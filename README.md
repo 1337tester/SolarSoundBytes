@@ -22,9 +22,8 @@ between **public sentiment** and **renewable energy development**, combining
 
 <img src="SolarSoundBytes_1.png" alt="SolarSoundBytes_1" width="500"/>
 
-### 2. Map sentiment data against actual solar power production to find possible
+### 2. Map sentiment data against actual solar power production to find possible correlations
 
-correlations
 <img src="SolarSoundBytes_2.png" alt="SolarSoundBytes_2" width="500"/>
 
 ### 3. Use AI to predict how renewable energy production might change based on new
