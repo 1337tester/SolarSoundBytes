@@ -1,5 +1,7 @@
 # SolarSoundBytes
 
+Mapping our global transition to solar energy into bite-sized audio insights.
+
 ## Table of Contents
 
 - [Quick Overview](#quick-overview)
@@ -10,11 +12,10 @@
 - [The Process](#the-process)
 - [Datasets to use](#datasets-to-use)
 
-_Mapping our global transition to solar energy into bite-sized audio insights._
-
 **SolarSoundBytes** is a data-driven AI project that explores the connection
 between **public sentiment** and **renewable energy development**, combining
-**geospatial analysis, natural language processing, and audio generation.**
+geospatial analysis and natural language processing, which culminate in
+generating effective audio aka SolarSoundBytes.
 
 ## Quick Overview
 
