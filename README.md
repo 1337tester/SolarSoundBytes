@@ -20,18 +20,18 @@ between **public sentiment** and **renewable energy development**, combining
 
 ### 1. Analyze social media sentiment about solar energy
 
-<img src="SolarSoundBytes_1.png" alt="SolarSoundBytes_1" width="500"/>
+<img src="images/SolarSoundBytes_1.png" alt="SolarSoundBytes_1" width="500"/>
 
 ### 2. Map sentiment data against actual solar power production to find possible correlations
 
-<img src="SolarSoundBytes_2.png" alt="SolarSoundBytes_2" width="500"/>
+<img src="images/SolarSoundBytes_2.png" alt="SolarSoundBytes_2" width="500"/>
 
 ### 3. Use AI to predict how renewable energy production might change based on new
 
 sentiment data. Create audio summaries to educate, engage and influence public
 perception around renewable energy and sustainability (#social-engineering)
 
-<img src="SolarSoundBytes_3.png" alt="SolarSoundBytes_3" width="500"/>
+<img src="images/SolarSoundBytes_3.png" alt="SolarSoundBytes_3" width="500"/>
 
 ## Key Features
 
@@ -70,14 +70,14 @@ renewable energy topics, incorporating both geolocation and timestamp data for
 each tweet. This allows us to map how opinions around clean energy evolve over
 time and across different regions.
 
-<img src="SolarSoundBytes_1.png" alt="SolarSoundBytes_1" width="500"/>
+<img src="images/SolarSoundBytes_1.png" alt="SolarSoundBytes_1" width="500"/>
 
 We then explore **potential correlations between changes in renewable energy
 production and shifts in public sentiment**, focusing specifically on
 environmental and spatial factors (even though economic and political variables
 also play a role).
 
-<img src="SolarSoundBytes_2.png" alt="SolarSoundBytes_2" width="500"/>
+<img src="images/SolarSoundBytes_2.png" alt="SolarSoundBytes_2" width="500"/>
 
 **If a correlation is found**, we take it a step further by **predicting how
 renewable energy production might change** in the future, based on current
@@ -88,7 +88,7 @@ sentiment analysis with relevant news articles. The summaries are transformed
 into short, informative **audio clips—soundbytes—featuring natural voice
 narration**.
 
-<img src="SolarSoundBytes_3.png" alt="SolarSoundBytes_3" width="500"/>
+<img src="images/SolarSoundBytes_3.png" alt="SolarSoundBytes_3" width="500"/>
 
 These soundbytes are designed to educate, engage, and influence public
 perception around renewable energy and sustainability.
