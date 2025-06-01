@@ -2,53 +2,131 @@
 
 Mapping our global transition to solar energy into bite-sized audio insights.
 
-## Table of Contents
-
-- [Quick Overview](#quick-overview)
-- [Key Features](#key-features)
-- [Tech Stack](#tech-stack)
-- [Getting Started](#getting-started)
-- [Basic Usage](#basic-usage)
-- [The Process](#the-process)
-- [Datasets to use](#datasets-to-use)
-
 **SolarSoundBytes** is a data-driven AI project that explores the connection
 between **public sentiment** and **renewable energy development**, combining
 geospatial analysis and natural language processing, which culminate in
 generating effective audio aka SolarSoundBytes.
 
-## Quick Overview
+# TODO: create Table of Contents
 
-### 1. Analyze social media sentiment about solar energy
+# Data
+
+## twitter scraping with console.apify
+
+- [scraping actor](https://console.apify.com/actors/CJdippxWmn9uRfooo/input)
+- [stored datasets](https://console.apify.com/storage/datasets)
+
+### GUI
+
+![console-apify](images/console-apify.png)
+
+### search terms for a single day at end of month
+
+- "#Renewables until:2024-04-01"
+- "#CleanEnergy until:2024-04-01"
+- "renewable energy until:2024-04-01"
+- "clean energy until:2024-04-01"
+- "green energy until:2024-04-01"
+- "sustainable energy until:2024-04-01"
+- "alternative energy until:2024-04-01"
+- "decarbonized energy until:2024-04-01"
+- "low-carbon energy until:2024-04-01"
+- "carbon-free energy until:2024-04-01"
+- "energy transition until:2024-04-01"
+
+### data features
+
+- id
+- url
+- text
+- createdAt
+- author.profilePicture
+- retweetCount
+- replyCount
+- likeCount
+- quoteCount
+- viewCount
+- bookmarkCount
+- source
+- lang
+- isReply
+- isRetweet
+- isQuote
+- isPinned
+
+## check data sources to correlate satellite images with solar production
+
+- [solar panel detection from space](https://universe.roboflow.com/search?q=solar%2520panel+object+detection)
+
+## correlate sentiment evolution with framework conditions (technological, legal)
+
+# setup
+
+## clone this repo to your computer
+
+```shell
+cd /path/to/your/project-parent-folder
+
+git clone <paste_your_SSH_link_here>
+```
+
+## create virtual environment
+
+Separate local development environment from your global python environment to
+define specific packages and versions
+
+```shell
+# go to the project-folder
+cd /path/to/SolarSoundBytes
+
+pyenv virtualenv 3.12.9 SolarSoundBytes
+```
+
+## activate virtual environment in cloned repo
+
+```shell
+pyenv local SolarSoundBytes
+```
+
+## create hidden data folder (untracked by .gitignore)
+
+```shell
+touch .data
+```
+
+<!--
+# Quick Overview
+
+## 1. Analyze social media sentiment about solar energy
 
 <img src="images/SolarSoundBytes_1.png" alt="SolarSoundBytes_1" width="500"/>
 
-### 2. Map sentiment data against actual solar power production to find possible correlations
+## 2. Map sentiment data against actual solar power production to find possible correlations
 
 <img src="images/SolarSoundBytes_2.png" alt="SolarSoundBytes_2" width="500"/>
 
-### 3. Use AI to predict how renewable energy production might change based on new
+## 3. Use AI to predict how renewable energy production might change based on new
 
 sentiment data. Create audio summaries to educate, engage and influence public
 perception around renewable energy and sustainability (#social-engineering)
 
 <img src="images/SolarSoundBytes_3.png" alt="SolarSoundBytes_3" width="500"/>
 
-## Key Features
+# Key Features
 
 - Sentiment analysis of geo-tagged tweets
 - Solar power production data correlation
 - AI-powered audio summary generation
 - Interactive data visualization
 
-## Tech Stack
+# Tech Stack
 
 - Python 3.8+
 - Natural Language Processing (HuggingFace)
 - Audio Generation (Coqui TTS)
 - Data Analysis (Pandas, NumPy)
 
-## Getting Started
+# Getting Started
 
 ```bash
 git clone https://github.com/YourUsername/SolarSoundBytes.git
@@ -56,7 +134,7 @@ cd SolarSoundBytes
 pip install -r requirements.txt
 ```
 
-## Basic Usage
+# Basic Usage
 
 ```python
 from solarsoundbytes.pipeline import SolarAnalyzer
@@ -100,4 +178,4 @@ perception around renewable energy and sustainability.
 articles and summaries only. **Target:** highlights(summaries)
 
 **Model:** BART - FINE TUNING NLP with LoRa
-(https://huggingface.co/facebook/bart-large-cnn)
+(https://huggingface.co/facebook/bart-large-cnn) -->
