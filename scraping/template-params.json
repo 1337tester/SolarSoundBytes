@@ -22,15 +22,15 @@
   "lang": "en",
   "maxItems": 100000,
   "searchTerms": [
-    "\"clean energy until:2025-06-02\"",
-    "\"green energy until:2025-06-02\"",
-    "\"sustainable energy until:2025-06-02\"",
-    "\"#Renewables until:2025-06-02\"",
-    "\"#CleanEnergy until:2025-06-02\"",
-    "\"decarbonized energy until:2025-06-02\"",
-    "\"energy transition until:2025-06-02\"",
-    "\"low-carbon energy until:2025-06-02\"",
-    "\"carbon-free energy until:2025-06-02\"",
-    "\"alternative energy until:2025-06-02\""
+    "\"clean energy since:2023-12-02 until:2024-01-02\"",
+    "\"green energy since:2023-12-02 until:2024-01-02\"",
+    "\"sustainable energy since:2023-12-02 until:2024-01-02\"",
+    "\"#Renewables since:2023-12-02 until:2024-01-02\"",
+    "\"#CleanEnergy since:2023-12-02 until:2024-01-02\"",
+    "\"decarbonized energy since:2023-12-02 until:2024-01-02\"",
+    "\"energy transition since:2023-12-02 until:2024-01-02\"",
+    "\"low-carbon energy since:2023-12-02 until:2024-01-02\"",
+    "\"carbon-free energy since:2023-12-02 until:2024-01-02\"",
+    "\"alternative energy since:2023-12-02 until:2024-01-02\""
   ]
 }
