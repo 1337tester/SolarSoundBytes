@@ -20,19 +20,7 @@ generating effective audio aka SolarSoundBytes.
 
 ![console-apify](images/console-apify.png)
 
-### search terms for a single day at end of month
-
-- "#Renewables until:2024-04-01"
-- "#CleanEnergy until:2024-04-01"
-- "renewable energy until:2024-04-01"
-- "clean energy until:2024-04-01"
-- "green energy until:2024-04-01"
-- "sustainable energy until:2024-04-01"
-- "alternative energy until:2024-04-01"
-- "decarbonized energy until:2024-04-01"
-- "low-carbon energy until:2024-04-01"
-- "carbon-free energy until:2024-04-01"
-- "energy transition until:2024-04-01"
+### see template-params.json for sample input parameters to scrape target month
 
 ### data features
 
