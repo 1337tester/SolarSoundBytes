@@ -15,12 +15,12 @@ generating effective audio aka SolarSoundBytes.
 
 - [scraping actor](https://console.apify.com/actors/CJdippxWmn9uRfooo/input)
 - [stored datasets](https://console.apify.com/storage/datasets)
+- See [`scraping/template-params.json`](scraping/template-params.json) for
+  sample input parameters to scrape a target month.
 
 ### GUI
 
 ![console-apify](images/console-apify.png)
-
-### see template-params.json for sample input parameters to scrape target month
 
 ### data features
 
