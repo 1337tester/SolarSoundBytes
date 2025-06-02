@@ -2,7 +2,7 @@
 
 Mapping our global transition to solar energy into bite-sized audio insights.
 
-**SolarSoundBytes** is a data-driven AI project that explores the relationship between **renewable energy development**, as observed through satellite imagery, **public sentiment**, and **official news articles**, focusing initially on California and Texas, with plans to expand globally upon successful completion of the MVP.
+**SolarSoundBytes** is a data-driven AI project that explores the relationship between **renewable energy development**, as observed through satellite imagery, **public sentiment**, and **official news articles**, focusing initially in United Kingdom, with plans to expand globally upon successful completion of the MVP.
 
 This approach will help uncover potential influences of political, economic, or social factors on the adoption and perception of solar energy.
 
