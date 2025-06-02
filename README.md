@@ -2,12 +2,29 @@
 
 Mapping our global transition to solar energy into bite-sized audio insights.
 
-**SolarSoundBytes** is a data-driven AI project that explores the connection
-between **public sentiment** and **renewable energy development**, combining
-geospatial analysis and natural language processing, which culminate in
-generating effective audio aka SolarSoundBytes.
+**SolarSoundBytes** is a data-driven AI project that explores the relationship between **renewable energy development**, as observed through satellite imagery, **public sentiment**, and **official news articles**, focusing initially on California and Texas, with plans to expand globally upon successful completion of the MVP.
 
-# TODO: create Table of Contents
+This approach will help uncover potential influences of political, economic, or social factors on the adoption and perception of solar energy.
+
+To make our findings accessible and engaging, we transform these insights into concise audio summaries, **soundbites**, that effectively communicate the state of the energy transition to a broader audience.
+
+# Roles and Responsabilities:
+**Fadri Pestalozz**i** - Team leader
+- Scrapping Data
+- NLP - Tweeter Data
+- Documentation Supervisor
+
+**Steffen Lauterbach**
+- System Architect (code efficiency)
+- Data Researcher - satelite images
+- Proces images for detection of solar pannels
+
+**Enrique Flores Roldán**
+- Project Manager
+- NLP - News Articles
+- TTS integration
+
+# Table of Contents
 
 # Data
 
@@ -81,6 +98,8 @@ pyenv local SolarSoundBytes
 ```shell
 touch .data
 ```
+
+
 
 <!--
 # Quick Overview
