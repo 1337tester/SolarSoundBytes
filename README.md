@@ -2,27 +2,37 @@
 
 Mapping our global transition to solar energy into bite-sized audio insights.
 
-**SolarSoundBytes** is a data-driven AI project that explores the relationship between **renewable energy development**, as observed through satellite imagery, **public sentiment**, and **official news articles**, focusing initially on California and Texas, with plans to expand globally upon successful completion of the MVP.
+**SolarSoundBytes** is a data-driven AI project that explores the relationship
+between **renewable energy development**, as observed through satellite imagery,
+**public sentiment**, and **official news articles**, focusing initially on
+California and Texas, with plans to expand globally upon successful completion
+of the MVP.
 
-This approach will help uncover potential influences of political, economic, or social factors on the adoption and perception of solar energy.
+This approach will help uncover potential influences of political, economic, or
+social factors on the adoption and perception of solar energy.
 
-To make our findings accessible and engaging, we transform these insights into concise audio summaries, **soundbites**, that effectively communicate the state of the energy transition to a broader audience.
+To make our findings accessible and engaging, we transform these insights into
+concise audio summaries, **soundbites**, that effectively communicate the state
+of the energy transition to a broader audience.
 
 # Roles and Responsabilities:
-**Fadri Pestalozz**i** - Team leader
-- Scrapping Data
-- NLP - Tweeter Data
+
+**[Fadri Pestalozzi](https://github.com/FadriPestalozzi)** – Team Leader
+
+- Scraping Data
+- NLP – Twitter Data
 - Documentation Supervisor
 
-**Steffen Lauterbach**
-- System Architect (code efficiency)
-- Data Researcher - satelite images
-- Proces images for detection of solar pannels
+**[Steffen Lauterbach](https://github.com/SL14-SL)** – System Architect
 
-**Enrique Flores Roldán**
-- Project Manager
-- NLP - News Articles
-- TTS integration
+- Code Efficiency
+- Data Researcher – Satellite Images
+- Process Images for Detection of Solar Panels
+
+**[Enrique Flores Roldán](https://github.com/EFRdev)** – Project Manager
+
+- NLP – News Articles
+- TTS Integration
 
 # Table of Contents
 
@@ -98,8 +108,6 @@ pyenv local SolarSoundBytes
 ```shell
 touch .data
 ```
-
-
 
 <!--
 # Quick Overview
