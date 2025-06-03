@@ -1,37 +1,78 @@
-# SolarSoundBytes
+# Table of Contents
+
+- [Project Overview](#solarsoundbytes)
+- [MVP](#mvp)
+- [Roles and Responsibilities](#roles-and-responsabilities)
+- [Gather Data](#gather-data)
+- [Process Data](#process-data)
+- [Installation](#installation)
+- [Glossary](#glossary)
+
+# Project Overview
+
+**SolarSoundBytes** is a data-driven machine-learning project that explores the
+development of **renewable energy**, particularly solar, by:
+
+1. NLP sentiment analysis of **public tweets** and
+
+2. NLP sentiment analysis of **official news articles**.
+
+These 2 sentiment analyses are investigated with respect to each other (possible
+correlations) and in comparison with the implementation of renewable energy
+technologies.
+
+## SoundBytes
+
+To make our findings accessible and engaging, we transform these insights into
+concise audio summaries, aka **SoundBytes**, that effectively communicate the
+state of the energy transition to a broader audience.
+
+## Tagline
 
 Mapping our global transition to solar energy into bite-sized audio insights.
 
-**SolarSoundBytes** is a data-driven AI project that explores the relationship between **renewable energy development**, as observed through satellite imagery, **public sentiment**, and **official news articles**, focusing initially in United Kingdom, with plans to expand globally upon successful completion of the MVP.
+# MVP
 
-This approach will help uncover potential influences of political, economic, or social factors on the adoption and perception of solar energy.
+The initial MVP focuses on Great Britain and historical data on the development
+of renewable energy sources, gathered by the World Bank.
 
-To make our findings accessible and engaging, we transform these insights into concise audio summaries, **soundbites**, that effectively communicate the state of the energy transition to a broader audience.
+## Beyond the MVP
+
+To investigate a possible discrepancy between officially reported data and the
+actually installed solar PV, we aim to supplement the NLP sentiment analysis
+with solar panel detection using satellite images.
+
+This would be an additional real-world application of the learnings acquired
+during our
+[bootcamp at Le Wagon](https://www.lewagon.com/barcelona/data-science-course).
 
 # Roles and Responsabilities:
-**Fadri Pestalozz**i** - Team leader
-- Scrapping Data
-- NLP - Tweeter Data
-- Documentation Supervisor
 
-**Steffen Lauterbach**
-- System Architect (code efficiency)
-- Data Researcher - satelite images
-- Proces images for detection of solar pannels
+**[Fadri Pestalozzi](https://github.com/FadriPestalozzi)** – Team Leader
 
-**Enrique Flores Roldán**
-- Project Manager
-- NLP - News Articles
-- TTS integration
+- Tweets on renewable energy: Research data sources, scraping and perform NLP
+- Supervise documentation
+
+**[Steffen Lauterbach](https://github.com/SL14-SL)** – System Architect
+
+- Create model pipeline and docker container to expose API
+- Research and process satellite images to detect and quantify solar panels
+
+**[Enrique Flores Roldán](https://github.com/EFRdev)** – Project Manager
+
+- News Articles: Research data sources and perform NLP
+- Integrate TTS (text-to-sound)
 
 # Table of Contents
 
-# Data
+# Gather Data
 
-## twitter scraping with console.apify
+## Twitter scraping with console.apify
 
 - [scraping actor](https://console.apify.com/actors/CJdippxWmn9uRfooo/input)
 - [stored datasets](https://console.apify.com/storage/datasets)
+- [Search parameters](scraping/search-params.txt) are gathered using
+  [butter](https://app.butter.us/)
 - See [`scraping/template-params.json`](scraping/template-params.json) for
   sample input parameters to scrape a target month.
 
@@ -63,9 +104,15 @@ To make our findings accessible and engaging, we transform these insights into c
 
 - [solar panel detection from space](https://universe.roboflow.com/search?q=solar%2520panel+object+detection)
 
-## correlate sentiment evolution with framework conditions (technological, legal)
+## correlate time series of sentiment analysis with renewable energylegal)
 
-# setup
+# Process Data
+
+## Sentiment Analysis
+
+<img src="images/sentiment_analysis_twitter_and_news.excalidraw.svg" alt="sentiment_analysis_twitter_and_news" width="500"/>
+
+# Installation
 
 ## clone this repo to your computer
 
@@ -75,16 +122,16 @@ cd /path/to/your/project-parent-folder
 git clone <paste_your_SSH_link_here>
 ```
 
-## create virtual environment
+## create virtual environment using python version according to [Le Wagon](https://www.lewagon.com/barcelona/data-science-course)
 
 Separate local development environment from your global python environment to
-define specific packages and versions
+define specific packages and versions.
 
 ```shell
 # go to the project-folder
 cd /path/to/SolarSoundBytes
 
-pyenv virtualenv 3.12.9 SolarSoundBytes
+pyenv virtualenv 3.10.6 SolarSoundBytes
 ```
 
 ## activate virtual environment in cloned repo
@@ -93,96 +140,31 @@ pyenv virtualenv 3.12.9 SolarSoundBytes
 pyenv local SolarSoundBytes
 ```
 
-## create hidden data folder (untracked by .gitignore)
+## Install minimal packages
 
 ```shell
-touch .data
+pip install --upgrade pip
+pip install -r https://gist.githubusercontent.com/krokrob/53ab953bbec16c96b9938fcaebf2b199/raw/9035bbf12922840905ef1fbbabc459dc565b79a3/minimal_requirements.txt
+pip list
 ```
 
+## create data folder, untracked by .gitignore
 
-
-<!--
-# Quick Overview
-
-## 1. Analyze social media sentiment about solar energy
-
-<img src="images/SolarSoundBytes_1.png" alt="SolarSoundBytes_1" width="500"/>
-
-## 2. Map sentiment data against actual solar power production to find possible correlations
-
-<img src="images/SolarSoundBytes_2.png" alt="SolarSoundBytes_2" width="500"/>
-
-## 3. Use AI to predict how renewable energy production might change based on new
-
-sentiment data. Create audio summaries to educate, engage and influence public
-perception around renewable energy and sustainability (#social-engineering)
-
-<img src="images/SolarSoundBytes_3.png" alt="SolarSoundBytes_3" width="500"/>
-
-# Key Features
-
-- Sentiment analysis of geo-tagged tweets
-- Solar power production data correlation
-- AI-powered audio summary generation
-- Interactive data visualization
-
-# Tech Stack
-
-- Python 3.8+
-- Natural Language Processing (HuggingFace)
-- Audio Generation (Coqui TTS)
-- Data Analysis (Pandas, NumPy)
-
-# Getting Started
-
-```bash
-git clone https://github.com/YourUsername/SolarSoundBytes.git
-cd SolarSoundBytes
-pip install -r requirements.txt
+```shell
+touch data
 ```
 
-# Basic Usage
+# Glossary
 
-```python
-from solarsoundbytes.pipeline import SolarAnalyzer
-analyzer = SolarAnalyzer()
-analyzer.analyze_text("Sample text")
-```
-
-# The Process
-
-The project begins by **analyzing public sentiment** on Twitter regarding
-renewable energy topics, incorporating both geolocation and timestamp data for
-each tweet. This allows us to map how opinions around clean energy evolve over
-time and across different regions.
-
-<img src="images/SolarSoundBytes_1.png" alt="SolarSoundBytes_1" width="500"/>
-
-We then explore **potential correlations between changes in renewable energy
-production and shifts in public sentiment**, focusing specifically on
-environmental and spatial factors (even though economic and political variables
-also play a role).
-
-<img src="images/SolarSoundBytes_2.png" alt="SolarSoundBytes_2" width="500"/>
-
-**If a correlation is found**, we take it a step further by **predicting how
-renewable energy production might change** in the future, based on current
-sentiment trends and environmental context.
-
-These insights are used to generate **concise summaries**, combining the
-sentiment analysis with relevant news articles. The summaries are transformed
-into short, informative **audio clips—soundbytes—featuring natural voice
-narration**.
-
-<img src="images/SolarSoundBytes_3.png" alt="SolarSoundBytes_3" width="500"/>
-
-These soundbytes are designed to educate, engage, and influence public
-perception around renewable energy and sustainability.
-
-# Datasets to use
-
-**CNN-DailyMail News Text Summarization** (downloaded) - Use about 50K news
-articles and summaries only. **Target:** highlights(summaries)
-
-**Model:** BART - FINE TUNING NLP with LoRa
-(https://huggingface.co/facebook/bart-large-cnn) -->
+- **API**: Application Programming Interface – a set of rules that allows
+  different software applications to communicate with each other.
+- **GUI**: Graphical User Interface – a visual way of interacting with a
+  computer using items like windows, icons, and buttons.
+- **MVP**: Minimum Viable Product – the simplest version of a product that can
+  be released to test a new business idea and gather user feedback.
+- **NLP**: Natural Language Processing – a field of artificial intelligence
+  focused on the interaction between computers and human language.
+- **PV**: Photovoltaic – technology that converts sunlight directly into
+  electricity using solar cells.
+- **TTS**: Text-to-Speech – technology that converts written text into spoken
+  voice output.
