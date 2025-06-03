@@ -71,8 +71,8 @@ during our
 
 - [scraping actor](https://console.apify.com/actors/CJdippxWmn9uRfooo/input)
 - [stored datasets](https://console.apify.com/storage/datasets)
-- [Search parameters](scraping/search-params.txt) are gathered using
-  [butter](https://app.butter.us/)
+- [Renewable Energy Search Terms](scraping/renewable-energy-search-terms.md) are
+  gathered using [butter](https://app.butter.us/)
 - See [`scraping/template-params.json`](scraping/template-params.json) for
   sample input parameters to scrape a target month.
 
