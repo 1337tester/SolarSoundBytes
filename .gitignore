@@ -1,3 +1,10 @@
 data/
+solarsoundbytes.egg-info/
+__pycache__/
+solarsoundbytes/api/__pycache__/
+build/
 .keys/
 .python-version
+
+*.pyc 
+*.Zone.Identifier
