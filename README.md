@@ -148,6 +148,12 @@ pip install -r https://gist.githubusercontent.com/krokrob/53ab953bbec16c96b9938f
 pip list
 ```
 
+## install requirements
+
+```shell
+pip install -r requirements.txt
+```
+
 ## create data folder, untracked by .gitignore
 
 ```shell
