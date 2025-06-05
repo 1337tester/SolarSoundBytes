@@ -7,4 +7,4 @@ build/
 .python-version
 
 *.pyc 
-*.Zone.Identifier
+*Zone.Identifier
