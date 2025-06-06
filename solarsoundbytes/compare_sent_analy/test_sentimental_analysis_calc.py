@@ -63,4 +63,5 @@ def sent_analy_to_values():
 def create_output_interface():
     result_twitter = sent_analy_to_values()
     result_news = sent_analy_to_values()
+    print(result_news)
     return result_twitter, result_news
