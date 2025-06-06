@@ -17,26 +17,61 @@ development of **renewable energy**, particularly solar, by:
 
 2. NLP sentiment analysis of **official news articles**.
 
-These 2 sentiment analyses are investigated with respect to each other (possible
-correlations) and in comparison with the implementation of renewable energy
-technologies.
+These 2 sentiment analyses are compared to each other (to identify possible
+correlations) and both mapped onto data on the development of renewable energy
+technologies in the same timeframe.
 
 ## SoundBytes
 
-To make our findings accessible and engaging, we transform these insights into
-concise audio summaries, aka **SoundBytes**, that effectively communicate the
-state of the energy transition to a broader audience.
+To make our findings accessible and engaging, we transform the resulting
+insights into concise audio summaries, aka **SoundBytes**, to effectively
+communicate the state of our ongoing energy transition to a broader audience.
 
 ## Tagline
 
 Mapping our global transition to solar energy into bite-sized audio insights.
 
+# Website
+
+The code presented in this repo is exposed online on the
+[SolarSoundBytes Website](https://github.com/SL14-SL/solarsoundbytes-website).
+
 # MVP
 
-The initial MVP focuses on Great Britain and historical data on the development
-of renewable energy sources, gathered by the World Bank.
+The initial MVP focuses on articles in the
+[Cleantech Media Dataset by Anacode](https://www.kaggle.com/datasets/jannalipenkova/cleantech-media-dataset),
+which span a time from 2022-01-02 to 2024-10-24.
 
-## Beyond the MVP
+To compare this official/academic dataset with the perception of the general
+public, a twitter dataset was scraped, covering the same time frame.
+
+## Scraping Twitter Dataset
+
+To compile a twitter dataset covering the same topics as covered by the
+cleantech articles dataset, unique values in the cleantech "domains" column (see
+[`unique_domains.txt`](preprocessing/scraping/cleantech_articles__unique_domains.txt))
+are used as search terms for scraping with a twitter scraper on
+[console.apify](https://console.apify.com/).
+
+To keep scraping costs below a standard monthly membership of 39 USD, the
+following scraper was chosen:
+
+- [Tweet Scraper|$0.25/1K Tweets | Pay-Per Result | No Rate Limits](https://console.apify.com/actors/CJdippxWmn9uRfooo/input?addFromActorId=CJdippxWmn9uRfooo).
+
+### unique values in the cleantech "domains" column
+
+Unfortunately, the chosen scraping method was unable to handle more than 2
+search terms simultaneously.
+
+To Therefore the following 2 search terms were chosen to generate a twitter
+dataset for the same topics as contained in the cleantech dataset.
+
+### Search Terms
+
+- renewable energy
+- energy storage
+
+# Beyond the MVP
 
 To investigate a possible discrepancy between officially reported data and the
 actually installed solar PV, we aim to supplement the NLP sentiment analysis
@@ -190,3 +225,4 @@ touch data
   electricity using solar cells.
 - **TTS**: Text-to-Speech – technology that converts written text into spoken
   voice output.
+- **USD**: United States Dollar
