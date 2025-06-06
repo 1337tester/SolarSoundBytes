@@ -78,7 +78,7 @@ during our
 
 ### GUI
 
-![console-apify](images/console-apify.png)
+![console-apify](images/png/console-apify.png)
 
 ### data features
 
@@ -110,7 +110,23 @@ during our
 
 ## Sentiment Analysis
 
-<img src="images/sentiment_analysis_twitter_and_news.excalidraw.svg" alt="sentiment_analysis_twitter_and_news" width="500"/>
+### Methods
+
+<img src="images/svg/sentiment_analysis_twitter_and_news.excalidraw.svg" alt="sentiment_analysis_twitter_and_news" width="500"/>
+
+### Results
+
+#### histogram confidence score vs sentiment color
+
+<img src="images/png/twitter/hist_confidenceScore__sentimentColor.png" alt="sentiment_analysis_twitter_and_news" width="500"/>
+
+#### sentiment score share over time
+
+<img src="images/png/twitter/sentiment_share_over_time_quarters.png" alt="sentiment_analysis_twitter_and_news" width="500"/>
+
+#### sentiment score share vs number of tweets over time
+
+<img src="images/png/twitter/sentiment_share_vs_nTweets_quarter.png" alt="sentiment_analysis_twitter_and_news" width="500"/>
 
 # Installation
 
