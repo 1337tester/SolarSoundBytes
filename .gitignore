@@ -6,5 +6,6 @@ build/
 .keys/
 .python-version
 
-*.pyc 
-*.Zone.Identifier
+*.pyc
+*.py:Zone.Identifier
+*.ipynb:Zone.Identifier
