@@ -5,12 +5,7 @@ solarsoundbytes/api/__pycache__/
 build/
 .keys/
 .python-version
-<<<<<<< HEAD
-*.env
-*.pyc 
-*Zone.Identifier
-=======
 
 *.pyc
-*.Zone.Identifier
->>>>>>> e1d460044039f24dc0dc13087aad4eb5f0cbde8d
+*.py:Zone.Identifier
+*.ipynb:Zone.Identifier
