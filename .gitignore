@@ -9,3 +9,8 @@ build/
 *.pyc
 *.py:Zone.Identifier
 *.ipynb:Zone.Identifier
+
+*.env
+.env
+
+
