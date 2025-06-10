@@ -12,8 +12,10 @@ openai.api_key = api_key
 def create_text_from_sent_analy_df(df_twitter, df_news, df_1):
 
     prompt = f"""
-    Hier sind monatliche Sentimentdaten zum Thema 'Klimawandel' aus Nachrichtenartikeln und Twitter von Januar 2023 bis Dezember 2024:
-
+    Hier sind monatliche Sentimentdaten zum Thema 'Klimawandel' aus Nachrichtenartikeln und Twitter:
+    Hier sind verschiedene Dataframes. Bitte analysiere diese und zeige einen Zusammenhang mit in diesem
+    Zeitraum stattgefundenen weltweiten Ereignissen auf. Weiter unten sind einige aufgeführt,
+    aber bitte nutze zuerst dein eigenes Wissen
     {df_twitter}
     {df_news}
     {df_1}
