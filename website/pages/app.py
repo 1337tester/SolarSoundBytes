@@ -13,8 +13,7 @@ from gtts import gTTS
 from solarsoundbytes.import_twitter_sent_analysis import create_df_of_twitter_result
 from solarsoundbytes.import_newsarticle_sent_analysis import create_df_of_newsarticle_result
 
-# from solarsoundbytes.compare_sent_analy.test_sentimental_analysis_calc import create_output_interface
-# from solarsoundbytes.text_creation.create_text import create_text_from_sent_analy_df
+from solarsoundbytes.text_creation.create_text import create_text_from_sent_analy_df
 from solarsoundbytes.process_sp500_df import preprocess_sp500_df
 from solarsoundbytes.process_df_sent_analysis import count_sent_per_quarter
 from solarsoundbytes.process_df_sent_analysis import agg_monthly_sent_analysis
@@ -369,9 +368,9 @@ st.plotly_chart(fig, use_container_width=True)
 ############################################################################
 #############################################################################
 
-# result_text = create_text_from_sent_analy_df(filtered_counts_twitter, filtered_counts_news,filtered_sp500)
+result_text = create_text_from_sent_analy_df(filtered_counts_twitter, filtered_counts_news,filtered_sp500)
 
-# st.write(result_text)
+st.write(result_text)
 
 # text = st.text_input(label='1', value=result_text)
 
