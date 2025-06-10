@@ -15,7 +15,7 @@ from solarsoundbytes.import_newsarticle_sent_analysis import create_df_of_newsar
 
 from solarsoundbytes.compare_sent_analy.test_sentimental_analysis_calc import create_output_interface
 from solarsoundbytes.text_creation.create_text import create_text_from_sent_analy_df
-from solarsoundbytes.data_sp500 import get_sp500_df
+from solarsoundbytes.process_sp500_df import preprocess_sp500_df
 
 st.set_page_config(layout="wide")
 
@@ -31,7 +31,6 @@ except KeyError:
 # --- DATA SOURCE ---
 df_twitter = create_df_of_twitter_result()
 df_news = create_df_of_newsarticle_result()
-df_sp500 = get_sp500_df()
 
 # Quarterly GDP values
 gdp = {
@@ -40,14 +39,7 @@ gdp = {
     '2024': 5750,
 }
 
-
-# Prepare S&P 500
-df_sp500['Date'] = pd.to_datetime(df_sp500['Date'], format='%m/%d/%Y', errors='coerce')
-df_sp500['Price'] = df_sp500['Price'].str.replace(',', '')
-df_sp500['Price'] = pd.to_numeric(df_sp500['Price'], errors='coerce')
-df_sp500['month'] = df_sp500['Date'].dt.to_period('M')
-monthly_sp500 = df_sp500.groupby('month')['Price'].mean().reset_index()
-monthly_sp500['month'] = monthly_sp500['month'].dt.to_timestamp()
+monthly_sp500 = preprocess_sp500_df()
 
 # Prepare GDP for quarterly plotting (flat line per quarter)
 df_gdp_yearly = pd.DataFrame({'year': list(gdp.keys()), 'gdp': list(gdp.values())})
@@ -71,8 +63,8 @@ df_tweets['three_month_block'] = (df_tweets['createdAt'].dt.year * 100 +
 counts_twitter = df_tweets.groupby(['quarter', 'sentiment']).size().reset_index(name='count')
 counts_twitter['quarter_start'] = counts_twitter['quarter'].dt.start_time
 
-st.write(df_twitter.head())
-st.write(df_news.head())
+# st.write(df_twitter.head())
+# st.write(df_news.head())
 
 # Prepare news
 df_news = df_news.copy()
@@ -178,7 +170,7 @@ agg_counts_bubbles_news = filtered_counts_news.pivot_table(
     fill_value=0
 ).reset_index()
 
-st.write(agg_counts_bubbles_news)
+# st.write(agg_counts_bubbles_news)
 # Berechne die erforderlichen Zählungen für die Kreise
 agg_counts_bubbles_twitter['total_count'] = agg_counts_bubbles_twitter['positive'] + agg_counts_bubbles_twitter['neutral'] + agg_counts_bubbles_twitter['negative']
 agg_counts_bubbles_twitter['negative_neutral_count'] = agg_counts_bubbles_twitter['neutral'] + agg_counts_bubbles_twitter['negative']
