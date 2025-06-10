@@ -9,8 +9,9 @@ def create_df_of_twitter_result():
     data = pd.read_csv(file_path,  encoding='utf-8')
 
     df = data[['createdAt', 'sentiment', 'confidence score']]
+    df = df.rename(columns={'createdAt': 'published'})
     return df
 
 
-test = create_df_of_twitter_result()
-print(test.head())
+# test = create_df_of_twitter_result()
+# print(test.head())
