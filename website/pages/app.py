@@ -28,12 +28,6 @@ except KeyError:
     st.stop() # Stoppt die App, wenn der Schlüssel fehlt
 
 
-st.header('Welcome to SolarSoundBytes')
-st.write('our Dashboard to show ...')
-st.write('the Team: ')
-
-
-
 # --- DATA SOURCE ---
 df_twitter = create_df_of_twitter_result()
 df_news = create_df_of_newsarticle_result()
@@ -554,11 +548,11 @@ st.plotly_chart(fig, use_container_width=True)
 ############################################################################
 #############################################################################
 
-result_text = create_text_from_sent_analy_df(filtered_counts_twitter, filtered_counts_news,filtered_sp500)
+# result_text = create_text_from_sent_analy_df(filtered_counts_twitter, filtered_counts_news,filtered_sp500)
 
-st.write(result_text)
+# st.write(result_text)
 
-text = st.text_input(label='1', value=result_text)
+# text = st.text_input(label='1', value=result_text)
 
 
 # if st.button("Play"):
