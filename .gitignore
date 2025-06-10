@@ -1,12 +1,19 @@
+# security
+# deleted .keys/ since folder was empty
+# not moving .env and .envrc into .keys/ to not break anything
+.env
+.envrc
+.python-version
+
+# folders
+__pycache__/
+build/
 data/
 solarsoundbytes.egg-info/
-__pycache__/
 solarsoundbytes/api/__pycache__/
-build/
-.keys/
-.python-version
 *data_test/
+
+# chaching
 *.pyc
 *.py:Zone.Identifier
 *.ipynb:Zone.Identifier
-.env
