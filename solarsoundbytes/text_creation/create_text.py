@@ -13,6 +13,7 @@ openai.api_key = api_key
 result_twitter, result_news = create_output_interface()
 
 def create_text_from_sent_analy_df():
+    
     def build_sentiment_summary(df_news, df_twitter):
         merged_df = pd.merge(df_news, df_twitter, on="month_year", suffixes=("_News", "_Twitter"))
 
