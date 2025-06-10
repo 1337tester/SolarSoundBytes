@@ -1,36 +1,38 @@
 import pandas as pd
 from dotenv import load_dotenv
 import os
-import openai
+from openai import OpenAI
 
 from solarsoundbytes.compare_sent_analy.test_sentimental_analysis_calc import create_output_interface
 
 load_dotenv()
+# api_key = os.getenv("API_KEY")
 
-api_key = os.getenv("API_KEY")
-
-openai.api_key = api_key
+# openai.api_key = api_key
 result_twitter, result_news = create_output_interface()
 
-def create_text_from_sent_analy_df():
-    def build_sentiment_summary(df_news, df_twitter):
-        merged_df = pd.merge(df_news, df_twitter, on="month_year", suffixes=("_News", "_Twitter"))
+def create_text_from_sent_analy_df(data_twitter, data_news, data_1):
 
-        lines = []
-        for _, row in merged_df.iterrows():
-            line = f"{row['month_year']}: News={row['multiplication_News']:+.2f}, Twitter={row['multiplication_Twitter']:+.2f}"
-            lines.append(line)
-        return "\n".join(lines)
+    # def build_sentiment_summary(df_news, df_twitter):
+    #     merged_df = pd.merge(df_news, df_twitter, on="month_year", suffixes=("_News", "_Twitter"))
 
-    sentiment_summary = build_sentiment_summary(result_news, result_twitter)
+    #     lines = []
+    #     for _, row in merged_df.iterrows():
+    #         line = f"{row['month_year']}: News={row['multiplication_News']:+.2f}, Twitter={row['multiplication_Twitter']:+.2f}"
+    #         lines.append(line)
+    #     return "\n".join(lines)
+
+    # sentiment_summary = build_sentiment_summary(sent_news, sent_twitter)
 
 
     prompt = f"""
-    Hier sind monatliche Sentimentdaten zum Thema 'Klimawandel' aus Nachrichtenartikeln und Twitter von Januar 2023 bis Dezember 2024:
+    Hier sind monatliche Sentimentdaten zum Thema 'Klimawandel' aus Nachrichtenartikeln und Twitter:
+    Bei Betrachtung der folgenden Dataframes
+    {data_twitter}
+    {data_news}
+    {data_1}
 
-    {sentiment_summary}
-
-    Bitte fasse die Entwicklung der öffentlichen Meinung zusammen.welche unter multiplication steht.
+    Bitte fasse die Entwicklung der öffentlichen Meinung zusammen..
     - Erkläre, ob die Wahrnehmung in sozialen Medien und in Nachrichtenmedien unterschiedlich war.
     - Wichtige Ereignisse, in diesem Zeitraum: Juli 2024 – Wärmstes Jahr: Globaltemperatur erstmals >1,5 °C über vorindustriellem Niveau.
 
@@ -75,7 +77,8 @@ def create_text_from_sent_analy_df():
     auf englisch bitte
     """
 
-    response = openai.chat.completions.create(
+    client = OpenAI(api_key = api_key)
+    response = client.chat.completions.create(
         model="gpt-4o",  # oder "gpt-4o" für schnelleren Output
         messages=[
             {"role": "system", "content": "Du bist ein datenanalytischer Journalist."},
@@ -86,5 +89,8 @@ def create_text_from_sent_analy_df():
     )
 
     # 🖨️ Ausgabe
-    print(response.choices[0].message.content)
+    # print(response.choices[0].message.content)
     return response.choices[0].message.content
+
+# output = create_text_from_sent_analy_df(result_twitter, result_news)
+# print(output)
