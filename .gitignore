@@ -18,7 +18,5 @@ solarsoundbytes/api/__pycache__/
 
 # chaching
 *.pyc
-*.py:Zone.Identifier
-*.ipynb:Zone.Identifier
-*.txt:Zone.Identifier
-*.mp3:Zone.Identifier
+*:Zone.Identifier
+
