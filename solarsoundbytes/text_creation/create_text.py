@@ -71,7 +71,7 @@ def create_text_from_sent_analy_df():
     → Mehr als 1 Billion Yuan (~140 Mrd. USD) für Solar, Wind, Speicher & Netze
     Signalisiert geopolitisches Engagement in globaler Energiewende.
 
-    - Schreibe einen strukturierten Text mit etwa 200 Wörtern.
+    - Schreibe einen strukturierten Text mit etwa 100 Wörtern.
     auf englisch bitte
     """
 

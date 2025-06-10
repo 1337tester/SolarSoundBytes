@@ -11,8 +11,9 @@ build/
 data/
 solarsoundbytes.egg-info/
 solarsoundbytes/api/__pycache__/
+*data_test/
 
-# deployment?
+# chaching
 *.pyc
 *.py:Zone.Identifier
 *.ipynb:Zone.Identifier
