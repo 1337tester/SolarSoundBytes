@@ -13,4 +13,3 @@ def create_df_of_twitter_result():
 
 
 test = create_df_of_twitter_result()
-print(test.head())

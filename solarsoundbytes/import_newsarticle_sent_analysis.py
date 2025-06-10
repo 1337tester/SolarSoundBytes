@@ -13,4 +13,3 @@ def create_df_of_newsarticle_result():
 
 
 test = create_df_of_newsarticle_result()
-print(test.head())
