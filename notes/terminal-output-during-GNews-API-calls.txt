@@ -1,0 +1,2325 @@
+➜  data_acquisition git:(fp_scrape_missing_days) ✗ python articles_api_2_csv.py
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-01-02T00:00:00Z to 2024-12-24T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-01-02T00:00:00Z to 2023-06-29T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-01-02T00:00:00Z to 2022-09-30T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-01-02T00:00:00Z to 2022-05-17T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-01-02T00:00:00Z to 2022-03-10T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-01-02T00:00:00Z to 2022-02-04T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-01-02T00:00:00Z to 2022-01-18T23:59:59Z
+Saved 21 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-21-articles-from-2022-01-02-to-2022-01-10.csv
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-01-10T12:00:00Z to 2022-01-18T23:59:59Z
+Saved 15 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-15-articles-from-2022-01-10-to-2022-01-14.csv
+Saved 18 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-18-articles-from-2022-01-14-to-2022-01-18.csv
+Recursion depth: 9
+Recursion depth: 8
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-01-19T00:00:00Z to 2022-02-04T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-01-19T00:00:00Z to 2022-01-27T11:59:59Z
+Saved 21 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-21-articles-from-2022-01-19-to-2022-01-23.csv
+Saved 21 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-21-articles-from-2022-01-23-to-2022-01-27.csv
+Recursion depth: 9
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-01-27T12:00:00Z to 2022-02-04T23:59:59Z
+Saved 6 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-6-articles-from-2022-01-27-to-2022-01-31.csv
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-01-31T18:00:00Z to 2022-02-04T23:59:59Z
+Saved 20 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-20-articles-from-2022-01-31-to-2022-02-02.csv
+Saved 8 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-8-articles-from-2022-02-02-to-2022-02-04.csv
+Recursion depth: 10
+Recursion depth: 9
+Recursion depth: 8
+Recursion depth: 7
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-02-05T00:00:00Z to 2022-03-10T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-02-05T00:00:00Z to 2022-02-21T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-02-05T00:00:00Z to 2022-02-13T11:59:59Z
+Saved 24 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-24-articles-from-2022-02-05-to-2022-02-09.csv
+Saved 12 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-12-articles-from-2022-02-09-to-2022-02-13.csv
+Recursion depth: 9
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-02-13T12:00:00Z to 2022-02-21T23:59:59Z
+Saved 21 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-21-articles-from-2022-02-13-to-2022-02-17.csv
+Saved 16 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-16-articles-from-2022-02-17-to-2022-02-21.csv
+Recursion depth: 9
+Recursion depth: 8
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-02-22T00:00:00Z to 2022-03-10T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-02-22T00:00:00Z to 2022-03-02T11:59:59Z
+Saved 12 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-12-articles-from-2022-02-22-to-2022-02-26.csv
+Saved 18 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-18-articles-from-2022-02-26-to-2022-03-02.csv
+Recursion depth: 9
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-03-02T12:00:00Z to 2022-03-10T23:59:59Z
+Saved 12 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-12-articles-from-2022-03-02-to-2022-03-06.csv
+Saved 24 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-24-articles-from-2022-03-06-to-2022-03-10.csv
+Recursion depth: 9
+Recursion depth: 8
+Recursion depth: 7
+Recursion depth: 6
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-03-11T00:00:00Z to 2022-05-17T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-03-11T00:00:00Z to 2022-04-13T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-03-11T00:00:00Z to 2022-03-27T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-03-11T00:00:00Z to 2022-03-19T11:59:59Z
+Saved 10 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-10-articles-from-2022-03-11-to-2022-03-15.csv
+Saved 22 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-22-articles-from-2022-03-15-to-2022-03-19.csv
+Recursion depth: 9
+Saved 24 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-24-articles-from-2022-03-19-to-2022-03-27.csv
+Recursion depth: 8
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-03-28T00:00:00Z to 2022-04-13T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-03-28T00:00:00Z to 2022-04-05T11:59:59Z
+Saved 16 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-16-articles-from-2022-03-28-to-2022-04-01.csv
+Saved 21 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-21-articles-from-2022-04-01-to-2022-04-05.csv
+Recursion depth: 9
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-04-05T12:00:00Z to 2022-04-13T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-04-05T12:00:00Z to 2022-04-09T17:59:59Z
+Saved 16 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-16-articles-from-2022-04-05-to-2022-04-07.csv
+Saved 12 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-12-articles-from-2022-04-07-to-2022-04-09.csv
+Recursion depth: 10
+Saved 13 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-13-articles-from-2022-04-09-to-2022-04-13.csv
+Recursion depth: 9
+Recursion depth: 8
+Recursion depth: 7
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-04-14T00:00:00Z to 2022-05-17T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-04-14T00:00:00Z to 2022-04-30T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-04-14T00:00:00Z to 2022-04-22T11:59:59Z
+Saved 14 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-14-articles-from-2022-04-14-to-2022-04-18.csv
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-04-18T06:00:00Z to 2022-04-22T11:59:59Z
+Saved 19 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-19-articles-from-2022-04-18-to-2022-04-20.csv
+Saved 14 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-14-articles-from-2022-04-20-to-2022-04-22.csv
+Recursion depth: 10
+Recursion depth: 9
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-04-22T12:00:00Z to 2022-04-30T23:59:59Z
+Saved 17 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-17-articles-from-2022-04-22-to-2022-04-26.csv
+Saved 14 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-14-articles-from-2022-04-26-to-2022-04-30.csv
+Recursion depth: 9
+Recursion depth: 8
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-05-01T00:00:00Z to 2022-05-17T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-05-01T00:00:00Z to 2022-05-09T11:59:59Z
+Saved 15 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-15-articles-from-2022-05-01-to-2022-05-05.csv
+Saved 14 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-14-articles-from-2022-05-05-to-2022-05-09.csv
+Recursion depth: 9
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-05-09T12:00:00Z to 2022-05-17T23:59:59Z
+Saved 15 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-15-articles-from-2022-05-09-to-2022-05-13.csv
+Saved 13 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-13-articles-from-2022-05-13-to-2022-05-17.csv
+Recursion depth: 9
+Recursion depth: 8
+Recursion depth: 7
+Recursion depth: 6
+Recursion depth: 5
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-05-18T00:00:00Z to 2022-09-30T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-05-18T00:00:00Z to 2022-07-24T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-05-18T00:00:00Z to 2022-06-20T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-05-18T00:00:00Z to 2022-06-03T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-05-18T00:00:00Z to 2022-05-26T11:59:59Z
+Saved 17 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-17-articles-from-2022-05-18-to-2022-05-22.csv
+Saved 22 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-22-articles-from-2022-05-22-to-2022-05-26.csv
+Recursion depth: 9
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-05-26T12:00:00Z to 2022-06-03T23:59:59Z
+Saved 19 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-19-articles-from-2022-05-26-to-2022-05-30.csv
+Saved 22 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-22-articles-from-2022-05-30-to-2022-06-03.csv
+Recursion depth: 9
+Recursion depth: 8
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-06-04T00:00:00Z to 2022-06-20T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-06-04T00:00:00Z to 2022-06-12T11:59:59Z
+Saved 16 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-16-articles-from-2022-06-04-to-2022-06-08.csv
+Saved 16 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-16-articles-from-2022-06-08-to-2022-06-12.csv
+Recursion depth: 9
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-06-12T12:00:00Z to 2022-06-20T23:59:59Z
+Saved 23 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-23-articles-from-2022-06-12-to-2022-06-16.csv
+Saved 11 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-11-articles-from-2022-06-16-to-2022-06-20.csv
+Recursion depth: 9
+Recursion depth: 8
+Recursion depth: 7
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-06-21T00:00:00Z to 2022-07-24T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-06-21T00:00:00Z to 2022-07-07T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-06-21T00:00:00Z to 2022-06-29T11:59:59Z
+Saved 9 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-9-articles-from-2022-06-21-to-2022-06-25.csv
+Saved 19 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-19-articles-from-2022-06-25-to-2022-06-29.csv
+Recursion depth: 9
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-06-29T12:00:00Z to 2022-07-07T23:59:59Z
+Saved 7 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-7-articles-from-2022-06-29-to-2022-07-03.csv
+Saved 21 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-21-articles-from-2022-07-03-to-2022-07-07.csv
+Recursion depth: 9
+Recursion depth: 8
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-07-08T00:00:00Z to 2022-07-24T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-07-08T00:00:00Z to 2022-07-16T11:59:59Z
+Saved 10 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-10-articles-from-2022-07-08-to-2022-07-12.csv
+Saved 19 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-19-articles-from-2022-07-12-to-2022-07-16.csv
+Recursion depth: 9
+Saved 24 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-24-articles-from-2022-07-16-to-2022-07-24.csv
+Recursion depth: 8
+Recursion depth: 7
+Recursion depth: 6
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-07-25T00:00:00Z to 2022-09-30T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-07-25T00:00:00Z to 2022-08-27T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-07-25T00:00:00Z to 2022-08-10T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-07-25T00:00:00Z to 2022-08-02T11:59:59Z
+Saved 17 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-17-articles-from-2022-07-25-to-2022-07-29.csv
+Saved 11 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-11-articles-from-2022-07-29-to-2022-08-02.csv
+Recursion depth: 9
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-08-02T12:00:00Z to 2022-08-10T23:59:59Z
+Saved 10 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-10-articles-from-2022-08-02-to-2022-08-06.csv
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-08-06T18:00:00Z to 2022-08-10T23:59:59Z
+Saved 15 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-15-articles-from-2022-08-06-to-2022-08-08.csv
+Saved 18 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-18-articles-from-2022-08-08-to-2022-08-10.csv
+Recursion depth: 10
+Recursion depth: 9
+Recursion depth: 8
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-08-11T00:00:00Z to 2022-08-27T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-08-11T00:00:00Z to 2022-08-19T11:59:59Z
+Saved 20 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-20-articles-from-2022-08-11-to-2022-08-15.csv
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-08-15T06:00:00Z to 2022-08-19T11:59:59Z
+Saved 12 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-12-articles-from-2022-08-15-to-2022-08-17.csv
+Saved 13 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-13-articles-from-2022-08-17-to-2022-08-19.csv
+Recursion depth: 10
+Recursion depth: 9
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-08-19T12:00:00Z to 2022-08-27T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-08-19T12:00:00Z to 2022-08-23T17:59:59Z
+Saved 12 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-12-articles-from-2022-08-19-to-2022-08-21.csv
+Saved 13 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-13-articles-from-2022-08-21-to-2022-08-23.csv
+Recursion depth: 10
+Saved 19 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-19-articles-from-2022-08-23-to-2022-08-27.csv
+Recursion depth: 9
+Recursion depth: 8
+Recursion depth: 7
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-08-28T00:00:00Z to 2022-09-30T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-08-28T00:00:00Z to 2022-09-13T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-08-28T00:00:00Z to 2022-09-05T11:59:59Z
+Saved 22 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-22-articles-from-2022-08-28-to-2022-09-01.csv
+Saved 10 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-10-articles-from-2022-09-01-to-2022-09-05.csv
+Recursion depth: 9
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-09-05T12:00:00Z to 2022-09-13T23:59:59Z
+Saved 19 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-19-articles-from-2022-09-05-to-2022-09-09.csv
+Saved 13 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-13-articles-from-2022-09-09-to-2022-09-13.csv
+Recursion depth: 9
+Recursion depth: 8
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-09-14T00:00:00Z to 2022-09-30T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-09-14T00:00:00Z to 2022-09-22T11:59:59Z
+Saved 21 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-21-articles-from-2022-09-14-to-2022-09-18.csv
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-09-18T06:00:00Z to 2022-09-22T11:59:59Z
+Saved 11 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-11-articles-from-2022-09-18-to-2022-09-20.csv
+Saved 17 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-17-articles-from-2022-09-20-to-2022-09-22.csv
+Recursion depth: 10
+Recursion depth: 9
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-09-22T12:00:00Z to 2022-09-30T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-09-22T12:00:00Z to 2022-09-26T17:59:59Z
+Saved 13 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-13-articles-from-2022-09-22-to-2022-09-24.csv
+Saved 12 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-12-articles-from-2022-09-24-to-2022-09-26.csv
+Recursion depth: 10
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-09-26T18:00:00Z to 2022-09-30T23:59:59Z
+Saved 13 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-13-articles-from-2022-09-26-to-2022-09-28.csv
+Saved 14 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-14-articles-from-2022-09-28-to-2022-09-30.csv
+Recursion depth: 10
+Recursion depth: 9
+Recursion depth: 8
+Recursion depth: 7
+Recursion depth: 6
+Recursion depth: 5
+Recursion depth: 4
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-10-01T00:00:00Z to 2023-06-29T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-10-01T00:00:00Z to 2023-02-13T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-10-01T00:00:00Z to 2022-12-07T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-10-01T00:00:00Z to 2022-11-03T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-10-01T00:00:00Z to 2022-10-17T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-10-01T00:00:00Z to 2022-10-09T11:59:59Z
+Saved 22 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-22-articles-from-2022-10-01-to-2022-10-05.csv
+Saved 20 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-20-articles-from-2022-10-05-to-2022-10-09.csv
+Recursion depth: 9
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-10-09T12:00:00Z to 2022-10-17T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-10-09T12:00:00Z to 2022-10-13T17:59:59Z
+Saved 7 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-7-articles-from-2022-10-09-to-2022-10-11.csv
+Saved 22 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-22-articles-from-2022-10-11-to-2022-10-13.csv
+Recursion depth: 10
+Saved 22 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-22-articles-from-2022-10-13-to-2022-10-17.csv
+Recursion depth: 9
+Recursion depth: 8
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-10-18T00:00:00Z to 2022-11-03T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-10-18T00:00:00Z to 2022-10-26T11:59:59Z
+Saved 13 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-13-articles-from-2022-10-18-to-2022-10-22.csv
+Saved 20 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-20-articles-from-2022-10-22-to-2022-10-26.csv
+Recursion depth: 9
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-10-26T12:00:00Z to 2022-11-03T23:59:59Z
+Saved 19 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-19-articles-from-2022-10-26-to-2022-10-30.csv
+Saved 15 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-15-articles-from-2022-10-30-to-2022-11-03.csv
+Recursion depth: 9
+Recursion depth: 8
+Recursion depth: 7
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-11-04T00:00:00Z to 2022-12-07T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-11-04T00:00:00Z to 2022-11-20T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-11-04T00:00:00Z to 2022-11-12T11:59:59Z
+Saved 20 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-20-articles-from-2022-11-04-to-2022-11-08.csv
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-11-08T06:00:00Z to 2022-11-12T11:59:59Z
+Saved 21 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-21-articles-from-2022-11-08-to-2022-11-10.csv
+Saved 19 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-19-articles-from-2022-11-10-to-2022-11-12.csv
+Recursion depth: 10
+Recursion depth: 9
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-11-12T12:00:00Z to 2022-11-20T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-11-12T12:00:00Z to 2022-11-16T17:59:59Z
+Saved 13 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-13-articles-from-2022-11-12-to-2022-11-14.csv
+Saved 24 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-24-articles-from-2022-11-14-to-2022-11-16.csv
+Recursion depth: 10
+Saved 17 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-17-articles-from-2022-11-16-to-2022-11-20.csv
+Recursion depth: 9
+Recursion depth: 8
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-11-21T00:00:00Z to 2022-12-07T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-11-21T00:00:00Z to 2022-11-29T11:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-11-21T00:00:00Z to 2022-11-25T05:59:59Z
+Saved 16 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-16-articles-from-2022-11-21-to-2022-11-23.csv
+Saved 9 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-9-articles-from-2022-11-23-to-2022-11-25.csv
+Recursion depth: 10
+Saved 14 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-14-articles-from-2022-11-25-to-2022-11-29.csv
+Recursion depth: 9
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-11-29T12:00:00Z to 2022-12-07T23:59:59Z
+Saved 20 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-20-articles-from-2022-11-29-to-2022-12-03.csv
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-12-03T18:00:00Z to 2022-12-07T23:59:59Z
+Saved 9 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-9-articles-from-2022-12-03-to-2022-12-05.csv
+Saved 20 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-20-articles-from-2022-12-05-to-2022-12-07.csv
+Recursion depth: 10
+Recursion depth: 9
+Recursion depth: 8
+Recursion depth: 7
+Recursion depth: 6
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-12-08T00:00:00Z to 2023-02-13T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-12-08T00:00:00Z to 2023-01-10T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-12-08T00:00:00Z to 2022-12-24T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-12-08T00:00:00Z to 2022-12-16T11:59:59Z
+Saved 23 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-23-articles-from-2022-12-08-to-2022-12-12.csv
+Saved 14 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-14-articles-from-2022-12-12-to-2022-12-16.csv
+Recursion depth: 9
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-12-16T12:00:00Z to 2022-12-24T23:59:59Z
+Saved 16 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-16-articles-from-2022-12-16-to-2022-12-20.csv
+Saved 16 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-16-articles-from-2022-12-20-to-2022-12-24.csv
+Recursion depth: 9
+Recursion depth: 8
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-12-25T00:00:00Z to 2023-01-10T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2022-12-25T00:00:00Z to 2023-01-02T11:59:59Z
+Saved 24 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-24-articles-from-2022-12-25-to-2022-12-29.csv
+Saved 14 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-14-articles-from-2022-12-29-to-2023-01-02.csv
+Recursion depth: 9
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-01-02T12:00:00Z to 2023-01-10T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-01-02T12:00:00Z to 2023-01-06T17:59:59Z
+Saved 10 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-10-articles-from-2023-01-02-to-2023-01-04.csv
+Saved 15 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-15-articles-from-2023-01-04-to-2023-01-06.csv
+Recursion depth: 10
+Saved 21 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-21-articles-from-2023-01-06-to-2023-01-10.csv
+Recursion depth: 9
+Recursion depth: 8
+Recursion depth: 7
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-01-11T00:00:00Z to 2023-02-13T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-01-11T00:00:00Z to 2023-01-27T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-01-11T00:00:00Z to 2023-01-19T11:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-01-11T00:00:00Z to 2023-01-15T05:59:59Z
+Saved 24 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-24-articles-from-2023-01-11-to-2023-01-13.csv
+Saved 7 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-7-articles-from-2023-01-13-to-2023-01-15.csv
+Recursion depth: 10
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-01-15T06:00:00Z to 2023-01-19T11:59:59Z
+Saved 20 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-20-articles-from-2023-01-15-to-2023-01-17.csv
+Saved 15 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-15-articles-from-2023-01-17-to-2023-01-19.csv
+Recursion depth: 10
+Recursion depth: 9
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-01-19T12:00:00Z to 2023-01-27T23:59:59Z
+Saved 21 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-21-articles-from-2023-01-19-to-2023-01-23.csv
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-01-23T18:00:00Z to 2023-01-27T23:59:59Z
+Saved 17 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-17-articles-from-2023-01-23-to-2023-01-25.csv
+Saved 11 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-11-articles-from-2023-01-25-to-2023-01-27.csv
+Recursion depth: 10
+Recursion depth: 9
+Recursion depth: 8
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-01-28T00:00:00Z to 2023-02-13T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-01-28T00:00:00Z to 2023-02-05T11:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-01-28T00:00:00Z to 2023-02-01T05:59:59Z
+Saved 10 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-10-articles-from-2023-01-28-to-2023-01-30.csv
+Saved 21 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-21-articles-from-2023-01-30-to-2023-02-01.csv
+Recursion depth: 10
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-02-01T06:00:00Z to 2023-02-05T11:59:59Z
+Saved 17 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-17-articles-from-2023-02-01-to-2023-02-03.csv
+Saved 8 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-8-articles-from-2023-02-03-to-2023-02-05.csv
+Recursion depth: 10
+Recursion depth: 9
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-02-05T12:00:00Z to 2023-02-13T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-02-05T12:00:00Z to 2023-02-09T17:59:59Z
+Saved 14 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-14-articles-from-2023-02-05-to-2023-02-07.csv
+Saved 12 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-12-articles-from-2023-02-07-to-2023-02-09.csv
+Recursion depth: 10
+Saved 12 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-12-articles-from-2023-02-09-to-2023-02-13.csv
+Recursion depth: 9
+Recursion depth: 8
+Recursion depth: 7
+Recursion depth: 6
+Recursion depth: 5
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-02-14T00:00:00Z to 2023-06-29T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-02-14T00:00:00Z to 2023-04-22T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-02-14T00:00:00Z to 2023-03-19T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-02-14T00:00:00Z to 2023-03-02T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-02-14T00:00:00Z to 2023-02-22T11:59:59Z
+Saved 24 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-24-articles-from-2023-02-14-to-2023-02-18.csv
+Saved 9 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-9-articles-from-2023-02-18-to-2023-02-22.csv
+Recursion depth: 9
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-02-22T12:00:00Z to 2023-03-02T23:59:59Z
+Saved 14 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-14-articles-from-2023-02-22-to-2023-02-26.csv
+Saved 16 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-16-articles-from-2023-02-26-to-2023-03-02.csv
+Recursion depth: 9
+Recursion depth: 8
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-03-03T00:00:00Z to 2023-03-19T23:59:59Z
+Saved 22 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-22-articles-from-2023-03-03-to-2023-03-11.csv
+Saved 22 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-22-articles-from-2023-03-11-to-2023-03-19.csv
+Recursion depth: 8
+Recursion depth: 7
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-03-20T00:00:00Z to 2023-04-22T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-03-20T00:00:00Z to 2023-04-05T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-03-20T00:00:00Z to 2023-03-28T11:59:59Z
+Saved 21 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-21-articles-from-2023-03-20-to-2023-03-24.csv
+Saved 15 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-15-articles-from-2023-03-24-to-2023-03-28.csv
+Recursion depth: 9
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-03-28T12:00:00Z to 2023-04-05T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-03-28T12:00:00Z to 2023-04-01T17:59:59Z
+Saved 16 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-16-articles-from-2023-03-28-to-2023-03-30.csv
+Saved 11 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-11-articles-from-2023-03-30-to-2023-04-01.csv
+Recursion depth: 10
+Saved 17 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-17-articles-from-2023-04-01-to-2023-04-05.csv
+Recursion depth: 9
+Recursion depth: 8
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-04-06T00:00:00Z to 2023-04-22T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-04-06T00:00:00Z to 2023-04-14T11:59:59Z
+Saved 12 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-12-articles-from-2023-04-06-to-2023-04-10.csv
+Saved 22 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-22-articles-from-2023-04-10-to-2023-04-14.csv
+Recursion depth: 9
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-04-14T12:00:00Z to 2023-04-22T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-04-14T12:00:00Z to 2023-04-18T17:59:59Z
+Saved 17 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-17-articles-from-2023-04-14-to-2023-04-16.csv
+Saved 8 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-8-articles-from-2023-04-16-to-2023-04-18.csv
+Recursion depth: 10
+Saved 18 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-18-articles-from-2023-04-18-to-2023-04-22.csv
+Recursion depth: 9
+Recursion depth: 8
+Recursion depth: 7
+Recursion depth: 6
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-04-23T00:00:00Z to 2023-06-29T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-04-23T00:00:00Z to 2023-05-26T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-04-23T00:00:00Z to 2023-05-09T23:59:59Z
+Saved 24 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-24-articles-from-2023-04-23-to-2023-05-01.csv
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-05-01T12:00:00Z to 2023-05-09T23:59:59Z
+Saved 19 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-19-articles-from-2023-05-01-to-2023-05-05.csv
+Saved 17 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-17-articles-from-2023-05-05-to-2023-05-09.csv
+Recursion depth: 9
+Recursion depth: 8
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-05-10T00:00:00Z to 2023-05-26T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-05-10T00:00:00Z to 2023-05-18T11:59:59Z
+Saved 24 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-24-articles-from-2023-05-10-to-2023-05-14.csv
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-05-14T06:00:00Z to 2023-05-18T11:59:59Z
+Saved 10 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-10-articles-from-2023-05-14-to-2023-05-16.csv
+Saved 17 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-17-articles-from-2023-05-16-to-2023-05-18.csv
+Recursion depth: 10
+Recursion depth: 9
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-05-18T12:00:00Z to 2023-05-26T23:59:59Z
+Saved 14 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-14-articles-from-2023-05-18-to-2023-05-22.csv
+Saved 16 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-16-articles-from-2023-05-22-to-2023-05-26.csv
+Recursion depth: 9
+Recursion depth: 8
+Recursion depth: 7
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-05-27T00:00:00Z to 2023-06-29T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-05-27T00:00:00Z to 2023-06-12T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-05-27T00:00:00Z to 2023-06-04T11:59:59Z
+Saved 10 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-10-articles-from-2023-05-27-to-2023-05-31.csv
+Saved 20 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-20-articles-from-2023-05-31-to-2023-06-04.csv
+Recursion depth: 9
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-06-04T12:00:00Z to 2023-06-12T23:59:59Z
+Saved 15 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-15-articles-from-2023-06-04-to-2023-06-08.csv
+Saved 11 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-11-articles-from-2023-06-08-to-2023-06-12.csv
+Recursion depth: 9
+Recursion depth: 8
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-06-13T00:00:00Z to 2023-06-29T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-06-13T00:00:00Z to 2023-06-21T11:59:59Z
+Saved 20 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-20-articles-from-2023-06-13-to-2023-06-17.csv
+Saved 12 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-12-articles-from-2023-06-17-to-2023-06-21.csv
+Recursion depth: 9
+Saved 17 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-17-articles-from-2023-06-21-to-2023-06-29.csv
+Recursion depth: 8
+Recursion depth: 7
+Recursion depth: 6
+Recursion depth: 5
+Recursion depth: 4
+Recursion depth: 3
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-06-30T00:00:00Z to 2024-12-24T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-06-30T00:00:00Z to 2024-03-27T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-06-30T00:00:00Z to 2023-11-12T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-06-30T00:00:00Z to 2023-09-05T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-06-30T00:00:00Z to 2023-08-02T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-06-30T00:00:00Z to 2023-07-16T23:59:59Z
+Saved 21 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-21-articles-from-2023-06-30-to-2023-07-08.csv
+Saved 19 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-19-articles-from-2023-07-08-to-2023-07-16.csv
+Recursion depth: 8
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-07-17T00:00:00Z to 2023-08-02T23:59:59Z
+Saved 21 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-21-articles-from-2023-07-17-to-2023-07-25.csv
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-07-25T12:00:00Z to 2023-08-02T23:59:59Z
+Saved 17 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-17-articles-from-2023-07-25-to-2023-07-29.csv
+Saved 12 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-12-articles-from-2023-07-29-to-2023-08-02.csv
+Recursion depth: 9
+Recursion depth: 8
+Recursion depth: 7
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-08-03T00:00:00Z to 2023-09-05T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-08-03T00:00:00Z to 2023-08-19T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-08-03T00:00:00Z to 2023-08-11T11:59:59Z
+Saved 23 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-23-articles-from-2023-08-03-to-2023-08-07.csv
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-08-07T06:00:00Z to 2023-08-11T11:59:59Z
+Saved 7 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-7-articles-from-2023-08-07-to-2023-08-09.csv
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-08-09T09:00:00Z to 2023-08-11T11:59:59Z
+Saved 14 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-14-articles-from-2023-08-09-to-2023-08-10.csv
+Saved 11 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-11-articles-from-2023-08-10-to-2023-08-11.csv
+Recursion depth: 11
+Recursion depth: 10
+Recursion depth: 9
+Saved 19 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-19-articles-from-2023-08-11-to-2023-08-19.csv
+Recursion depth: 8
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-08-20T00:00:00Z to 2023-09-05T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-08-20T00:00:00Z to 2023-08-28T11:59:59Z
+Saved 12 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-12-articles-from-2023-08-20-to-2023-08-24.csv
+Saved 13 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-13-articles-from-2023-08-24-to-2023-08-28.csv
+Recursion depth: 9
+Saved 23 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-23-articles-from-2023-08-28-to-2023-09-05.csv
+Recursion depth: 8
+Recursion depth: 7
+Recursion depth: 6
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-09-06T00:00:00Z to 2023-11-12T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-09-06T00:00:00Z to 2023-10-09T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-09-06T00:00:00Z to 2023-09-22T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-09-06T00:00:00Z to 2023-09-14T11:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-09-06T00:00:00Z to 2023-09-10T05:59:59Z
+Saved 20 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-20-articles-from-2023-09-06-to-2023-09-08.csv
+Saved 10 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-10-articles-from-2023-09-08-to-2023-09-10.csv
+Recursion depth: 10
+Saved 21 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-21-articles-from-2023-09-10-to-2023-09-14.csv
+Recursion depth: 9
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-09-14T12:00:00Z to 2023-09-22T23:59:59Z
+Saved 9 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-9-articles-from-2023-09-14-to-2023-09-18.csv
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-09-18T18:00:00Z to 2023-09-22T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-09-18T18:00:00Z to 2023-09-20T20:59:59Z
+Saved 4 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-4-articles-from-2023-09-18-to-2023-09-19.csv
+Saved 21 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-21-articles-from-2023-09-19-to-2023-09-20.csv
+Recursion depth: 11
+Saved 5 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-5-articles-from-2023-09-20-to-2023-09-22.csv
+Recursion depth: 10
+Recursion depth: 9
+Recursion depth: 8
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-09-23T00:00:00Z to 2023-10-09T23:59:59Z
+Saved 21 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-21-articles-from-2023-09-23-to-2023-10-01.csv
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-10-01T12:00:00Z to 2023-10-09T23:59:59Z
+Saved 16 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-16-articles-from-2023-10-01-to-2023-10-05.csv
+Saved 11 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-11-articles-from-2023-10-05-to-2023-10-09.csv
+Recursion depth: 9
+Recursion depth: 8
+Recursion depth: 7
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-10-10T00:00:00Z to 2023-11-12T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-10-10T00:00:00Z to 2023-10-26T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-10-10T00:00:00Z to 2023-10-18T11:59:59Z
+Saved 14 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-14-articles-from-2023-10-10-to-2023-10-14.csv
+Saved 13 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-13-articles-from-2023-10-14-to-2023-10-18.csv
+Recursion depth: 9
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-10-18T12:00:00Z to 2023-10-26T23:59:59Z
+Saved 15 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-15-articles-from-2023-10-18-to-2023-10-22.csv
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-10-22T18:00:00Z to 2023-10-26T23:59:59Z
+Saved 12 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-12-articles-from-2023-10-22-to-2023-10-24.csv
+Saved 13 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-13-articles-from-2023-10-24-to-2023-10-26.csv
+Recursion depth: 10
+Recursion depth: 9
+Recursion depth: 8
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-10-27T00:00:00Z to 2023-11-12T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-10-27T00:00:00Z to 2023-11-04T11:59:59Z
+Saved 7 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-7-articles-from-2023-10-27-to-2023-10-31.csv
+Saved 24 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-24-articles-from-2023-10-31-to-2023-11-04.csv
+Recursion depth: 9
+Saved 18 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-18-articles-from-2023-11-04-to-2023-11-12.csv
+Recursion depth: 8
+Recursion depth: 7
+Recursion depth: 6
+Recursion depth: 5
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-11-13T00:00:00Z to 2024-03-27T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-11-13T00:00:00Z to 2024-01-19T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-11-13T00:00:00Z to 2023-12-16T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-11-13T00:00:00Z to 2023-11-29T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-11-13T00:00:00Z to 2023-11-21T11:59:59Z
+Saved 19 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-19-articles-from-2023-11-13-to-2023-11-17.csv
+Saved 10 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-10-articles-from-2023-11-17-to-2023-11-21.csv
+Recursion depth: 9
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-11-21T12:00:00Z to 2023-11-29T23:59:59Z
+Saved 14 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-14-articles-from-2023-11-21-to-2023-11-25.csv
+Saved 18 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-18-articles-from-2023-11-25-to-2023-11-29.csv
+Recursion depth: 9
+Recursion depth: 8
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-11-30T00:00:00Z to 2023-12-16T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-11-30T00:00:00Z to 2023-12-08T11:59:59Z
+Saved 14 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-14-articles-from-2023-11-30-to-2023-12-04.csv
+Saved 24 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-24-articles-from-2023-12-04-to-2023-12-08.csv
+Recursion depth: 9
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-12-08T12:00:00Z to 2023-12-16T23:59:59Z
+Saved 10 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-10-articles-from-2023-12-08-to-2023-12-12.csv
+Saved 22 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-22-articles-from-2023-12-12-to-2023-12-16.csv
+Recursion depth: 9
+Recursion depth: 8
+Recursion depth: 7
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-12-17T00:00:00Z to 2024-01-19T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2023-12-17T00:00:00Z to 2024-01-02T23:59:59Z
+Saved 23 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-23-articles-from-2023-12-17-to-2023-12-25.csv
+Saved 19 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-19-articles-from-2023-12-25-to-2024-01-02.csv
+Recursion depth: 8
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-01-03T00:00:00Z to 2024-01-19T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-01-03T00:00:00Z to 2024-01-11T11:59:59Z
+Saved 10 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-10-articles-from-2024-01-03-to-2024-01-07.csv
+Saved 18 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-18-articles-from-2024-01-07-to-2024-01-11.csv
+Recursion depth: 9
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-01-11T12:00:00Z to 2024-01-19T23:59:59Z
+Saved 16 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-16-articles-from-2024-01-11-to-2024-01-15.csv
+Saved 16 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-16-articles-from-2024-01-15-to-2024-01-19.csv
+Recursion depth: 9
+Recursion depth: 8
+Recursion depth: 7
+Recursion depth: 6
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-01-20T00:00:00Z to 2024-03-27T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-01-20T00:00:00Z to 2024-02-22T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-01-20T00:00:00Z to 2024-02-05T23:59:59Z
+Saved 22 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-22-articles-from-2024-01-20-to-2024-01-28.csv
+Saved 22 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-22-articles-from-2024-01-28-to-2024-02-05.csv
+Recursion depth: 8
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-02-06T00:00:00Z to 2024-02-22T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-02-06T00:00:00Z to 2024-02-14T11:59:59Z
+Saved 13 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-13-articles-from-2024-02-06-to-2024-02-10.csv
+Saved 14 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-14-articles-from-2024-02-10-to-2024-02-14.csv
+Recursion depth: 9
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-02-14T12:00:00Z to 2024-02-22T23:59:59Z
+Saved 24 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-24-articles-from-2024-02-14-to-2024-02-18.csv
+Saved 16 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-16-articles-from-2024-02-18-to-2024-02-22.csv
+Recursion depth: 9
+Recursion depth: 8
+Recursion depth: 7
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-02-23T00:00:00Z to 2024-03-27T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-02-23T00:00:00Z to 2024-03-10T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-02-23T00:00:00Z to 2024-03-02T11:59:59Z
+Saved 13 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-13-articles-from-2024-02-23-to-2024-02-27.csv
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-02-27T06:00:00Z to 2024-03-02T11:59:59Z
+Saved 14 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-14-articles-from-2024-02-27-to-2024-02-29.csv
+Saved 11 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-11-articles-from-2024-02-29-to-2024-03-02.csv
+Recursion depth: 10
+Recursion depth: 9
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-03-02T12:00:00Z to 2024-03-10T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-03-02T12:00:00Z to 2024-03-06T17:59:59Z
+Saved 7 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-7-articles-from-2024-03-02-to-2024-03-04.csv
+Saved 19 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-19-articles-from-2024-03-04-to-2024-03-06.csv
+Recursion depth: 10
+Saved 10 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-10-articles-from-2024-03-06-to-2024-03-10.csv
+Recursion depth: 9
+Recursion depth: 8
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-03-11T00:00:00Z to 2024-03-27T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-03-11T00:00:00Z to 2024-03-19T11:59:59Z
+Saved 18 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-18-articles-from-2024-03-11-to-2024-03-15.csv
+Saved 8 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-8-articles-from-2024-03-15-to-2024-03-19.csv
+Recursion depth: 9
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-03-19T12:00:00Z to 2024-03-27T23:59:59Z
+Saved 8 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-8-articles-from-2024-03-19-to-2024-03-23.csv
+Saved 17 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-17-articles-from-2024-03-23-to-2024-03-27.csv
+Recursion depth: 9
+Recursion depth: 8
+Recursion depth: 7
+Recursion depth: 6
+Recursion depth: 5
+Recursion depth: 4
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-03-28T00:00:00Z to 2024-12-24T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-03-28T00:00:00Z to 2024-08-10T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-03-28T00:00:00Z to 2024-06-03T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-03-28T00:00:00Z to 2024-04-30T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-03-28T00:00:00Z to 2024-04-13T23:59:59Z
+Saved 23 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-23-articles-from-2024-03-28-to-2024-04-05.csv
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-04-05T12:00:00Z to 2024-04-13T23:59:59Z
+Saved 14 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-14-articles-from-2024-04-05-to-2024-04-09.csv
+Saved 12 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-12-articles-from-2024-04-09-to-2024-04-13.csv
+Recursion depth: 9
+Recursion depth: 8
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-04-14T00:00:00Z to 2024-04-30T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-04-14T00:00:00Z to 2024-04-22T11:59:59Z
+Saved 15 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-15-articles-from-2024-04-14-to-2024-04-18.csv
+Saved 17 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-17-articles-from-2024-04-18-to-2024-04-22.csv
+Recursion depth: 9
+Saved 15 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-15-articles-from-2024-04-22-to-2024-04-30.csv
+Recursion depth: 8
+Recursion depth: 7
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-05-01T00:00:00Z to 2024-06-03T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-05-01T00:00:00Z to 2024-05-17T23:59:59Z
+Saved 18 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-18-articles-from-2024-05-01-to-2024-05-09.csv
+Saved 16 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-16-articles-from-2024-05-09-to-2024-05-17.csv
+Recursion depth: 8
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-05-18T00:00:00Z to 2024-06-03T23:59:59Z
+Saved 16 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-16-articles-from-2024-05-18-to-2024-05-26.csv
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-05-26T12:00:00Z to 2024-06-03T23:59:59Z
+Saved 22 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-22-articles-from-2024-05-26-to-2024-05-30.csv
+Saved 6 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-6-articles-from-2024-05-30-to-2024-06-03.csv
+Recursion depth: 9
+Recursion depth: 8
+Recursion depth: 7
+Recursion depth: 6
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-06-04T00:00:00Z to 2024-08-10T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-06-04T00:00:00Z to 2024-07-07T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-06-04T00:00:00Z to 2024-06-20T23:59:59Z
+Saved 14 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-14-articles-from-2024-06-04-to-2024-06-12.csv
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-06-12T12:00:00Z to 2024-06-20T23:59:59Z
+Saved 7 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-7-articles-from-2024-06-12-to-2024-06-16.csv
+Saved 22 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-22-articles-from-2024-06-16-to-2024-06-20.csv
+Recursion depth: 9
+Recursion depth: 8
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-06-21T00:00:00Z to 2024-07-07T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-06-21T00:00:00Z to 2024-06-29T11:59:59Z
+Saved 7 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-7-articles-from-2024-06-21-to-2024-06-25.csv
+Saved 18 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-18-articles-from-2024-06-25-to-2024-06-29.csv
+Recursion depth: 9
+Saved 13 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-13-articles-from-2024-06-29-to-2024-07-07.csv
+Recursion depth: 8
+Recursion depth: 7
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-07-08T00:00:00Z to 2024-08-10T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-07-08T00:00:00Z to 2024-07-24T23:59:59Z
+Saved 15 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-15-articles-from-2024-07-08-to-2024-07-16.csv
+Saved 19 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-19-articles-from-2024-07-16-to-2024-07-24.csv
+Recursion depth: 8
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-07-25T00:00:00Z to 2024-08-10T23:59:59Z
+Saved 20 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-20-articles-from-2024-07-25-to-2024-08-02.csv
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-08-02T12:00:00Z to 2024-08-10T23:59:59Z
+Saved 18 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-18-articles-from-2024-08-02-to-2024-08-06.csv
+Saved 16 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-16-articles-from-2024-08-06-to-2024-08-10.csv
+Recursion depth: 9
+Recursion depth: 8
+Recursion depth: 7
+Recursion depth: 6
+Recursion depth: 5
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-08-11T00:00:00Z to 2024-12-24T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-08-11T00:00:00Z to 2024-10-17T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-08-11T00:00:00Z to 2024-09-13T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-08-11T00:00:00Z to 2024-08-27T23:59:59Z
+Saved 15 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-15-articles-from-2024-08-11-to-2024-08-19.csv
+Saved 16 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-16-articles-from-2024-08-19-to-2024-08-27.csv
+Recursion depth: 8
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-08-28T00:00:00Z to 2024-09-13T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-08-28T00:00:00Z to 2024-09-05T11:59:59Z
+Saved 11 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-11-articles-from-2024-08-28-to-2024-09-01.csv
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-09-01T06:00:00Z to 2024-09-05T11:59:59Z
+Saved 12 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-12-articles-from-2024-09-01-to-2024-09-03.csv
+Saved 14 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-14-articles-from-2024-09-03-to-2024-09-05.csv
+Recursion depth: 10
+Recursion depth: 9
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-09-05T12:00:00Z to 2024-09-13T23:59:59Z
+Saved 16 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-16-articles-from-2024-09-05-to-2024-09-09.csv
+Saved 15 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-15-articles-from-2024-09-09-to-2024-09-13.csv
+Recursion depth: 9
+Recursion depth: 8
+Recursion depth: 7
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-09-14T00:00:00Z to 2024-10-17T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-09-14T00:00:00Z to 2024-09-30T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-09-14T00:00:00Z to 2024-09-22T11:59:59Z
+Saved 15 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-15-articles-from-2024-09-14-to-2024-09-18.csv
+Saved 17 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-17-articles-from-2024-09-18-to-2024-09-22.csv
+Recursion depth: 9
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-09-22T12:00:00Z to 2024-09-30T23:59:59Z
+Saved 22 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-22-articles-from-2024-09-22-to-2024-09-26.csv
+Saved 8 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-8-articles-from-2024-09-26-to-2024-09-30.csv
+Recursion depth: 9
+Recursion depth: 8
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-10-01T00:00:00Z to 2024-10-17T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-10-01T00:00:00Z to 2024-10-09T11:59:59Z
+Saved 17 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-17-articles-from-2024-10-01-to-2024-10-05.csv
+Saved 9 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-9-articles-from-2024-10-05-to-2024-10-09.csv
+Recursion depth: 9
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-10-09T12:00:00Z to 2024-10-17T23:59:59Z
+Saved 11 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-11-articles-from-2024-10-09-to-2024-10-13.csv
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-10-13T18:00:00Z to 2024-10-17T23:59:59Z
+Saved 16 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-16-articles-from-2024-10-13-to-2024-10-15.csv
+Saved 11 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-11-articles-from-2024-10-15-to-2024-10-17.csv
+Recursion depth: 10
+Recursion depth: 9
+Recursion depth: 8
+Recursion depth: 7
+Recursion depth: 6
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-10-18T00:00:00Z to 2024-12-24T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-10-18T00:00:00Z to 2024-11-20T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-10-18T00:00:00Z to 2024-11-03T23:59:59Z
+Saved 22 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-22-articles-from-2024-10-18-to-2024-10-26.csv
+Saved 9 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-9-articles-from-2024-10-26-to-2024-11-03.csv
+Recursion depth: 8
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-11-04T00:00:00Z to 2024-11-20T23:59:59Z
+Saved 21 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-21-articles-from-2024-11-04-to-2024-11-12.csv
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-11-12T12:00:00Z to 2024-11-20T23:59:59Z
+Saved 20 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-20-articles-from-2024-11-12-to-2024-11-16.csv
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-11-16T18:00:00Z to 2024-11-20T23:59:59Z
+Saved 4 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-4-articles-from-2024-11-16-to-2024-11-18.csv
+Saved 22 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-22-articles-from-2024-11-18-to-2024-11-20.csv
+Recursion depth: 10
+Recursion depth: 9
+Recursion depth: 8
+Recursion depth: 7
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-11-21T00:00:00Z to 2024-12-24T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-11-21T00:00:00Z to 2024-12-07T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-11-21T00:00:00Z to 2024-11-29T11:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-11-21T00:00:00Z to 2024-11-25T05:59:59Z
+Saved 19 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-19-articles-from-2024-11-21-to-2024-11-23.csv
+Saved 8 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-8-articles-from-2024-11-23-to-2024-11-25.csv
+Recursion depth: 10
+Saved 17 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-17-articles-from-2024-11-25-to-2024-11-29.csv
+Recursion depth: 9
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-11-29T12:00:00Z to 2024-12-07T23:59:59Z
+Saved 19 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-19-articles-from-2024-11-29-to-2024-12-03.csv
+Saved 15 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-15-articles-from-2024-12-03-to-2024-12-07.csv
+Recursion depth: 9
+Recursion depth: 8
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-12-08T00:00:00Z to 2024-12-24T23:59:59Z
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-12-08T00:00:00Z to 2024-12-16T11:59:59Z
+Saved 20 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-20-articles-from-2024-12-08-to-2024-12-12.csv
+Saved 13 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-13-articles-from-2024-12-12-to-2024-12-16.csv
+Recursion depth: 9
+Query
+'"Renewable Energy" OR "Energy Storage"'
+ reached maximum number of 25 articles.
+To ensure no articles are missed, divide query into two half time ranges,
+            by moving t_start towards fixed t_end and call API again using
+            {query_subdivisions} query_subdivisions.
+Original time range: 2024-12-16T12:00:00Z to 2024-12-24T23:59:59Z
+Saved 24 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-24-articles-from-2024-12-16-to-2024-12-20.csv
+Saved 5 articles to ../data/csv/gnews_articles/gnews-query-renewable-energy-OR-energy-storage-yields-5-articles-from-2024-12-20-to-2024-12-24.csv
+Recursion depth: 9
+Recursion depth: 8
+Recursion depth: 7
+Recursion depth: 6
+Recursion depth: 5
+Recursion depth: 4
+Recursion depth: 3
+Recursion depth: 2
+➜  data_acquisition git:(fp_scrape_missing_days) ✗ ..
