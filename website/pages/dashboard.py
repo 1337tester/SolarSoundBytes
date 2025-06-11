@@ -18,7 +18,7 @@ from solarsoundbytes.process_sp500_df import preprocess_sp500_df
 from solarsoundbytes.process_df_sent_analysis import count_sent_per_quarter
 from solarsoundbytes.process_df_sent_analysis import agg_monthly_sent_analysis
 
-st.set_page_config(layout="wide")
+#st.set_page_config(layout="wide")
 
 # --- load api key from streamlit secrets .streamlit ---
 try:
