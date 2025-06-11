@@ -1,11 +1,58 @@
+# ToDo
+
+## ToDos for **[@Fadri](https://github.com/FadriPestalozzi)**
+
+- [ ] please refactor the README
+
+## ToDos for **[@Enrique](https://github.com/efloresr)**
+
+- [ ] please delete these outdated notebooks and the then empty folders
+      ![outdated notebooks](images/png/todo/notebooks_News_Articles.png) after
+      you save whatever you still need from them
+
+## ToDos for **[@Steffen](https://github.com/steffenlaut)**
+
+- [ ] please update or remove the [Website](#website) section
+
 # Table of Contents
 
-- [Project Overview](#solarsoundbytes)
+- [ToDo](#todo)
+  - [ToDos for **@Fadri**](#todos-for-fadri)
+  - [ToDos for **@Enrique**](#todos-for-enrique)
+  - [ToDos for **@Steffen**](#todos-for-steffen)
+- [Table of Contents](#table-of-contents)
+- [Project Overview](#project-overview)
+  - [SoundBytes](#soundbytes)
+  - [Tagline](#tagline)
+- [Website](#website)
 - [MVP](#mvp)
-- [Roles and Responsibilities](#roles-and-responsabilities)
+- [Beyond the MVP](#beyond-the-mvp)
+- [👥 Roles and Responsabilities of Collaborators](#-roles-and-responsabilities-of-collaborators)
+- [Table of Contents](#table-of-contents-1)
 - [Gather Data](#gather-data)
+  - [News Articles from Cleantech Media Dataset](#news-articles-from-cleantech-media-dataset)
+  - [**Training, Test \& Evaluate**](#training-test--evaluate)
+  - [**Fine Tuning and Predict**](#fine-tuning-and-predict)
+  - [Conclusion:](#conclusion)
+  - [Social Media Data from Twitter](#social-media-data-from-twitter)
+    - [Rehydration of Climate Change Twitter Dataset](#rehydration-of-climate-change-twitter-dataset)
+    - [Scraping Twitter Dataset](#scraping-twitter-dataset)
+    - [Search Terms](#search-terms)
+- [Global Events](#global-events)
 - [Process Data](#process-data)
+  - [Sentiment Analysis](#sentiment-analysis)
+    - [Methods](#methods)
+    - [Results](#results)
+      - [histogram confidence score vs sentiment color](#histogram-confidence-score-vs-sentiment-color)
+      - [sentiment score share over time](#sentiment-score-share-over-time)
+      - [sentiment score share vs number of tweets over time](#sentiment-score-share-vs-number-of-tweets-over-time)
 - [Installation](#installation)
+  - [clone this repo to your computer](#clone-this-repo-to-your-computer)
+  - [create virtual environment using python version according to Le Wagon](#create-virtual-environment-using-python-version-according-to-le-wagon)
+  - [activate virtual environment in cloned repo](#activate-virtual-environment-in-cloned-repo)
+  - [Install minimal packages](#install-minimal-packages)
+  - [install requirements](#install-requirements)
+  - [create data folder (untracked by .gitignore) and request data access from one of the authors](#create-data-folder-untracked-by-gitignore-and-request-data-access-from-one-of-the-authors)
 - [Glossary](#glossary)
 
 # Project Overview
@@ -33,9 +80,6 @@ communicate the state of the ongoing energy transition to a broader audience.
 Mapping our global energy transition into bite-sized audio insights.
 
 # Website
-
-**TODO [@Steffen](https://github.com/steffenlaut): please update or remove this
-section**
 
 The code presented in this repo is exposed online on the
 [SolarSoundBytes Website](https://github.com/SL14-SL/solarsoundbytes-website).
@@ -220,6 +264,16 @@ twitter dataset with as large of a contextual overlap as possible with the
 
 - renewable energy
 - energy storage
+
+# Global Events
+
+To identify around which specific dates to refine the twitter dataset to zoom
+into global events where a significant change in sentiment is highly probable, a
+[deep research was performed by iteratively prompting ChatGPT 4.1](https://chatgpt.com/share/68495bc3-ee6c-8006-9816-8b0480a0bf3c).
+
+The resulting overview with reasoning based on refererences is available in
+[pdf](<data_acquisition/Global-Events-Influencing-Renewable-Energy-Sentiment-(2022–2024).pdf>)
+format.
 
 # Process Data
 
