@@ -63,11 +63,11 @@ def convert_twitter_datetime(date_str):
 
 # # select only 2 files manually to test output.csv
 # json_files = [
-#     "../../data/json/dataset_2022-01-02_2025-06-03_22-22-56-837.json",
-#     "../../data/json/dataset_2022-02-02_2025-06-03_22-57-32-967.json"
+#     "../../data/json/day_02/2022/dataset_2022-01-02_2025-06-03_22-22-56-837.json",
+#     "../../data/json/day_02/2022/dataset_2022-02-02_2025-06-03_22-57-32-967.json"
 # ]
 
-# process all files
+# process all scraped files
 json_files = sorted(glob("../../data/json/*.json"))
 
 all_data = []

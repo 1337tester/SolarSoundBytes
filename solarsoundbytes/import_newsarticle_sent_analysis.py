@@ -15,5 +15,4 @@ def create_df_of_newsarticle_result():
     return df
 
 
-# test = create_df_of_newsarticle_result()
-# print(test.head())
+test = create_df_of_newsarticle_result()
