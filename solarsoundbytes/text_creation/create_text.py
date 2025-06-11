@@ -3,36 +3,34 @@ from dotenv import load_dotenv
 import os
 from openai import OpenAI
 
-from solarsoundbytes.compare_sent_analy.test_sentimental_analysis_calc import create_output_interface
-
 load_dotenv()
 # api_key = os.getenv("API_KEY")
 
-# openai.api_key = api_key
-result_twitter, result_news = create_output_interface()
+api_key = os.getenv("API_KEY")
 
-def create_text_from_sent_analy_df(data_twitter, data_news, data_1):
+openai.api_key = api_key
 
-    # def build_sentiment_summary(df_news, df_twitter):
-    #     merged_df = pd.merge(df_news, df_twitter, on="month_year", suffixes=("_News", "_Twitter"))
-
-    #     lines = []
-    #     for _, row in merged_df.iterrows():
-    #         line = f"{row['month_year']}: News={row['multiplication_News']:+.2f}, Twitter={row['multiplication_Twitter']:+.2f}"
-    #         lines.append(line)
-    #     return "\n".join(lines)
-
-    # sentiment_summary = build_sentiment_summary(sent_news, sent_twitter)
-
+def create_text_from_sent_analy_df(df_twitter, df_news, df_1):
 
     prompt = f"""
     Hier sind monatliche Sentimentdaten zum Thema 'Klimawandel' aus Nachrichtenartikeln und Twitter:
+<<<<<<< HEAD
     Bei Betrachtung der folgenden Dataframes
     {data_twitter}
     {data_news}
     {data_1}
 
     Bitte fasse die Entwicklung der öffentlichen Meinung zusammen..
+=======
+    Hier sind verschiedene Dataframes. Bitte analysiere diese und zeige einen Zusammenhang mit in diesem
+    Zeitraum stattgefundenen weltweiten Ereignissen auf. Weiter unten sind einige aufgeführt,
+    aber bitte nutze zuerst dein eigenes Wissen
+    {df_twitter}
+    {df_news}
+    {df_1}
+
+    Bitte fasse die Entwicklung der öffentlichen Meinung zusammen.welche unter multiplication steht.
+>>>>>>> main
     - Erkläre, ob die Wahrnehmung in sozialen Medien und in Nachrichtenmedien unterschiedlich war.
     - Wichtige Ereignisse, in diesem Zeitraum: Juli 2024 – Wärmstes Jahr: Globaltemperatur erstmals >1,5 °C über vorindustriellem Niveau.
 

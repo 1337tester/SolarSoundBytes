@@ -9,6 +9,9 @@ def create_df_of_newsarticle_result():
     data = pd.read_excel(file_path)
 
     df = data[['Date Published', 'predicted_sentiment', 'confidence_score']]
+    df = df.rename(columns={'Date Published': 'published',
+                            'predicted_sentiment': 'sentiment',
+                            'confidence_score': 'confidence score'})
     return df
 
 
