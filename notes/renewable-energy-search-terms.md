@@ -1,7 +1,6 @@
 # Search Terms to collect articles to compare with tweets
 
-- Renewable Energy
-- Energy Storage
+- '"Renewable Energy" OR "Energy Storage"'
 
 ## possible extension of search terms
 

@@ -1,15 +1,10 @@
-# articles_api_2_csv()
 import os
-import requests
-import pandas as pd
-from dotenv import load_dotenv
-from datetime import datetime
-
-# run_articles_api_in_month_chunks()
-from datetime import datetime
-from dateutil.relativedelta import relativedelta
 import re
 import time
+import requests
+import pandas as pd
+from datetime import datetime
+from dotenv import load_dotenv
 
 
 def articles_api_2_csv(t_start_str: str, t_end_str: str, query: str, query_subdivisions: int = 1):
@@ -45,12 +40,22 @@ def articles_api_2_csv(t_start_str: str, t_end_str: str, query: str, query_subdi
         'expand': 'content'
     }
 
-    # API call
+    # call API and store data if successful
     response = requests.get(url, params=params)
     if response.status_code != 200:
         raise Exception(f"API call failed with status {response.status_code}: {response.text}")
-
     data = response.json()
+
+    # add timeout between API calls to prevent being locked out
+    '''
+    Essential plan as per GNews API pricing = https://gnews.io/#pricing
+    - 1000 requests per day
+    - Up to 25 articles returned per request
+    - Maximum of 4 requests per 1 second
+        --> t_min between requests = 1/4 = 0.25 seconds
+    - Full article content and pagination
+    '''
+    time.sleep(0.5)  # double the minimum of 1/4 = 0.25 seconds to be on the safe side
 
     if 'articles' not in data or not data['articles']:
         print(f"No articles found between {t_start_str} and {t_end_str}")
@@ -72,18 +77,6 @@ def articles_api_2_csv(t_start_str: str, t_end_str: str, query: str, query_subdi
     - recursively subdividing until no sub-window is overfilled or the window is too small.
     - For a very dense period (e.g., news spike), it’ll keep splitting until it can fit all articles.
     '''
-
-    # if len(df) >= MAX_N_ARTICLES:
-    #     print(f"Query \n'{query}'\n reached maximum number of {MAX_N_ARTICLES} articles.")
-    #     print("To ensure no articles are missed, divide query into two half time ranges, \n\
-    #            by moving t_start towards fixed t_end and call API again using \n\
-    #            {query_subdivisions} query_subdivisions.")
-    #     print(f"Original time range: {t_start_str} to {t_end_str}")
-    #
-    #     # t_start_str = '2024-07-02T00:00:00Z'
-    #     # t_end_str = '2024-12-24T23:59:59Z'
-    #
-    #     return
 
     from datetime import timedelta
 
@@ -173,9 +166,6 @@ def articles_api_2_csv(t_start_str: str, t_end_str: str, query: str, query_subdi
     start_date_str = datetime.fromisoformat(t_start_str.replace("Z", "")).strftime(date_fmt)
     end_date_str = datetime.fromisoformat(t_end_str.replace("Z", "")).strftime(date_fmt)
     filename = f"gnews-query-{query_string}-yields-{number_of_articles}-articles-from-{start_date_str}-to-{end_date_str}.csv"
-    # NO part_label needed in filename since date is updated and identifies articles within the time range
-    # if query_subdivisions > 1:
-    #     filename = filename.replace('.csv', f'_part_{query_subdivisions}.csv')
 
     # define output path
     output_folder = '../data/csv/gnews_articles/'
@@ -191,83 +181,14 @@ def articles_api_2_csv(t_start_str: str, t_end_str: str, query: str, query_subdi
     print(f"Saved {len(df)} articles to {output_path}")
 
 
-
-
-
-
-
-
-# --------------------- run_articles_api_in_month_chunks ---------------------
-
-
-def run_articles_api_in_month_chunks(t_total_start, t_total_end, query, query_subdivisions=1, window_months=6):
-
-    t_start = t_total_start
-
-    while t_start < t_total_end:
-
-        # build current time-chunk by adding relativedelta to t_start to get t_end
-        # subtraction of 1 second prevents overlap with next chunk
-        t_end = t_start + relativedelta(months=window_months) - relativedelta(seconds=1)
-
-
-        # ensure we don't overshoot the total end time
-        if t_end > t_total_end:
-            t_end = t_total_end
-
-        # format datetime to ISO 8601 string and call API function
-        t_start_str = t_start.strftime('%Y-%m-%dT%H:%M:%SZ')
-        t_end_str = t_end.strftime('%Y-%m-%dT%H:%M:%SZ')
-        articles_api_2_csv(t_start_str, t_end_str, query, query_subdivisions)
-
-        # move to next time-chunk, starting 1 second after previous t_end
-        t_start = t_end + relativedelta(seconds=1)
-
-        # add timeout between API calls to prevent being locked out
-        '''
-        Essential plan as per GNews API pricing = https://gnews.io/#pricing
-        - 1000 requests per day
-        - Up to 25 articles returned per request
-        - Maximum of 4 requests per 1 second
-          --> t_min between requests = 1/4 = 0.25 seconds
-        - Full article content and pagination
-        '''
-        time.sleep(0.5)  # double the minimum of 1/4 = 0.25 seconds to be on the safe side
-
-
-
-
 # ------------------ loop through API calls in main function -------------------
 
 
 if __name__ == "__main__":
 
-    # backwards from t_total_end since number of publications is increasing
-    t_start_str = '2024-12-12T00:00:00Z'
+    t_start_str = '2022-01-02T00:00:00Z'
     t_end_str = '2024-12-24T23:59:59Z'
 
-    queries = [
-        '"Climate Change"',
-        '"Renewable Energy"',
-    ]
+    query = '"Renewable Energy" OR "Energy Storage"'
 
-    # queries = [
-    #     '"Renewable Energy" OR "Energy Storage" OR "Carbon Neutrality" OR "Net Zero"',
-    #     '"Climate Change" OR "Sustainable Development Goals" OR "Circular Economy"',
-    #     '"Climate Policy" OR "Environmental Policy"',
-    # ]
-
-    # query = '"Renewable Energy" OR "Energy Storage" OR "Carbon Neutrality" OR "Net Zero"'
-    # query = '"Climate Change"'
-
-    for query in queries:
-        # test with custom time period to confirm window_months sufficient
-        articles_api_2_csv(t_start_str, t_end_str, query, query_subdivisions=1)
-
-        # # after testing, uncomment below to run the full time period
-        # # Define total time period
-        # t_total_start = datetime.fromisoformat('2022-01-02T00:00:00'.replace("Z", ""))
-        # t_total_end = datetime.fromisoformat('2024-12-24T23:59:59'.replace("Z", ""))
-
-        # # loop through entire time period, using window size of 6 months each
-        # run_articles_api_in_month_chunks(t_total_start, t_total_end, query, query_subdivisions=1, window_months=6)
+    articles_api_2_csv(t_start_str, t_end_str, query, query_subdivisions=1)
