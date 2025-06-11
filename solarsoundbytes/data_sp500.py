@@ -13,6 +13,4 @@ def get_sp500_df():
     df_sp500 = df[['Date', 'Price']]
     return df_sp500
 
-
 data = get_sp500_df()
-print(data.head())

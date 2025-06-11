@@ -12,8 +12,11 @@ data/
 solarsoundbytes.egg-info/
 solarsoundbytes/api/__pycache__/
 *data_test/
+.streamlit/
+
+*.mp3
 
 # chaching
 *.pyc
-*.py:Zone.Identifier
-*.ipynb:Zone.Identifier
+*:Zone.Identifier
+
