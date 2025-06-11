@@ -1,17 +1,65 @@
+# ToDo
+
+## ToDos for **[@Fadri](https://github.com/FadriPestalozzi)**
+
+- [ ] please refactor the README
+
+## ToDos for **[@Enrique](https://github.com/efloresr)**
+
+- [ ] please delete these outdated notebooks and the then empty folders
+      ![outdated notebooks](images/png/todo/notebooks_News_Articles.png) after
+      you save whatever you still need from them
+
+## ToDos for **[@Steffen](https://github.com/steffenlaut)**
+
+- [ ] please update or remove the [Website](#website) section
+
 # Table of Contents
 
-- [Project Overview](#solarsoundbytes)
+- [ToDo](#todo)
+  - [ToDos for **@Fadri**](#todos-for-fadri)
+  - [ToDos for **@Enrique**](#todos-for-enrique)
+  - [ToDos for **@Steffen**](#todos-for-steffen)
+- [Table of Contents](#table-of-contents)
+- [Project Overview](#project-overview)
+  - [SoundBytes](#soundbytes)
+  - [Tagline](#tagline)
+- [Website](#website)
 - [MVP](#mvp)
-- [Roles and Responsibilities](#roles-and-responsabilities)
+- [Beyond the MVP](#beyond-the-mvp)
+- [👥 Roles and Responsabilities of Collaborators](#-roles-and-responsabilities-of-collaborators)
+- [Table of Contents](#table-of-contents-1)
 - [Gather Data](#gather-data)
+  - [News Articles from Cleantech Media Dataset](#news-articles-from-cleantech-media-dataset)
+  - [**Training, Test \& Evaluate**](#training-test--evaluate)
+  - [**Fine Tuning and Predict**](#fine-tuning-and-predict)
+  - [Conclusion:](#conclusion)
+  - [Social Media Data from Twitter](#social-media-data-from-twitter)
+    - [Rehydration of Climate Change Twitter Dataset](#rehydration-of-climate-change-twitter-dataset)
+    - [Scraping Twitter Dataset](#scraping-twitter-dataset)
+    - [Search Terms](#search-terms)
+- [Global Events](#global-events)
+  - [Global Events Table](#global-events-table)
 - [Process Data](#process-data)
+  - [Sentiment Analysis](#sentiment-analysis)
+    - [Methods](#methods)
+    - [Results](#results)
+      - [histogram confidence score vs sentiment color](#histogram-confidence-score-vs-sentiment-color)
+      - [sentiment score share over time](#sentiment-score-share-over-time)
+      - [sentiment score share vs number of tweets over time](#sentiment-score-share-vs-number-of-tweets-over-time)
 - [Installation](#installation)
+  - [clone this repo to your computer](#clone-this-repo-to-your-computer)
+  - [create virtual environment using python version according to Le Wagon](#create-virtual-environment-using-python-version-according-to-le-wagon)
+  - [activate virtual environment in cloned repo](#activate-virtual-environment-in-cloned-repo)
+  - [Install minimal packages](#install-minimal-packages)
+  - [install requirements](#install-requirements)
+  - [create data folder (untracked by .gitignore) and request data access from one of the authors](#create-data-folder-untracked-by-gitignore-and-request-data-access-from-one-of-the-authors)
 - [Glossary](#glossary)
 
 # Project Overview
 
 **SolarSoundBytes** is a data-driven machine-learning project that explores the
-development of **renewable energy**, particularly solar, by:
+development of **renewable energy** and **energy storage** by:
 
 1. NLP sentiment analysis of **public tweets** and
 
@@ -19,17 +67,18 @@ development of **renewable energy**, particularly solar, by:
 
 These 2 sentiment analyses are compared to each other (to identify possible
 correlations) and both mapped onto data on the development of renewable energy
-technologies in the same timeframe.
+and energy storage technologies in the same timeframe from 2022-01-02 to
+2024-12-24.
 
 ## SoundBytes
 
 To make our findings accessible and engaging, we transform the resulting
 insights into concise audio summaries, aka **SoundBytes**, to effectively
-communicate the state of our ongoing energy transition to a broader audience.
+communicate the state of the ongoing energy transition to a broader audience.
 
 ## Tagline
 
-Mapping our global transition to solar energy into bite-sized audio insights.
+Mapping our global energy transition into bite-sized audio insights.
 
 # Website
 
@@ -58,23 +107,13 @@ This would be an additional real-world application of the learnings acquired
 during our
 [bootcamp at Le Wagon](https://www.lewagon.com/barcelona/data-science-course).
 
-# Roles and Responsabilities:
+# 👥 Roles and Responsabilities of Collaborators
 
-**[Fadri Pestalozzi](https://github.com/FadriPestalozzi)** – Team Leader
-
-- Tweets on renewable energy: Research data sources, scraping and perform NLP
-- Supervise documentation
-
-**[Steffen Lauterbach](https://github.com/SL14-SL)** – System Architect
-
-- Create model pipeline and docker container to expose API
-- Research and process satellite images to detect and quantify solar panels
-- Integrate TTS (text-to-sound)
-
-**[Enrique Flores Roldán](https://github.com/EFRdev)** – Project Manager
-- News Articles: Research data sources
-- Create data processing pipeline, and tested models for NLP.
-- Fine tune distilber model for sentiment analysis.
+| Name                  | GitHub                                                 | Role             | Content                                                                                                                                                               |
+| --------------------- | ------------------------------------------------------ | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Fadri Pestalozzi      | [@FadriPestalozzi](https://github.com/FadriPestalozzi) | Team Lead        | Documentation // Tweets on renewable energy: Research data sources, scraping and perform NLP                                                                          |
+| Steffen Lauterbach    | [@steffenlaut](https://github.com/steffenlaut)         | System Architect | Create model pipeline and docker container to expose API // Research and process satellite images to detect and quantify solar panels //Integrate TTS (text-to-sound) |
+| Enrique Flores Roldán | [@efloresr](https://github.com/efloresr)               | Project Manager  | News Articles: Research data sources // Create data processing pipeline, and tested models for NLP. // Fine tune distilber model for sentiment analysis.              |
 
 # Table of Contents
 
@@ -82,60 +121,78 @@ during our
 
 ## News Articles from Cleantech Media Dataset
 
-Online research for datasets of news-articles in the field of renewable energy technologies led us to the
+Online research for datasets of news-articles in the field of renewable energy
+technologies led us to the
 [Cleantech Media Dataset by Anacode](https://www.kaggle.com/datasets/jannalipenkova/cleantech-media-dataset).
 
-  - 20K articles in total
-  - Build a code for text processing: cleaning signs & digits, stopwords, lemmatize
-      - 12,966 articles without a date. 2.5K Dates extracted from urls
-      - **9,938** working articles (Europe only) (for MVP)
+- 20K articles in total
+- Build a code for text processing: cleaning signs & digits, stopwords,
+  lemmatize
+  - 12,966 articles without a date. 2.5K Dates extracted from urls
+  - **9,938** working articles (Europe only) (for MVP)
 
 ## **Training, Test & Evaluate**
 
 - Tested different models for sentiment analysis.
-    - [**distilbert-base-uncased-finetuned-sst-2-english**](https://huggingface.co/distilbert/distilbert-base-uncased-finetuned-sst-2-english) — Pos/Neg ONLY ***
-    - [**cardiffnlp/twitter-roberta-base-sentiment-latest**](https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment-latest) — Pos/Neg/Netural
-    - [**nlptown/bert-base-multilingual-uncased-sentiment**](https://huggingface.co/nlptown/bert-base-multilingual-uncased-sentiment) -- Optimized for reviews
-    - [**Gemma 3**](https://huggingface.co/google/gemma-3-27b-it) — ***
+  - [**distilbert-base-uncased-finetuned-sst-2-english**](https://huggingface.co/distilbert/distilbert-base-uncased-finetuned-sst-2-english)
+    — Pos/Neg ONLY \*\*\*
+  - [**cardiffnlp/twitter-roberta-base-sentiment-latest**](https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment-latest)
+    — Pos/Neg/Netural
+  - [**nlptown/bert-base-multilingual-uncased-sentiment**](https://huggingface.co/nlptown/bert-base-multilingual-uncased-sentiment)
+    -- Optimized for reviews
+  - [**Gemma 3**](https://huggingface.co/google/gemma-3-27b-it) — \*\*\*
 - **First trial:** Very inaccurate — try again without too much preprocessing.
-- **Second trial:** Still inaccurate — Analyse in sentences instead of entire article??? — divide data into chunks!
+- **Second trial:** Still inaccurate — Analyse in sentences instead of entire
+  article??? — divide data into chunks!
 - **Third trial:** Still inaccurate — decided to fine tune a new model...
 
-*****GEMMA - VertexAI**
-- **Vertex AI SDK for Generative AI fine-tuning (Gemma models)** evolves very fast and the API keeps changing.
-- Key methods like **fine_tune()** or **tune_model()** were either **missing, deprecated, or moved** to other parts of the library in different SDK versions.
-- The **GenerativeModel.fine_tune()** method was not stable or consistently available, even after trying different setups (with Cloud Shell and pip installs).
-- **Gemma is a chat / instruction-following model, not a task-specific model like DistilBERT or RoBERTa.**
-- The new/recommended way to fine-tune Gemma now uses a **helper method** like aiplatform.model_garden.models.fine_tune_gemma(), which I started to implement but needed to refactore my code and so I decided to pivot.
+**\***GEMMA - VertexAI\*\*
+
+- **Vertex AI SDK for Generative AI fine-tuning (Gemma models)** evolves very
+  fast and the API keeps changing.
+- Key methods like **fine_tune()** or **tune_model()** were either **missing,
+  deprecated, or moved** to other parts of the library in different SDK
+  versions.
+- The **GenerativeModel.fine_tune()** method was not stable or consistently
+  available, even after trying different setups (with Cloud Shell and pip
+  installs).
+- **Gemma is a chat / instruction-following model, not a task-specific model
+  like DistilBERT or RoBERTa.**
+- The new/recommended way to fine-tune Gemma now uses a **helper method** like
+  aiplatform.model_garden.models.fine_tune_gemma(), which I started to implement
+  but needed to refactore my code and so I decided to pivot.
 - DIDN’T WORK —- MOVE ON!
 
 ## **Fine Tuning and Predict**
 
-*****Recommended model = ["distilbert/distilbert-base-uncased](https://huggingface.co/distilbert/distilbert-base-uncased)"**
+**\***Recommended model =
+["distilbert/distilbert-base-uncased](https://huggingface.co/distilbert/distilbert-base-uncased)"\*\*
 
 - Trained with labeled data and recommended model:
-    - [***NewsArticles_ForTraining*](https://www.kaggle.com/datasets/clovisdalmolinvieira/news-sentiment-analysis) Dataset:**
-        - Dataset for training (no topic in specific)
-        - **3.5K** news articles - labeled
-    - **model = "distilbert/distilbert-base-uncased"**
-        - Fine tuned with 3.5K articles labeled: Pos/Neg/Neut
-        - Run a 1st test and score was bad:
-            - loss:0.627
-            - accuracy 0.782
-        - Tweaked the parameters and run a 2nd test
-            - loss = 0.37
-            - accuracy = 0.796
+  - [_\*\*NewsArticles_ForTraining_](https://www.kaggle.com/datasets/clovisdalmolinvieira/news-sentiment-analysis)
+    Dataset:\*\*
+    - Dataset for training (no topic in specific)
+    - **3.5K** news articles - labeled
+  - **model = "distilbert/distilbert-base-uncased"**
+    - Fine tuned with 3.5K articles labeled: Pos/Neg/Neut
+    - Run a 1st test and score was bad:
+      - loss:0.627
+      - accuracy 0.782
+    - Tweaked the parameters and run a 2nd test
+      - loss = 0.37
+      - accuracy = 0.796
 
 ## Conclusion:
 
 - Pre-trained sentiment models performed poorly on CleanTech news articles.
-- Tried advanced models (DistilBERT, Twitter-RoBERTa, Gemma); accuracy remained low or workflow too complex.
-- Fine-tuning Gemma on Vertex AI failed due to unstable SDK APIs and . Also, **Gemma 3** is optimised for chat / instruction-following.
+- Tried advanced models (DistilBERT, Twitter-RoBERTa, Gemma); accuracy remained
+  low or workflow too complex.
+- Fine-tuning Gemma on Vertex AI failed due to unstable SDK APIs and . Also,
+  **Gemma 3** is optimised for chat / instruction-following.
 - Pivoted to fine-tuning **DistilBERT-base** with 3.5K labeled articles.
 - Achieved ~0.80 accuracy after tuning.
-- Conclusion: **Domain-specific fine-tuning is required** for reliable sentiment analysis on niche topics like CleanTech.
-
-
+- Conclusion: **Domain-specific fine-tuning is required** for reliable sentiment
+  analysis on niche topics like CleanTech.
 
 ## Social Media Data from Twitter
 
@@ -208,6 +265,37 @@ twitter dataset with as large of a contextual overlap as possible with the
 
 - renewable energy
 - energy storage
+
+# Global Events
+
+To identify around which specific dates to refine the twitter dataset to zoom
+into global events where a significant change in sentiment is highly probable, a
+[deep research was performed by iteratively prompting ChatGPT 4.1](https://chatgpt.com/share/68495bc3-ee6c-8006-9816-8b0480a0bf3c).
+
+The resulting overview with reasoning based on verified refererences is
+available in a
+[pdf](<notes/Global-Events-Influencing-Renewable-Energy-Sentiment-(2022–2024).pdf>)
+and summarized in the [table below](#global-events-table). For detailed
+references and reasoning, see the
+[Global Events PDF](<notes/Global-Events-Influencing-Renewable-Energy-Sentiment-(2022–2024).pdf>).
+
+## Global Events Table
+
+| Date       | Event                                                                                                                                                                                                                | Country/Region | Expected Impact on Sentiment                 |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- | -------------------------------------------- |
+| 2022-02-24 | [Russian invasion of Ukraine](https://en.wikipedia.org/wiki/2022_Russian_invasion_of_Ukraine)                                                                                                                        | Global/EU      | Spike in interest and urgency for renewables |
+| 2022-03-08 | [US bans Russian oil imports](https://www.whitehouse.gov/briefing-room/statements-releases/2022/03/08/fact-sheet-united-states-bans-imports-of-russian-oil-liquefied-natural-gas-and-coal/)                          | USA            | Increased focus on energy independence       |
+| 2022-05-18 | [EU announces REPowerEU plan](https://ec.europa.eu/commission/presscorner/detail/en/IP_22_3131)                                                                                                                      | EU             | Positive sentiment for renewables            |
+| 2022-08-16 | [US Inflation Reduction Act signed (major climate/energy provisions)](https://www.whitehouse.gov/briefing-room/statements-releases/2022/08/16/fact-sheet-the-inflation-reduction-act-supports-workers-and-families/) | USA            | Strong positive sentiment                    |
+| 2022-09-06 | [UK announces energy price guarantee](https://www.gov.uk/government/news/government-announces-energy-price-guarantee-for-families-and-businesses-while-urgently-taking-action-to-reform-broken-energy-market)        | UK             | Mixed/concerned sentiment                    |
+| 2022-11-06 | [COP27 UN Climate Change Conference begins](https://unfccc.int/cop27)                                                                                                                                                | Global         | Increased discussion, mixed sentiment        |
+| 2023-02-01 | [India Union Budget: major renewable energy investments](https://www.livemint.com/budget/news/budget-2023-renewable-energy-sector-gets-major-boost-11675218723204.html)                                              | India          | Positive sentiment                           |
+| 2023-03-30 | [EU adopts Net-Zero Industry Act proposal](https://ec.europa.eu/commission/presscorner/detail/en/ip_23_1661)                                                                                                         | EU             | Positive sentiment                           |
+| 2023-05-19 | [G7 Hiroshima Summit: climate/energy focus](https://www.consilium.europa.eu/en/meetings/international-summit/2023/05/19-21/)                                                                                         | Global         | Positive sentiment                           |
+| 2023-11-30 | [COP28 UN Climate Change Conference begins](https://www.cop28.com/en/)                                                                                                                                               | Global         | Increased discussion, mixed sentiment        |
+| 2024-01-01 | [EU Carbon Border Adjustment Mechanism (CBAM) phase-in](https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en)                                                                                 | EU             | Mixed/positive sentiment                     |
+| 2024-04-22 | [Earth Day 2024](https://www.earthday.org/earth-day-2024/)                                                                                                                                                           | Global         | Positive sentiment                           |
+| 2024-06-06 | [European Parliament elections (energy/climate as key topics)](https://www.europarl.europa.eu/news/en/headlines/eu-affairs/20240118STO16302/european-elections-2024-what-you-need-to-know)                           | EU             | Increased discussion, mixed sentiment        |
 
 # Process Data
 

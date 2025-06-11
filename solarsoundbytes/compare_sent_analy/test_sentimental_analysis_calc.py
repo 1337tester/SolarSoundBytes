@@ -24,7 +24,6 @@ def sent_analy_to_values_twitter():
     # })
 
     df = create_df_of_twitter_result()
-    print('hola1')
         ## use the dataframe from Fadri with create_df_of_twitter_result()
         ## instead of the fake one!!!!
     df['createdAt'] = pd.to_datetime(df['createdAt'])
@@ -67,14 +66,12 @@ def sent_analy_to_values_twitter():
 def sent_analy_to_values_newsarticle():
 
     df = create_df_of_newsarticle_result()
-    print('hola1')
         ## use the dataframe from Fadri with create_df_of_twitter_result()
         ## instead of the fake one!!!!
     df['Date Published'] = pd.to_datetime(df['Date Published'])
     df['month_year'] = df['Date Published'].dt.strftime('%Y-%m')
     df['quarter'] = df['Date Published'].dt.to_period('Q').astype(str)
     ## convert result of sent analysis into numbers
-    print(df.head())
 
     df['sentiment_value'] = df['predicted_sentiment'].map({
         'neutral': 0,
@@ -113,10 +110,6 @@ def sent_analy_to_values_newsarticle():
 def create_output_interface():
     result_twitter = sent_analy_to_values_twitter()
     result_news = sent_analy_to_values_newsarticle()
-    print('hola3')
-    print(result_news)
-    print('hola4')
-    print(result_twitter)
     return result_twitter, result_news
 
 test = create_output_interface()

@@ -1,26 +1,25 @@
 import pandas as pd
 from dotenv import load_dotenv
 import os
-import openai
+from openai import OpenAI
 
 load_dotenv()
+# api_key = os.getenv("API_KEY")
 
 api_key = os.getenv("API_KEY")
 
 openai.api_key = api_key
 
-def create_text_from_sent_analy_df(df_twitter, df_news, df_1):
+def create_text_from_sent_analy_df(data_twitter, data_news, data_1):
 
     prompt = f"""
     Hier sind monatliche Sentimentdaten zum Thema 'Klimawandel' aus Nachrichtenartikeln und Twitter:
-    Hier sind verschiedene Dataframes. Bitte analysiere diese und zeige einen Zusammenhang mit in diesem
-    Zeitraum stattgefundenen weltweiten Ereignissen auf. Weiter unten sind einige aufgeführt,
-    aber bitte nutze zuerst dein eigenes Wissen
-    {df_twitter}
-    {df_news}
-    {df_1}
+    Bei Betrachtung der folgenden Dataframes
+    {data_twitter}
+    {data_news}
+    {data_1}
 
-    Bitte fasse die Entwicklung der öffentlichen Meinung zusammen.welche unter multiplication steht.
+    Bitte fasse die Entwicklung der öffentlichen Meinung zusammen..
     - Erkläre, ob die Wahrnehmung in sozialen Medien und in Nachrichtenmedien unterschiedlich war.
     - Wichtige Ereignisse, in diesem Zeitraum: Juli 2024 – Wärmstes Jahr: Globaltemperatur erstmals >1,5 °C über vorindustriellem Niveau.
 
@@ -65,7 +64,8 @@ def create_text_from_sent_analy_df(df_twitter, df_news, df_1):
     auf englisch bitte
     """
 
-    response = openai.chat.completions.create(
+    client = OpenAI(api_key = api_key)
+    response = client.chat.completions.create(
         model="gpt-4o",  # oder "gpt-4o" für schnelleren Output
         messages=[
             {"role": "system", "content": "Du bist ein datenanalytischer Journalist."},
@@ -76,5 +76,8 @@ def create_text_from_sent_analy_df(df_twitter, df_news, df_1):
     )
 
     # 🖨️ Ausgabe
-    print(response.choices[0].message.content)
+    # print(response.choices[0].message.content)
     return response.choices[0].message.content
+
+# output = create_text_from_sent_analy_df(result_twitter, result_news)
+# print(output)
