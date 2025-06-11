@@ -297,6 +297,7 @@ st.plotly_chart(fig, use_container_width=True)
 # monthly grouped df
 agg_df_twitter = agg_monthly_sent_analysis(df_twitter)
 agg_df_news = agg_monthly_sent_analysis(df_news)
+st.write(agg_df_news.head())
 
 unique_dates_twitter = agg_df_twitter[['date']].drop_duplicates().sort_values('date').reset_index(drop=True)
 unique_dates_twitter['date_order'] = unique_dates_twitter.index + 1  # 1-basiert
