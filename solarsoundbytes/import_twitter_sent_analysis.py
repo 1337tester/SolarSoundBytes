@@ -13,5 +13,4 @@ def create_df_of_twitter_result():
     return df
 
 
-# test = create_df_of_twitter_result()
-# print(test.head())
+test = create_df_of_twitter_result()
