@@ -11,7 +11,7 @@
 # Project Overview
 
 **SolarSoundBytes** is a data-driven machine-learning project that explores the
-development of **renewable energy**, particularly solar, by:
+development of **renewable energy** and **energy storage** by:
 
 1. NLP sentiment analysis of **public tweets** and
 
@@ -19,19 +19,23 @@ development of **renewable energy**, particularly solar, by:
 
 These 2 sentiment analyses are compared to each other (to identify possible
 correlations) and both mapped onto data on the development of renewable energy
-technologies in the same timeframe.
+and energy storage technologies in the same timeframe from 2022-01-02 to
+2024-12-24.
 
 ## SoundBytes
 
 To make our findings accessible and engaging, we transform the resulting
 insights into concise audio summaries, aka **SoundBytes**, to effectively
-communicate the state of our ongoing energy transition to a broader audience.
+communicate the state of the ongoing energy transition to a broader audience.
 
 ## Tagline
 
-Mapping our global transition to solar energy into bite-sized audio insights.
+Mapping our global energy transition into bite-sized audio insights.
 
 # Website
+
+**TODO [@Steffen](https://github.com/steffenlaut): please update or remove this
+section**
 
 The code presented in this repo is exposed online on the
 [SolarSoundBytes Website](https://github.com/SL14-SL/solarsoundbytes-website).
@@ -58,23 +62,13 @@ This would be an additional real-world application of the learnings acquired
 during our
 [bootcamp at Le Wagon](https://www.lewagon.com/barcelona/data-science-course).
 
-# Roles and Responsabilities:
+# 👥 Roles and Responsabilities of Collaborators
 
-**[Fadri Pestalozzi](https://github.com/FadriPestalozzi)** – Team Leader
-
-- Tweets on renewable energy: Research data sources, scraping and perform NLP
-- Supervise documentation
-
-**[Steffen Lauterbach](https://github.com/SL14-SL)** – System Architect
-
-- Create model pipeline and docker container to expose API
-- Research and process satellite images to detect and quantify solar panels
-- Integrate TTS (text-to-sound)
-
-**[Enrique Flores Roldán](https://github.com/EFRdev)** – Project Manager
-- News Articles: Research data sources
-- Create data processing pipeline, and tested models for NLP.
-- Fine tune distilber model for sentiment analysis.
+| Name                  | GitHub                                                 | Role             | Content                                                                                                                                                               |
+| --------------------- | ------------------------------------------------------ | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Fadri Pestalozzi      | [@FadriPestalozzi](https://github.com/FadriPestalozzi) | Team Lead        | Documentation // Tweets on renewable energy: Research data sources, scraping and perform NLP                                                                          |
+| Steffen Lauterbach    | [@steffenlaut](https://github.com/steffenlaut)         | System Architect | Create model pipeline and docker container to expose API // Research and process satellite images to detect and quantify solar panels //Integrate TTS (text-to-sound) |
+| Enrique Flores Roldán | [@efloresr](https://github.com/efloresr)               | Project Manager  | News Articles: Research data sources // Create data processing pipeline, and tested models for NLP. // Fine tune distilber model for sentiment analysis.              |
 
 # Table of Contents
 
@@ -82,60 +76,78 @@ during our
 
 ## News Articles from Cleantech Media Dataset
 
-Online research for datasets of news-articles in the field of renewable energy technologies led us to the
+Online research for datasets of news-articles in the field of renewable energy
+technologies led us to the
 [Cleantech Media Dataset by Anacode](https://www.kaggle.com/datasets/jannalipenkova/cleantech-media-dataset).
 
-  - 20K articles in total
-  - Build a code for text processing: cleaning signs & digits, stopwords, lemmatize
-      - 12,966 articles without a date. 2.5K Dates extracted from urls
-      - **9,938** working articles (Europe only) (for MVP)
+- 20K articles in total
+- Build a code for text processing: cleaning signs & digits, stopwords,
+  lemmatize
+  - 12,966 articles without a date. 2.5K Dates extracted from urls
+  - **9,938** working articles (Europe only) (for MVP)
 
 ## **Training, Test & Evaluate**
 
 - Tested different models for sentiment analysis.
-    - [**distilbert-base-uncased-finetuned-sst-2-english**](https://huggingface.co/distilbert/distilbert-base-uncased-finetuned-sst-2-english) — Pos/Neg ONLY ***
-    - [**cardiffnlp/twitter-roberta-base-sentiment-latest**](https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment-latest) — Pos/Neg/Netural
-    - [**nlptown/bert-base-multilingual-uncased-sentiment**](https://huggingface.co/nlptown/bert-base-multilingual-uncased-sentiment) -- Optimized for reviews
-    - [**Gemma 3**](https://huggingface.co/google/gemma-3-27b-it) — ***
+  - [**distilbert-base-uncased-finetuned-sst-2-english**](https://huggingface.co/distilbert/distilbert-base-uncased-finetuned-sst-2-english)
+    — Pos/Neg ONLY \*\*\*
+  - [**cardiffnlp/twitter-roberta-base-sentiment-latest**](https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment-latest)
+    — Pos/Neg/Netural
+  - [**nlptown/bert-base-multilingual-uncased-sentiment**](https://huggingface.co/nlptown/bert-base-multilingual-uncased-sentiment)
+    -- Optimized for reviews
+  - [**Gemma 3**](https://huggingface.co/google/gemma-3-27b-it) — \*\*\*
 - **First trial:** Very inaccurate — try again without too much preprocessing.
-- **Second trial:** Still inaccurate — Analyse in sentences instead of entire article??? — divide data into chunks!
+- **Second trial:** Still inaccurate — Analyse in sentences instead of entire
+  article??? — divide data into chunks!
 - **Third trial:** Still inaccurate — decided to fine tune a new model...
 
-*****GEMMA - VertexAI**
-- **Vertex AI SDK for Generative AI fine-tuning (Gemma models)** evolves very fast and the API keeps changing.
-- Key methods like **fine_tune()** or **tune_model()** were either **missing, deprecated, or moved** to other parts of the library in different SDK versions.
-- The **GenerativeModel.fine_tune()** method was not stable or consistently available, even after trying different setups (with Cloud Shell and pip installs).
-- **Gemma is a chat / instruction-following model, not a task-specific model like DistilBERT or RoBERTa.**
-- The new/recommended way to fine-tune Gemma now uses a **helper method** like aiplatform.model_garden.models.fine_tune_gemma(), which I started to implement but needed to refactore my code and so I decided to pivot.
+**\***GEMMA - VertexAI\*\*
+
+- **Vertex AI SDK for Generative AI fine-tuning (Gemma models)** evolves very
+  fast and the API keeps changing.
+- Key methods like **fine_tune()** or **tune_model()** were either **missing,
+  deprecated, or moved** to other parts of the library in different SDK
+  versions.
+- The **GenerativeModel.fine_tune()** method was not stable or consistently
+  available, even after trying different setups (with Cloud Shell and pip
+  installs).
+- **Gemma is a chat / instruction-following model, not a task-specific model
+  like DistilBERT or RoBERTa.**
+- The new/recommended way to fine-tune Gemma now uses a **helper method** like
+  aiplatform.model_garden.models.fine_tune_gemma(), which I started to implement
+  but needed to refactore my code and so I decided to pivot.
 - DIDN’T WORK —- MOVE ON!
 
 ## **Fine Tuning and Predict**
 
-*****Recommended model = ["distilbert/distilbert-base-uncased](https://huggingface.co/distilbert/distilbert-base-uncased)"**
+**\***Recommended model =
+["distilbert/distilbert-base-uncased](https://huggingface.co/distilbert/distilbert-base-uncased)"\*\*
 
 - Trained with labeled data and recommended model:
-    - [***NewsArticles_ForTraining*](https://www.kaggle.com/datasets/clovisdalmolinvieira/news-sentiment-analysis) Dataset:**
-        - Dataset for training (no topic in specific)
-        - **3.5K** news articles - labeled
-    - **model = "distilbert/distilbert-base-uncased"**
-        - Fine tuned with 3.5K articles labeled: Pos/Neg/Neut
-        - Run a 1st test and score was bad:
-            - loss:0.627
-            - accuracy 0.782
-        - Tweaked the parameters and run a 2nd test
-            - loss = 0.37
-            - accuracy = 0.796
+  - [_\*\*NewsArticles_ForTraining_](https://www.kaggle.com/datasets/clovisdalmolinvieira/news-sentiment-analysis)
+    Dataset:\*\*
+    - Dataset for training (no topic in specific)
+    - **3.5K** news articles - labeled
+  - **model = "distilbert/distilbert-base-uncased"**
+    - Fine tuned with 3.5K articles labeled: Pos/Neg/Neut
+    - Run a 1st test and score was bad:
+      - loss:0.627
+      - accuracy 0.782
+    - Tweaked the parameters and run a 2nd test
+      - loss = 0.37
+      - accuracy = 0.796
 
 ## Conclusion:
 
 - Pre-trained sentiment models performed poorly on CleanTech news articles.
-- Tried advanced models (DistilBERT, Twitter-RoBERTa, Gemma); accuracy remained low or workflow too complex.
-- Fine-tuning Gemma on Vertex AI failed due to unstable SDK APIs and . Also, **Gemma 3** is optimised for chat / instruction-following.
+- Tried advanced models (DistilBERT, Twitter-RoBERTa, Gemma); accuracy remained
+  low or workflow too complex.
+- Fine-tuning Gemma on Vertex AI failed due to unstable SDK APIs and . Also,
+  **Gemma 3** is optimised for chat / instruction-following.
 - Pivoted to fine-tuning **DistilBERT-base** with 3.5K labeled articles.
 - Achieved ~0.80 accuracy after tuning.
-- Conclusion: **Domain-specific fine-tuning is required** for reliable sentiment analysis on niche topics like CleanTech.
-
-
+- Conclusion: **Domain-specific fine-tuning is required** for reliable sentiment
+  analysis on niche topics like CleanTech.
 
 ## Social Media Data from Twitter
 
