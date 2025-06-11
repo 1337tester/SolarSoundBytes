@@ -3,32 +3,22 @@ from dotenv import load_dotenv
 import os
 import openai
 
-from solarsoundbytes.compare_sent_analy.test_sentimental_analysis_calc import create_output_interface
-
 load_dotenv()
 
 api_key = os.getenv("API_KEY")
 
 openai.api_key = api_key
-result_twitter, result_news = create_output_interface()
 
-def create_text_from_sent_analy_df():
-    def build_sentiment_summary(df_news, df_twitter):
-        merged_df = pd.merge(df_news, df_twitter, on="month_year", suffixes=("_News", "_Twitter"))
-
-        lines = []
-        for _, row in merged_df.iterrows():
-            line = f"{row['month_year']}: News={row['multiplication_News']:+.2f}, Twitter={row['multiplication_Twitter']:+.2f}"
-            lines.append(line)
-        return "\n".join(lines)
-
-    sentiment_summary = build_sentiment_summary(result_news, result_twitter)
-
+def create_text_from_sent_analy_df(df_twitter, df_news, df_1):
 
     prompt = f"""
-    Hier sind monatliche Sentimentdaten zum Thema 'Klimawandel' aus Nachrichtenartikeln und Twitter von Januar 2023 bis Dezember 2024:
-
-    {sentiment_summary}
+    Hier sind monatliche Sentimentdaten zum Thema 'Klimawandel' aus Nachrichtenartikeln und Twitter:
+    Hier sind verschiedene Dataframes. Bitte analysiere diese und zeige einen Zusammenhang mit in diesem
+    Zeitraum stattgefundenen weltweiten Ereignissen auf. Weiter unten sind einige aufgeführt,
+    aber bitte nutze zuerst dein eigenes Wissen
+    {df_twitter}
+    {df_news}
+    {df_1}
 
     Bitte fasse die Entwicklung der öffentlichen Meinung zusammen.welche unter multiplication steht.
     - Erkläre, ob die Wahrnehmung in sozialen Medien und in Nachrichtenmedien unterschiedlich war.
