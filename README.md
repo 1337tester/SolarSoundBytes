@@ -1,26 +1,5 @@
-# ToDo
-
-## ToDos for **[@Fadri](https://github.com/FadriPestalozzi)**
-
-- [ ] please refactor the README
-
-## ToDos for **[@Enrique](https://github.com/efloresr)**
-
-- [ ] please delete these outdated notebooks and the then empty folders
-      ![outdated notebooks](images/png/todo/notebooks_News_Articles.png) after
-      you save whatever you still need from them
-
-## ToDos for **[@Steffen](https://github.com/steffenlaut)**
-
-- [ ] please update or remove the [Website](#website) section
-
 # Table of Contents
 
-- [ToDo](#todo)
-  - [ToDos for **@Fadri**](#todos-for-fadri)
-  - [ToDos for **@Enrique**](#todos-for-enrique)
-  - [ToDos for **@Steffen**](#todos-for-steffen)
-- [Table of Contents](#table-of-contents)
 - [Project Overview](#project-overview)
   - [SoundBytes](#soundbytes)
   - [Tagline](#tagline)
@@ -284,18 +263,13 @@ references and reasoning, see the
 | Date       | Event                                                                                                                                                                                                                | Country/Region | Expected Impact on Sentiment                 |
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- | -------------------------------------------- |
 | 2022-02-24 | [Russian invasion of Ukraine](https://en.wikipedia.org/wiki/2022_Russian_invasion_of_Ukraine)                                                                                                                        | Global/EU      | Spike in interest and urgency for renewables |
-| 2022-03-08 | [US bans Russian oil imports](https://www.whitehouse.gov/briefing-room/statements-releases/2022/03/08/fact-sheet-united-states-bans-imports-of-russian-oil-liquefied-natural-gas-and-coal/)                          | USA            | Increased focus on energy independence       |
 | 2022-05-18 | [EU announces REPowerEU plan](https://ec.europa.eu/commission/presscorner/detail/en/IP_22_3131)                                                                                                                      | EU             | Positive sentiment for renewables            |
 | 2022-08-16 | [US Inflation Reduction Act signed (major climate/energy provisions)](https://www.whitehouse.gov/briefing-room/statements-releases/2022/08/16/fact-sheet-the-inflation-reduction-act-supports-workers-and-families/) | USA            | Strong positive sentiment                    |
-| 2022-09-06 | [UK announces energy price guarantee](https://www.gov.uk/government/news/government-announces-energy-price-guarantee-for-families-and-businesses-while-urgently-taking-action-to-reform-broken-energy-market)        | UK             | Mixed/concerned sentiment                    |
-| 2022-11-06 | [COP27 UN Climate Change Conference begins](https://unfccc.int/cop27)                                                                                                                                                | Global         | Increased discussion, mixed sentiment        |
-| 2023-02-01 | [India Union Budget: major renewable energy investments](https://www.livemint.com/budget/news/budget-2023-renewable-energy-sector-gets-major-boost-11675218723204.html)                                              | India          | Positive sentiment                           |
-| 2023-03-30 | [EU adopts Net-Zero Industry Act proposal](https://ec.europa.eu/commission/presscorner/detail/en/ip_23_1661)                                                                                                         | EU             | Positive sentiment                           |
-| 2023-05-19 | [G7 Hiroshima Summit: climate/energy focus](https://www.consilium.europa.eu/en/meetings/international-summit/2023/05/19-21/)                                                                                         | Global         | Positive sentiment                           |
-| 2023-11-30 | [COP28 UN Climate Change Conference begins](https://www.cop28.com/en/)                                                                                                                                               | Global         | Increased discussion, mixed sentiment        |
-| 2024-01-01 | [EU Carbon Border Adjustment Mechanism (CBAM) phase-in](https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en)                                                                                 | EU             | Mixed/positive sentiment                     |
-| 2024-04-22 | [Earth Day 2024](https://www.earthday.org/earth-day-2024/)                                                                                                                                                           | Global         | Positive sentiment                           |
-| 2024-06-06 | [European Parliament elections (energy/climate as key topics)](https://www.europarl.europa.eu/news/en/headlines/eu-affairs/20240118STO16302/european-elections-2024-what-you-need-to-know)                           | EU             | Increased discussion, mixed sentiment        |
+| 2023-04-20 | [IEA reports global solar power generation surpasses oil for the first time](https://www.iea.org/news/solar-overtakes-oil-in-global-power-generation)                                                                | Global         | Positive sentiment for solar, shift from fossil fuels |
+| 2023-12-13 | [COP28 concludes with historic agreement to transition away from fossil fuels](https://unfccc.int/news/cop28-agrees-historic-deal-to-transition-away-from-fossil-fuels)                                             | Global         | Strong positive sentiment for renewables, policy optimism |
+| 2023-11-30 | [Global installed solar PV capacity surpasses 1 terawatt milestone](https://www.pv-magazine.com/2023/11/30/global-installed-solar-capacity-surpasses-1-tw/)                                                        | Global         | Positive sentiment, milestone for solar industry      |
+
+
 
 # Process Data
 
