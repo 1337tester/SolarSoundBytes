@@ -21,12 +21,14 @@ except KeyError:
     st.stop() # Stoppt die App, wenn der Schlüssel fehlt
 
 
+start_date = pd.to_datetime("2022-12-30")
+end_date = pd.to_datetime("2023-01-01")
+
+
+
 # --- DATA SOURCE ---
 df_twitter = create_df_of_twitter_result_events()
 df_news = create_df_of_newsarticle_result()
-
-start_date = pd.to_datetime("2022-02-23")
-end_date = pd.to_datetime("2022-02-25")
 
 
 # Filter datasets
@@ -66,6 +68,7 @@ custom_r_g_b_colorscale = [
     [1.0, 'rgb(0,128,0)']   # green
 ]
 
+
 # --- News Sentiment Bubble Chart Trace ---
 fig.add_trace(go.Scatter(
     x=monthly_stats_news['date'],
@@ -77,7 +80,7 @@ fig.add_trace(go.Scatter(
         sizeref=2. * monthly_stats_news['count'].max() / (40. ** 2),
         sizemin=4,
         color=monthly_stats_news['mean_pos_score'], # Color by mean_pos_score
-        colorscale=custom_r_g_b_colorscale, #'RdYlGn',
+        colorscale=custom_r_g_b_colorscale,
         cmin=0,
         cmax=1,
         showscale=True,
@@ -123,7 +126,7 @@ fig.add_trace(go.Scatter(
         sizeref=2. * hourly_stats_twitter['count'].max() / (40. ** 2),
         sizemin=4,
         color=hourly_stats_twitter['mean_pos_score'], # Color by mean_pos_score
-        colorscale=custom_r_g_b_colorscale, #'RdYlGn',
+        colorscale=custom_r_g_b_colorscale,
         cmin=0, # Keep original cmin
         cmax=1,  # Keep original cmax
         showscale=True,

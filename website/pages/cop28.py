@@ -21,12 +21,14 @@ except KeyError:
     st.stop() # Stoppt die App, wenn der Schlüssel fehlt
 
 
+start_date = pd.to_datetime("2023-12-11")
+end_date = pd.to_datetime("2023-12-13")
+
+
+
 # --- DATA SOURCE ---
 df_twitter = create_df_of_twitter_result_events()
 df_news = create_df_of_newsarticle_result()
-
-start_date = pd.to_datetime("2022-02-23")
-end_date = pd.to_datetime("2022-02-25")
 
 
 # Filter datasets
@@ -150,12 +152,13 @@ fig.update_layout(
         showgrid=True,
         anchor='free', # Allow free positioning
         overlaying='y', # Overlay on the primary y-axis
+        position=0, # Position of the left y-axis (0 is far left)
         range=[.65, 1],
-        position=0 # Position of the left y-axis (0 is far left)
     ),
     legend=dict(x=0.01, y=0.99), # Legend position
     height=600,
     margin=dict(r=200),
+
     # Make sure to set proper ranges if necessary or Plotly will auto-scale
     # yaxis_range=[min_val_sp500, max_val_sp500],
     # yaxis2_range=[min_val_renewables, max_val_renewables],

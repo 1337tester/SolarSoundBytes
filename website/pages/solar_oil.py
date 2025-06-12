@@ -21,12 +21,14 @@ except KeyError:
     st.stop() # Stoppt die App, wenn der Schlüssel fehlt
 
 
+start_date = pd.to_datetime("2023-05-29")
+end_date = pd.to_datetime("2023-05-31")
+
+
+
 # --- DATA SOURCE ---
 df_twitter = create_df_of_twitter_result_events()
 df_news = create_df_of_newsarticle_result()
-
-start_date = pd.to_datetime("2022-02-23")
-end_date = pd.to_datetime("2022-02-25")
 
 
 # Filter datasets

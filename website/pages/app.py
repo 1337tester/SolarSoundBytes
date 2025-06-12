@@ -139,7 +139,7 @@ df_news_filtered['month'] = df_news_filtered['date'].dt.to_period('M').dt.to_tim
 # Berechne die Wahrscheinlichkeit des korrekten Sentiments je Zeile
 df_news_filtered['correct_prob'] = df_news_filtered[['pos_score', 'neg_score']].max(axis=1)
 
-# Aggregiere nach Monat
+# a
 monthly_stats_news = df_news_filtered.groupby('month').agg(
     mean_correct_prob=('correct_prob', 'mean'),
     mean_pos_score=('pos_score', 'mean'),
@@ -156,7 +156,7 @@ monthly_stats_news['std_correct_prob'] = monthly_stats_news['std_correct_prob'].
 # --- News Sentiment Bubble Chart Trace ---
 fig.add_trace(go.Scatter(
     x=monthly_stats_news['month'],
-    y=monthly_stats_news['mean_correct_prob'],
+    y=monthly_stats_news['std_correct_prob'],
     mode='markers',
     marker=dict(
         size=monthly_stats_news['count'] / 3, # Using 'count' for size
@@ -196,7 +196,7 @@ fig.add_trace(go.Scatter(
 # --- NEW: Separate Trace for Standard Deviation Error Bars ---
 fig.add_trace(go.Scatter(
     x=monthly_stats_news['month'],
-    y=monthly_stats_news['mean_correct_prob'], # Y-values are the same as the bubbles
+    y=monthly_stats_news['std_correct_prob'], # Y-values are the same as the bubbles
     mode='lines', # No markers or lines for this trace, only error bars
     line=dict(
         color='grey',
@@ -221,49 +221,58 @@ fig.add_trace(go.Scatter(
 ########Twitter
 ################
 
-monthly_stats_twitter = monthly_stats_news
+df_twitter['date'] = pd.to_datetime(df_twitter['date'])
+df_twitter_filtered = df_twitter[(df_twitter['date'] >= start_date) & (df_twitter['date'] <= end_date)].copy()
+
+# Konvertiere Datum und extrahiere Monat
+df_twitter_filtered['date'] = pd.to_datetime(df_twitter_filtered['date'])
+
+
+
+df_twitter_filtered['month'] = df_twitter_filtered['date'].dt.to_period('M').dt.to_timestamp()
+
+# Berechne die Wahrscheinlichkeit des korrekten Sentiments je Zeile
+df_twitter_filtered['correct_prob'] = df_twitter_filtered[['pos_score', 'neg_score']].max(axis=1)
+
+# a
+monthly_stats_twitter = df_twitter_filtered.groupby('month').agg(
+    mean_correct_prob=('correct_prob', 'mean'),
+    mean_pos_score=('pos_score', 'mean'),
+    count=('correct_prob', 'count'),
+    std_correct_prob=('correct_prob', 'std'),
+).reset_index()
+
+# Create scatter trace for news sentiment
+# Handle potential NaN in std_correct_prob for months with only one data point
+# If a month has only one news item, std dev is NaN. Set to 0 for error bar.colorscale='RdYlGn',
+monthly_stats_twitter['std_correct_prob'] = monthly_stats_twitter['std_correct_prob'].fillna(0)
 
 # Generate random offsets for y-values
-random_offset = np.random.uniform(low=-0.2, high=0.2, size=len(monthly_stats_twitter))
-y_with_offset = monthly_stats_twitter['mean_correct_prob'] + random_offset * monthly_stats_twitter['mean_correct_prob']
 
 # --- News Sentiment Bubble Chart Trace (main trace) ---
 fig.add_trace(go.Scatter(
-    x=monthly_stats_twitter['month'],
-    y=y_with_offset, # Use the y-values with random offset
+    x=monthly_stats_twitter['month'], # X-Achse
+    y=monthly_stats_twitter['std_correct_prob'], # **NEU: Y-Achse ist jetzt die Standardabweichung**
     mode='markers',
     marker=dict(
-        symbol='diamond',  # Change marker to squares
-        size=monthly_stats_twitter['count'] / 3, # Using 'count' for size
+        symbol='diamond',  # Markerform
+        size=monthly_stats_twitter['count']/3, # Größe anpassen
         sizemode='area',
-        sizeref=2. * monthly_stats_twitter['count'].max() / (40. ** 2),
-        sizemin=4,
-        color=monthly_stats_twitter['mean_pos_score'], # Color by mean_pos_score
-        colorscale='RdYlGn',
-        cmin=0.4, # Keep original cmin
-        cmax=0.8,  # Keep original cmax
-        showscale=True,
-        colorbar=dict(
-            title='Mean Pos-score',
-            x=0.5,
-            y=1.15,
-            xanchor='center',
-            yanchor='top',
-            orientation='h',
-            len=0.5
-        ),
-
+        sizeref=2. * monthly_stats_twitter['count'].max() / (40. ** 2), # sizeref anpassen
+        sizemin=4, # sizemin anpassen
+        color=monthly_stats_twitter['mean_pos_score'], # Farbe weiterhin nach Pos-Score
+        colorscale='RdYlGn',        cmin=0,
+        cmax=1,
+        showscale=False, # Colorbar für Twitter Sentiment könnte dupliziert sein, wenn News sie schon hat
     ),
-    # visible='legendonly',
     name='Twitter Sentiment',
-    yaxis='y3', # Left y-axis
-    customdata=monthly_stats_twitter[['mean_pos_score', 'std_correct_prob']].values, # Include std_correct_prob in customdata
+    yaxis='y3', # Nutzt die y3-Achse
+    customdata=monthly_stats_twitter[['mean_pos_score', 'std_correct_prob']].values,
     hovertemplate=(
         "<b>Month:</b> %{x|%Y-%m}<br>" +
-        "<b>Mean Correct Prob:</b> %{y:.2f}<br>" +
-        "<b>Std Dev (Correct Prob):</b> %{customdata[2]:.2f}<br>" +  # Show std dev in hover
+        "<b>Std Dev (Correct Prob):</b> %{y:.2f}<br>" + # Y ist jetzt std dev
         "<b>Mean Pos-score:</b> %{customdata[0]:.2f}<br>" +
-        "<b>News Count:</b> %{marker.size}<extra></extra>"
+        "<b>Twitter Count:</b> %{marker.size}<extra></extra>"
     )
 ))
 
@@ -292,6 +301,7 @@ fig.update_layout(
         showgrid=True,
         anchor='free', # Allow free positioning
         overlaying='y', # Overlay on the primary y-axis
+        autorange="reversed",
         position=0 # Position of the left y-axis (0 is far left)
     ),
     legend=dict(x=0.01, y=0.99), # Legend position
@@ -310,6 +320,20 @@ st.plotly_chart(fig, use_container_width=True)
 if st.button("Russias invasion of Ukraine "):
     st.switch_page("pages/event_russia.py")
 
+if st.button("REPowerEU"):
+    st.switch_page("pages/repowereu.py")
+
+if st.button("COP28"):
+    st.switch_page("pages/cop28.py")
+
+if st.button("Solar Invest > Oil Invest"):
+    st.switch_page("pages/solar_oil.py")
+
+if st.button("IRA USA"):
+    st.switch_page("pages/eu_ira.py")
+
+if st.button("Solar Production > 1 TW"):
+    st.switch_page("pages/solar_1tw.py")
 
 
 ############################################################################
@@ -318,20 +342,20 @@ if st.button("Russias invasion of Ukraine "):
 ############################################################################
 #############################################################################
 
-# result_text = create_text_from_sent_analy_df(monthly_stats_twitter, monthly_stats_news ,filtered_sp500, filtered_df_energy)
+result_text = create_text_from_sent_analy_df(monthly_stats_twitter, monthly_stats_news ,filtered_sp500, filtered_df_energy)
 
-# st.write(result_text)
+st.write(result_text)
 
-# # text = st.text_input(label='1', value=result_text)
+# text = st.text_input(label='1', value=result_text)
 
 
-# # if st.button("Play"):
-# if isinstance(result_text, str) and result_text.strip():
-#         tts = gTTS(result_text.strip(), lang="en")
-#         tts.save("output.mp3")
-#         st.audio("output.mp3", format="audio/mp3")
-# else:
-#         st.warning("Text field is empty or invalid.")
+# if st.button("Play"):
+if isinstance(result_text, str) and result_text.strip():
+        tts = gTTS(result_text.strip(), lang="en")
+        tts.save("output.mp3")
+        st.audio("output.mp3", format="audio/mp3")
+else:
+        st.warning("Text field is empty or invalid.")
 
 #############################################################################
 

@@ -21,12 +21,23 @@ except KeyError:
     st.stop() # Stoppt die App, wenn der Schlüssel fehlt
 
 
+start_date = pd.to_datetime("2022-05-17")
+end_date = pd.to_datetime("2022-05-19")
+
+
+
 # --- DATA SOURCE ---
 df_twitter = create_df_of_twitter_result_events()
 df_news = create_df_of_newsarticle_result()
 
-start_date = pd.to_datetime("2022-02-23")
-end_date = pd.to_datetime("2022-02-25")
+# fig = go.Figure()
+# fig.add_trace(go.Scatter(
+#     x=df_twitter['date'],
+#     y=df_twitter['pos_score'], # Use the y-values with random offset
+#     mode='markers',
+# )
+# )
+# st.plotly_chart(fig, use_container_width=True)
 
 
 # Filter datasets
@@ -62,8 +73,8 @@ custom_r_g_b_colorscale = [
     [0.0, 'rgb(255,0,0)'],   # red
     [0.25, 'rgb(255,165,0)'], # Orange
     [0.5, 'rgb(75,0,130)'],   # indigo
-    [0.75, 'rgb(0,0,255)'],  # Blue
-    [1.0, 'rgb(0,128,0)']   # green
+    [0.55, 'rgb(0,0,255)'],  # Blue
+    [1, 'rgb(0,128,0)']   # green
 ]
 
 # --- News Sentiment Bubble Chart Trace ---
