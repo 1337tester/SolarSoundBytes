@@ -37,30 +37,6 @@ df_news = create_df_of_newsarticle_result()
 # counts_twitter = count_sent_per_quarter(df_twitter)
 monthly_sp500 = preprocess_sp500_df()
 df_energy = get_energy_df()
-df_energy = df_energy[['year', 'renewables']]
-
-# # Quarterly GDP values
-# gdp = {
-#     '2022': 5200,
-#     '2023': 5500,
-#     '2024': 5750,
-# }
-
-
-# # Prepare GDP for quarterly plotting (flat line per quarter)
-# df_gdp_yearly = pd.DataFrame({'year': list(gdp.keys()), 'gdp': list(gdp.values())})
-# df_gdp_yearly['year'] = pd.to_numeric(df_gdp_yearly['year']) # Ensure year is numeric for comparisons
-
-
-# # Create one row per quarter with the same GDP value (although not used directly in current plot)
-# quarters_energy = ['Q1', 'Q2', 'Q3', 'Q4']
-# df_gdp = pd.DataFrame([
-#     {'quarter': f"{year}-Q{q}", 'gdp': value}
-#     for year, value in gdp.items()
-#     for q in range(1, 5)
-# ])
-# df_gdp['quarter_start'] = df_gdp['quarter'].apply(lambda x: pd.to_datetime(f"{x[:4]}-{(int(x[-1])-1)*3 + 1:02d}-01"))
-
 
 # Generate list of quarters (e.g. "2022 Q1", ..., "2024 Q4")
 def generate_quarters(start_year, end_year):
@@ -93,13 +69,9 @@ if start_date > end_date:
     st.stop()
 
 # Filter datasets
-filtered_sp500 = monthly_sp500[(monthly_sp500['month'] >= start_date) & (monthly_sp500['month'] <= end_date)]
+# filtered_sp500 = monthly_sp500[(monthly_sp500['month'] >= start_date) & (monthly_sp500['month'] <= end_date)]
 # filtered_counts_twitter = counts_twitter[(counts_twitter['quarter_start'] >= start_date) & (counts_twitter['quarter_start'] <= end_date)]
 # filtered_counts_news = counts_news[(counts_news['quarter_start'] >= start_date) & (counts_news['quarter_start'] <= end_date)]
-
-
-df_energy['bar_center'] = pd.to_datetime(df_energy['year'].astype(str)) + pd.DateOffset(months=6)
-
 
 # # Streamlit Selectboxes for quarter selection
 # st.sidebar.header("Select Date Range")
@@ -144,50 +116,20 @@ fig.add_trace(go.Scatter(
 ))
 
 # --- Renewable Energy Trace ---
-x_all = []
-y_all = []
+
 
 # Filter df_energy based on selected quarter range
-filtered_df_energy = df_energy[(df_energy['year'] >= start_date.year) & (df_energy['year'] <= end_date.year)]
-
-for _, row in filtered_df_energy.iterrows():
-    year = int(row['year'])
-    value = row['renewables']
-
-    year_start = pd.to_datetime(f"{year}-01-01")
-    year_end = pd.to_datetime(f"{year}-12-31")
-
-    # This logic assumes selected_start applies to the horizontal lines for renewable energy too.
-    # If not, you might need to adjust the filtering or bar_start logic.
-    start_q_year, start_q = map(int, selected_start.split(" Q"))
-
-    if year < start_q_year:
-        continue
-
-    if year == start_q_year:
-        start_month = (start_q - 1) * 3 + 1
-        bar_start = pd.to_datetime(f"{year}-{start_month:02d}-01")
-    else:
-        bar_start = year_start
-
-    # Adjust year_end if it goes beyond the selected end date
-    if year == end_date.year:
-        if year_end > end_date:
-            year_end = end_date
-
-
-    x_all.extend([bar_start, year_end, None])  # None separates line segments
-    y_all.extend([value, value, None])
+df_energy['Date'] = pd.to_datetime(df_energy['Date'])
+filtered_df_energy = df_energy[(df_energy['Date'] >= start_date) & (df_energy['Date'] <= end_date)]
 
 fig.add_trace(go.Scatter(
-    x=x_all,
-    y=y_all,
+    x=filtered_df_energy['Date'], y=filtered_df_energy['Installed Capacity'],
+    name='Installed Capacity Solar + Wind (MW)',
+    yaxis='y2', # This will be the right y-axis (y1 is default, we'll configure it to be on the right later)
     mode='lines',
-    line=dict(color='orange', width=4),
-    name='Renewable Energy',
-    yaxis='y2' # This will be the right y-axis, overlaying y1
+    line=dict(color='green'),
+    # visible='legendonly'
 ))
-
 # --- News Sentiment Bubble Chart Trace ---
 df_news['date'] = pd.to_datetime(df_news['date'])
 df_news_filtered = df_news[(df_news['date'] >= start_date) & (df_news['date'] <= end_date)].copy()
@@ -200,7 +142,7 @@ df_news_filtered['month'] = df_news_filtered['date'].dt.to_period('M').dt.to_tim
 df_news_filtered['correct_prob'] = df_news_filtered[['pos_score', 'neg_score']].max(axis=1)
 
 # Aggregiere nach Monat
-monthly_stats = df_news_filtered.groupby('month').agg(
+monthly_stats_news = df_news_filtered.groupby('month').agg(
     mean_correct_prob=('correct_prob', 'mean'),
     mean_pos_score=('pos_score', 'mean'),
     count=('correct_prob', 'count'),
@@ -210,20 +152,20 @@ monthly_stats = df_news_filtered.groupby('month').agg(
 # Create scatter trace for news sentiment
 # Handle potential NaN in std_correct_prob for months with only one data point
 # If a month has only one news item, std dev is NaN. Set to 0 for error bar.
-monthly_stats['std_correct_prob'] = monthly_stats['std_correct_prob'].fillna(0)
+monthly_stats_news['std_correct_prob'] = monthly_stats_news['std_correct_prob'].fillna(0)
 
 
 # --- News Sentiment Bubble Chart Trace ---
 fig.add_trace(go.Scatter(
-    x=monthly_stats['month'],
-    y=monthly_stats['mean_correct_prob'],
+    x=monthly_stats_news['month'],
+    y=monthly_stats_news['mean_correct_prob'],
     mode='markers',
     marker=dict(
-        size=monthly_stats['count'], # Using 'count' for size
+        size=monthly_stats_news['count'] / 3, # Using 'count' for size
         sizemode='area',
-        sizeref=2. * monthly_stats['count'].max() / (40. ** 2),
+        sizeref=2. * monthly_stats_news['count'].max() / (40. ** 2),
         sizemin=4,
-        color=monthly_stats['mean_pos_score'], # Color by mean_pos_score
+        color=monthly_stats_news['mean_pos_score'], # Color by mean_pos_score
         colorscale='RdYlGn',
         cmin=0.4,
         cmax=0.8,
@@ -236,12 +178,14 @@ fig.add_trace(go.Scatter(
             yanchor='top',
             orientation='h',
             len=0.5
-        )
+        ),
+
     ),
     name='News Sentiment',
+    # visible='legendonly',
     yaxis='y3', # Left y-axis
     # Customdata for hover information (excluding std_correct_prob since it's now an error bar)
-    customdata=monthly_stats[['std_correct_prob', 'mean_pos_score']].values,
+    customdata=monthly_stats_news[['std_correct_prob', 'mean_pos_score']].values,
     hovertemplate=(
         "<b>Month:</b> %{x|%Y-%m}<br>" +
         "<b>Mean Correct Prob:</b> %{y:.2f}<br>" +
@@ -253,8 +197,8 @@ fig.add_trace(go.Scatter(
 
 # --- NEW: Separate Trace for Standard Deviation Error Bars ---
 fig.add_trace(go.Scatter(
-    x=monthly_stats['month'],
-    y=monthly_stats['mean_correct_prob'], # Y-values are the same as the bubbles
+    x=monthly_stats_news['month'],
+    y=monthly_stats_news['mean_correct_prob'], # Y-values are the same as the bubbles
     mode='lines', # No markers or lines for this trace, only error bars
     line=dict(
         color='grey',
@@ -262,7 +206,7 @@ fig.add_trace(go.Scatter(
     ),
     error_y=dict(
         type='data',
-        array=monthly_stats['std_correct_prob'],
+        array=monthly_stats_news['std_correct_prob'],
         symmetric=True,
         visible=True,
         color='grey', # You can choose a color for your error bars
@@ -271,25 +215,32 @@ fig.add_trace(go.Scatter(
     name='Std (News Sentiment)', # Name for the legend
     yaxis='y3', # Use the same y-axis as the bubbles
     showlegend=True, # Ensure it shows in the legend
-    hoverinfo='skip' # Skip hover info for this trace to avoid clutter
+    hoverinfo='skip', # Skip hover info for this trace to avoid clutter
+    visible='legendonly'
 ))
 
+####################
+########Twitter
+################
+
+monthly_stats_twitter = monthly_stats_news
+
 # Generate random offsets for y-values
-random_offset = np.random.uniform(low=-0.2, high=0.2, size=len(monthly_stats))
-y_with_offset = monthly_stats['mean_correct_prob'] + random_offset * monthly_stats['mean_correct_prob']
+random_offset = np.random.uniform(low=-0.2, high=0.2, size=len(monthly_stats_twitter))
+y_with_offset = monthly_stats_twitter['mean_correct_prob'] + random_offset * monthly_stats_twitter['mean_correct_prob']
 
 # --- News Sentiment Bubble Chart Trace (main trace) ---
 fig.add_trace(go.Scatter(
-    x=monthly_stats['month'],
+    x=monthly_stats_twitter['month'],
     y=y_with_offset, # Use the y-values with random offset
     mode='markers',
     marker=dict(
         symbol='diamond',  # Change marker to squares
-        size=monthly_stats['count'], # Using 'count' for size
+        size=monthly_stats_twitter['count'] / 3, # Using 'count' for size
         sizemode='area',
-        sizeref=2. * monthly_stats['count'].max() / (40. ** 2),
+        sizeref=2. * monthly_stats_twitter['count'].max() / (40. ** 2),
         sizemin=4,
-        color=monthly_stats['mean_pos_score'], # Color by mean_pos_score
+        color=monthly_stats_twitter['mean_pos_score'], # Color by mean_pos_score
         colorscale='RdYlGn',
         cmin=0.4, # Keep original cmin
         cmax=0.8,  # Keep original cmax
@@ -302,11 +253,13 @@ fig.add_trace(go.Scatter(
             yanchor='top',
             orientation='h',
             len=0.5
-        )
+        ),
+
     ),
+    # visible='legendonly',
     name='Twitter Sentiment',
     yaxis='y3', # Left y-axis
-    customdata=monthly_stats[['mean_pos_score', 'std_correct_prob']].values, # Include std_correct_prob in customdata
+    customdata=monthly_stats_twitter[['mean_pos_score', 'std_correct_prob']].values, # Include std_correct_prob in customdata
     hovertemplate=(
         "<b>Month:</b> %{x|%Y-%m}<br>" +
         "<b>Mean Correct Prob:</b> %{y:.2f}<br>" +
@@ -326,7 +279,7 @@ fig.update_layout(
         showgrid=False
     ),
     yaxis2=dict(
-        title='Installed electrical capacity renewable energies (MW)',
+        title='Installed Capacity Solar + Wind (MW)',
         side='right', # Secondary right axis
         overlaying='y', # Overlays the primary y-axis
         anchor='free',  # Allows it to be positioned independently
@@ -353,6 +306,33 @@ fig.update_layout(
 )
 
 st.plotly_chart(fig, use_container_width=True)
+
+
+
+
+############################################################################
+#############################################################################
+####################### TEXT and AUDIO ###################################
+############################################################################
+#############################################################################
+
+result_text = create_text_from_sent_analy_df(monthly_stats_twitter, monthly_stats_news ,filtered_sp500, filtered_df_energy)
+
+st.write(result_text)
+
+# text = st.text_input(label='1', value=result_text)
+
+
+# if st.button("Play"):
+if isinstance(result_text, str) and result_text.strip():
+        tts = gTTS(result_text.strip(), lang="en")
+        tts.save("output.mp3")
+        st.audio("output.mp3", format="audio/mp3")
+else:
+        st.warning("Text field is empty or invalid.")
+
+#############################################################################
+
 
 
 
@@ -786,27 +766,3 @@ st.plotly_chart(fig, use_container_width=True)
 # )
 
 # st.plotly_chart(fig, use_container_width=True)
-
-
-############################################################################
-#############################################################################
-####################### TEXT and AUDIO ###################################
-############################################################################
-#############################################################################
-
-# result_text = create_text_from_sent_analy_df(filtered_counts_twitter, filtered_counts_news,filtered_sp500)
-
-# st.write(result_text)
-
-# text = st.text_input(label='1', value=result_text)
-
-
-# if st.button("Play"):
-#     if isinstance(text, str) and text.strip():
-#         tts = gTTS(text.strip(), lang="en")
-#         tts.save("output.mp3")
-#         st.audio("output.mp3", format="audio/mp3")
-#     else:
-#         st.warning("Textfeld ist leer oder ungültig.")
-
-#############################################################################
