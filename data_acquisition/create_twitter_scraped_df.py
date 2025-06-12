@@ -63,12 +63,14 @@ def convert_twitter_datetime(date_str):
 
 # # select only 2 files manually to test output.csv
 # json_files = [
-#     "../../data/json/day_02/2022/dataset_2022-01-02_2025-06-03_22-22-56-837.json",
-#     "../../data/json/day_02/2022/dataset_2022-02-02_2025-06-03_22-57-32-967.json"
+#     "../data/json/day_02/2022/dataset_2022-01-02_2025-06-03_22-22-56-837.json",
+#     "../data/json/day_02/2022/dataset_2022-02-02_2025-06-03_22-57-32-967.json"
 # ]
 
 # process all scraped files
-json_files = sorted(glob("../../data/json/*.json"))
+# recursive=True --> search in all subfolders
+json_files = sorted(glob("../data/json/json-events-1-6/**/*.json", recursive=True))
+
 
 all_data = []
 
@@ -85,13 +87,17 @@ twitter_scraped_df = pd.DataFrame(all_data)
 # Convert createdAt to datetime
 twitter_scraped_df['createdAt'] = twitter_scraped_df['createdAt'].apply(convert_twitter_datetime)
 
+# drop rows where createdAt is NaT
+twitter_scraped_df = twitter_scraped_df.dropna(subset=['createdAt'])
+
 # Sort by datetime index
 twitter_scraped_df.sort_values('createdAt', inplace=True)
 
 # Ensure output folder exists and create output path
-output_folder = "../../data/csv"
+output_folder = "../data/csv/twitter/"
 os.makedirs(output_folder, exist_ok=True)
-csv_output_path = os.path.join(output_folder, "twitter_scraped_df.csv")
+# csv_output_path = os.path.join(output_folder, "twitter_scraped_df.csv")
+csv_output_path = os.path.join(output_folder, "twitter_events_df.csv")
 
 # Set index and save CSV
 twitter_scraped_df.set_index("createdAt", inplace=True)  # use datetime as index
