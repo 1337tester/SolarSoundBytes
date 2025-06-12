@@ -1,12 +1,5 @@
-pandas==2.0.0
-
-# geodata
-geopandas=0.13.2
-shapely==2.0.1
-
-# process large CSV
-dask==2023.5.0
-pyarrow==12.0.1
+# compatible with python 3.10.6
+pandas==2.1.4
 
 # NLP
 nltk==3.9.1
@@ -14,8 +7,6 @@ nltk==3.9.1
 # Website
 streamlit==1.45.1
 plotly==6.1.2
-streamlit_plotly_events=0.0.6
+streamlit_plotly_events==0.0.6
 gTTS== 2.5.4
-solarsoundbytes
-
 
