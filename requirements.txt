@@ -14,8 +14,8 @@ nltk==3.9.1
 # Website
 streamlit==1.45.1
 plotly==6.1.2
-streamlit_plotly_events=0.0.6
+streamlit_plotly_events==0.0.6
 gTTS== 2.5.4
-solarsoundbytes
+
 
 
