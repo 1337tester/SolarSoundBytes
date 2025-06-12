@@ -220,7 +220,7 @@ media sentiment analysis using a
 As a tradeoff between scraping cost, time and scraping-content, a sampling
 frequency of 1 day per month was chosen, applying an
 [actor-specific](https://console.apify.com/actors/CJdippxWmn9uRfooo) format of
-[scraping input parameters](scraping/template-params.json).
+[scraping input parameters](data_acquisition/apify_twitter_sample_query.json).
 
 ### Rehydration of Climate Change Twitter Dataset
 

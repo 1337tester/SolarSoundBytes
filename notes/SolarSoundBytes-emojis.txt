@@ -1,2 +1,4 @@
-:sun-shining: :sound: :zap:
+how to represent our project name with 3 emojis
 SolarSoundBytes
+:sun-shining: :sound: :zap:
+:sun-shining: :sound: :ugly_code:
