@@ -7,12 +7,12 @@ def create_df_of_newsarticle_result():
     # file_path = os.path.join(base_path, 'data_test', 'cleantech_predictions_with_confidence _UTF8.xlsx')
     csv_path = os.path.normpath(os.path.join(os.path.dirname(__file__), '..', 'data', 'csv', 'combined_articles_with_sentiment.csv'))
 
-    df = pd.read_csv(csv_path)
+    data = pd.read_csv(csv_path)
 
-    # df = data[['Clean_Date', 'distilbert_pos_score', 'distilbert_neg_score']]
-    # df = df.rename(columns={'distilbert_pos_score': 'pos_score',
-    #                         'Clean_Date': 'date',
-    #                         'distilbert_neg_score': 'neg_score'})
+    df = data[['Clean_Date', 'distilbert_pos_score', 'distilbert_neg_score']]
+    df = df.rename(columns={'distilbert_pos_score': 'pos_score',
+                            'Clean_Date': 'date',
+                            'distilbert_neg_score': 'neg_score'})
     return df
 
 
