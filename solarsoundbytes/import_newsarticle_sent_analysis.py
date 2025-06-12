@@ -5,7 +5,7 @@ import os
 def create_df_of_newsarticle_result():
     # base_path = os.path.dirname(__file__)
     # file_path = os.path.join(base_path, 'data_test', 'cleantech_predictions_with_confidence _UTF8.xlsx')
-    csv_path = os.path.normpath(os.path.join(os.path.dirname(__file__), '..', 'data', 'csv', 'combined_articles_with_sentiment.csv'))
+    csv_path = os.path.normpath(os.path.join(os.path.dirname(__file__), '..', 'data_input_streamlit', 'combined_articles_with_sentiment.csv'))
 
     data = pd.read_csv(csv_path)
 

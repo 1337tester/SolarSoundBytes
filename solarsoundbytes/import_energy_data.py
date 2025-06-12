@@ -4,7 +4,7 @@ import os
 
 def get_energy_df():
 
-    csv_path = os.path.normpath(os.path.join(os.path.dirname(__file__), '..', 'data', 'csv', 'monthly_capacity_wind_solar_public_release_file.csv'))
+    csv_path = os.path.normpath(os.path.join(os.path.dirname(__file__), '..', 'data_input_streamlit', 'monthly_capacity_wind_solar_public_release_file.csv'))
 
     df = pd.read_csv(
         csv_path)
