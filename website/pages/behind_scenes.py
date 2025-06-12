@@ -24,7 +24,6 @@ def header_section():
         """, unsafe_allow_html=True)
     st.markdown("---")
 
-
 ####----Data Research Tab----####
 def data_research_tab():
     """Content for the Data Research tab"""
@@ -44,10 +43,14 @@ def data_research_tab():
 
         st.subheader("Data Sources We Explored:")
         st.write("""
-                To compare the sentiment of **news articles** to a broader **public sentiment**, we looked for a fitting twitter dataset.
-                Although the **Climate Change Twitter Dataset (15 million tweets spanning over 13 years)** looked promising at first, we could not use it due to the lack of full-text tweets within.
-                Since the vast majority of the most recent tweet_ids listed inside the Climate Change Twitter Dataset in GBR are no longer accessible, we abandoned our attempt to rehydrate this dataset.
-                After extensive and unsuccessful further research for an alternative twitter dataset, we decided to create our own twitter dataset as input for a social media sentiment analysis using a scraping actor on console.apify.
+                To compare the sentiment of **news articles** to a broader **public sentiment**, we looked for a fitting twitter and news article datasets.
+                Both the **Climate Change Twitter Dataset (15 million tweets spanning over 13 years)** and the **Cleantech Media Dataset by Anacode** looked promising at first, but we could not use them due to several limitations:
+                - The lack of full-text tweets in the dataset.
+                - News articles were bias towards positive sentiment.""")
+        st.write("""
+                As we were advancing int our process, the Cleantech Media Dataset settled the timeframe of our data collection to **2022-01-02 to 2024-12-24**.
+                After extensive and unsuccessful further research for alternative datasets, we decided to create our own datasets for both, tweets and news articles
+                for a social media sentiment analysis using a scraping actor on [console.apify](https://console.apify.com/).
                  """)
         st.write("### Twitter/X API")
         st.write("""
@@ -60,9 +63,7 @@ def data_research_tab():
 
         st.write("### News Articles API")
         st.write("""
-                 Online research for datasets of news-articles in the field of renewable energy technologies led us to the Cleantech Media Dataset by Anacode.
-                 This dataset settled the timeframe of our data collection to **2022-01-02 to 2024-12-24**. Hoewever, after many tests, we found out that our data set was bias towards possitive sentiment.
-                 Therefore, we decided to use the **News API** to collect news articles from **2022-01-02 to 2024-12-24**.
+                 The **News API** was our main tool to collect news articles covering many
                  - GNews 49,00€/month: API results in JSON format via HTTP GET requests.
                     Search Terms:
                     - Renewable Energy
@@ -119,20 +120,6 @@ def nlp_models_tab():
     st.write("In our case, the ingredients are ***tweets and news articles***, and the dish is a ***podcast-style audio script*** that summarizes market sentiment.")
     st.write("We didn't just pick the first model we found.")
 
-    st.subheader("Models We Tested:")
-    col1, col2 = st.columns(2)
-    with col1:
-        models_tested = [
-            "distilBERT",
-            "twitter-RoBERTa",
-            "nlptown",
-            "VADER (NLTK)",
-            "Gemma 3 / Vertex AI",
-            "Custom DistilBERT Models (x3)"
-        ]
-        for i, model in enumerate(models_tested, 1):
-            st.write(f"{i}. {model}")
-    st.write("")
 
     st.subheader("Training, Test & Evaluate Models*")
     model_data = {
@@ -171,33 +158,31 @@ def nlp_models_tab():
 
     model_df = pd.DataFrame(model_data)
     st.table(model_df.reset_index(drop=True))
-
-
  # Map accuracy to numeric for plotting
-    with col2:
-        accuracy_map = {"High": 2, "Low": 1}
-        df_plot = pd.DataFrame(model_data).copy()
-        df_plot["Accuracy (Num)"] = df_plot["Accuracy"].apply(lambda x: accuracy_map["High"] if "High" in x else accuracy_map["Low"])
-        df_plot["Accuracy Label"] = df_plot["Accuracy"].apply(lambda x: "High" if "High" in x else "Low")
-
-        # Plot
-        plt.figure(figsize=(7, 4))
-        bar = sns.barplot(
-        data=df_plot,
-        y="Model / Tool",
-        x="Accuracy (Num)",
-        hue="Accuracy Label",
-        dodge=False,
-        palette={"High": "#2ECC71", "Low": "#E74C3C"}
-        )
-        bar.set_xlabel("Accuracy Level")
-        bar.set_ylabel("Model / Tool")
-        bar.set_xticks([1, 2])
-        bar.set_xticklabels(["Low", "High"])
-        plt.title("Sentiment Model Accuracy")
-        plt.legend(title="Accuracy", loc="lower right")
-        plt.tight_layout()
-        st.pyplot(plt)
+ #   with col2:
+ #       accuracy_map = {"High": 2, "Low": 1}
+ #       df_plot = pd.DataFrame(model_data).copy()
+ #       df_plot["Accuracy (Num)"] = df_plot["Accuracy"].apply(lambda x: accuracy_map["High"] if "High" in x else accuracy_map["Low"])
+ #       df_plot["Accuracy Label"] = df_plot["Accuracy"].apply(lambda x: "High" if "High" in x else "Low")
+#
+ #       # Plot
+ #       plt.figure(figsize=(7, 4))
+ #       bar = sns.barplot(
+ #       data=df_plot,
+ #       y="Model / Tool",
+ #       x="Accuracy (Num)",
+ #       hue="Accuracy Label",
+ #       dodge=False,
+ #       palette={"High": "#2ECC71", "Low": "#E74C3C"}
+ #       )
+ #       bar.set_xlabel("Accuracy Level")
+ #       bar.set_ylabel("Model / Tool")
+ #       bar.set_xticks([1, 2])
+ #       bar.set_xticklabels(["Low", "High"])
+ #       plt.title("Sentiment Model Accuracy")
+ #        plt.legend(title="Accuracy", loc="lower right")
+ #       plt.tight_layout()
+ #      st.pyplot(plt)
 
 
     st.success("🏆 **Winner: distilBERT Model** - Best balance of accuracy for both short and long text")
@@ -215,7 +200,7 @@ def pipeline_tab():
         ("🧹 Text Cleaning", "Remove noise, normalize text"),
         ("🤖 Sentiment Analysis", "Apply our trained NLP model"),
         ("📊 Data Aggregation", "Merge sentiment insights from tweets and news with market (S&P 500) and economic (GDP) data to reveal the bigger picture."),
-        ("📄 Script Generation", "Generate podcast-style summary content"),
+        ("📄 Text Generation", "Generate podcast-style summary content"),
         ("🎧 Text-to-Speech", "Convert to audio format")
     ]
 
@@ -225,15 +210,39 @@ def pipeline_tab():
 
             # Code examples for key steps
             if i == 1:
+                st.markdown("[**Twitter API user story**](https://drive.google.com/file/d/1uVTl7SvQNJE00I0GaDez2XCjw0byp4j7/view?usp=sharing)")
                 st.code("""
-            def scrape_financial_tweets(symbol, limit=100):
-                tweets = api.search_tweets(
-                    q=f"${symbol} OR #{symbol}",
-                    count=limit,
-                    lang='en'
-                )
-                return [tweet.text for tweet in tweets]
+            def extract_tweet_data(tweet, reference_date):
+    def safe_get(dct, key, default=None):
+        return dct.get(key, default)
+
+    def get_user_mentions(entities):
+        mentions = safe_get(entities, "user_mentions", [])
+        id_strs = "~~".join([m.get("id_str", "") for m in mentions])
+        indices_0 = mentions[0]["indices"][0] if len(mentions) > 0 else None
+        indices_1 = mentions[1]["indices"][1] if len(mentions) > 1 else None
+        name = "~~".join([m.get("name", "") for m in mentions])
+        screen_name = "~~".join([m.get("screen_name", "") for m in mentions])
+        return id_strs, indices_0, indices_1, name, screen_name
+
+    entities = tweet.get("entities", {})
+    user_mentions = get_user_mentions(entities)
                             """, language='python')
+
+                st.markdown("[**News Articles API user story**](https://drive.google.com/file/d/1LsZA_0e8LvhuxZZMg6myaI6gNTh1d0-e/view?usp=sharing)")
+                st.code("""
+                        def articles_api_2_csv(t_start_str: str, t_end_str: str, query: str, query_subdivisions: int = 1):
+
+    # --------------------- API call ---------------------
+
+    # load API key and plan-specific max_n_articles from .env file
+    load_dotenv()
+    API_KEY = os.getenv("GNEWS_API_KEY")
+    MAX_N_ARTICLES = os.getenv("GNEWS_MAX_N_ARTICLES")
+
+    if not API_KEY:
+        raise ValueError("GNEWS_API_KEY not found in environment variables.")
+                        """)
 
             elif i == 2:
                 st.code("""
@@ -261,7 +270,7 @@ def pipeline_tab():
 
             elif i == 3:
                 st.code("""
-                sentiment_pipeline = pipeline("sentiment-analysis", model="cardiffnlp/twitter-roberta-base-sentiment-latest")
+                sentiment_pipeline = pipeline("sentiment-analysis", model="distilbert-base-uncased-finetuned-sst-2-english")
                 df_sample = df_clean.sample(n=100, random_state=42).copy()
 
                 df_sample[['Sentiment', 'Score']] = df_sample['Clean Article Text'].apply(analyze_sentiment_chunked)
@@ -269,46 +278,35 @@ def pipeline_tab():
                     }
                 """, language='python')
 
-def audio_generation_tab():
-    """Content for the Audio Generation tab"""
-    st.header("🎵 Audio Generation Magic")
+            elif i == 5:
+                st.code("""
+                client = OpenAI(api_key = api_key)
+                response = client.chat.completions.create(
+                    model="gpt-4o",  #
+                    messages=[
+                        {"role": "system", "content": "You are a data-analytical journalist."},
+                        {"role": "user", "content": prompt}
+                    ],
+                    temperature=0.2,
+                    max_tokens=1000
+                )""", language='python')
 
-    col1, col2 = st.columns(2)
+            elif i == 6:
+                st.code("""
+                if st.button("Play"):
+                if isinstance(text, str) and text.strip():
+                    tts = gTTS(text.strip(), lang="en")
+                    tts.save("output.mp3")
+                    st.audio("output.mp3", format="audio/mp3")
+                else:
+                    st.warning("Text field is empty or invalid.")
+                """, language='python')
 
-    with col1:
-        st.markdown("**Text-to-Speech Pipeline:**")
-        st.write("1. **Script Generation**: AI creates podcast-style narrative")
-        st.write("2. **Voice Selection**: Choose appropriate voice characteristics")
-        st.write("3. **Audio Processing**: Add background music and effects")
-        st.write("4. **Quality Control**: Ensure natural speech patterns")
 
-        st.markdown("**Audio Features:**")
-        st.write("• Natural-sounding AI voices")
-        st.write("• Background music integration")
-        st.write("• Podcast-style formatting")
-        st.write("• Multiple language support (planned)")
-
-    with col2:
-        st.markdown("**Sample Audio Script Generation:**")
-        st.code("""
-# Example of generated script
-script = f'''
-Welcome to your daily market sentiment briefing.
-
-Today's analysis shows {sentiment_summary} sentiment
-around {top_stocks}.
-
-Let's dive into the details...
-'''
-        """, language='python')
-
-        st.info("🎧 **Fun Fact**: Each podcast is unique and generated in real-time based on current market sentiment!")
-
-def final_assembly_tab():
     """Content for the Final Assembly tab"""
     st.header("🚀 Final Assembly & Integration")
 
-    st.markdown("**Bringing It All Together with Streamlit**")
+    st.subheader("Bringing It All Together with Streamlit")
 
     col1, col2 = st.columns(2)
 
@@ -316,7 +314,7 @@ def final_assembly_tab():
         st.markdown("**Architecture Overview:**")
         st.write("• **Frontend**: Streamlit web application")
         st.write("• **Backend**: Python data processing pipeline")
-        st.write("• **Database**: Real-time sentiment data storage")
+        st.write("• **Database**: Sentiment anailysis")
         st.write("• **APIs**: External data sources integration")
         st.write("• **Deployment**: Cloud-based hosting")
 
@@ -336,12 +334,10 @@ def final_assembly_tab():
 
 def main_tabs():
     """Display the main content tabs"""
-    tab1, tab2, tab3, tab4, tab5 = st.tabs([
+    tab1, tab2, tab3, = st.tabs([
         "📊 Data Research",
         "🤖 NLP Models",
-        "⚙️ Pipeline",
-        "🎵 Audio Generation",
-        "🚀 Final Assembly"
+        "⚙️ Pipeline"
     ])
 
     with tab1:
@@ -353,20 +349,12 @@ def main_tabs():
     with tab3:
         pipeline_tab()
 
-    with tab4:
-        audio_generation_tab()
-
-    with tab5:
-        final_assembly_tab()
-
 def whats_next_section():
     """Display the What's Next section"""
     st.markdown("---")
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
         st.markdown("<h2 style='text-align: center;'>🎯 What's Next?</h2>", unsafe_allow_html=True)
-        st.markdown("<p style='text-align: center;'>Want to see our future plans? Check out our <strong>Upcoming Updates</strong> page!</p>", unsafe_allow_html=True)
-
 def navigation_buttons():
     """Display navigation buttons"""
     col1, col2, col3, col4, col5 = st.columns([1, 1, 1, 1, 1])
@@ -383,17 +371,21 @@ def navigation_buttons():
 def footer_section():
     """Display the footer with logo and credits"""
     st.markdown("---")
-    col1, col2, col3 = st.columns([1, 2, 1])
-    with col2:
-        try:
-            st.image('images/LeWagon_logo.png', width=150)
-            st.markdown("<p style='text-align: center;'>Created by Le Wagon Data Science Batch #2012</p>", unsafe_allow_html=True)
-            st.markdown("<p style='text-align: center; font-style: italic;'>Built with ❤️ by the SolarSoundBytes team</p>", unsafe_allow_html=True)
-        except FileNotFoundError:
-            st.info("📷 Logo not found")
-            st.markdown("<p style='text-align: center;'>Created by Le Wagon Data Science Batch #2012</p>", unsafe_allow_html=True)
-            st.markdown("<p style='text-align: center; font-style: italic;'>Built with ❤️ by the SolarSoundBytes team</p>", unsafe_allow_html=True)
-
+    # Use one wide column for centering
+    col1, = st.columns([1])
+    with col1:
+        st.markdown(
+            """
+            <div style="text-align: center;">
+                <img src="images/LeWagonIcon.png" width="150" style="margin-bottom: 10px;" />
+                <div>Created by Le Wagon Data Science Batch #2012</div>
+                <div style="font-style: italic; margin-top: 8px;">
+                    Built with ❤️ by the SolarSoundBytes team
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
 def render_behind_scenes():
     """Render function for importing into other pages"""
     header_section()

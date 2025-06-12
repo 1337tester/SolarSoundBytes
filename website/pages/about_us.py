@@ -80,7 +80,7 @@ def render_about_us():
         except FileNotFoundError: st.info("📷 Image not found")
         st.markdown("""
         <div class="profile-description">
-        Renewable energy engineer and former research associate with deep experience in designing and optimizing clean energy systems. Passionate about bridging technical innovation with real-world impact. Committed to driving the next wave of green energy solutions.
+        Mechanical engineer turned software developer proficient in Python, SQL, and Odoo, now pivoting fully into tech. After building strong foundations in full-stack development, he's diving into ML/AI through community‑driven bootcamps and open-source events. Motivated by collaborative impact and continuous upskilling.
         </div>
         """, unsafe_allow_html=True)
     # Social links as buttons
@@ -107,7 +107,7 @@ def render_about_us():
         # Description
         st.markdown("""
         <div class="profile-description">
-        Mechanical engineer turned software developer proficient in Python, SQL, and Odoo, now pivoting fully into tech. After building strong foundations in full-stack development, he's diving into ML/AI through community‑driven bootcamps and open-source events. Motivated by collaborative impact and continuous upskilling.
+        Renewable energy engineer and former research associate with deep experience in designing and optimizing clean energy systems. Passionate about bridging technical innovation with real-world impact. Committed to driving the next wave of green energy solutions.
         </div>
         """, unsafe_allow_html=True)
 
@@ -176,7 +176,7 @@ def render_about_us():
 
     with col_stats3:
         st.markdown("### 🚀 Mission")
-        st.write("AI-Powered Financial Audio Solutions")
+        st.write("AI-powered insights tracking the global shift to renewable energy")
 
 if __name__ == "__main__":
     render_about_us()
