@@ -305,6 +305,10 @@ fig.update_layout(
 
 st.plotly_chart(fig, use_container_width=True)
 
+#######################Switch to Events Site ################################
+############################################################################
+if st.button("Russias invasion of Ukraine "):
+    st.switch_page("pages/event_russia.py")
 
 
 
@@ -314,20 +318,20 @@ st.plotly_chart(fig, use_container_width=True)
 ############################################################################
 #############################################################################
 
-result_text = create_text_from_sent_analy_df(monthly_stats_twitter, monthly_stats_news ,filtered_sp500, filtered_df_energy)
+# result_text = create_text_from_sent_analy_df(monthly_stats_twitter, monthly_stats_news ,filtered_sp500, filtered_df_energy)
 
-st.write(result_text)
+# st.write(result_text)
 
-# text = st.text_input(label='1', value=result_text)
+# # text = st.text_input(label='1', value=result_text)
 
 
-# if st.button("Play"):
-if isinstance(result_text, str) and result_text.strip():
-        tts = gTTS(result_text.strip(), lang="en")
-        tts.save("output.mp3")
-        st.audio("output.mp3", format="audio/mp3")
-else:
-        st.warning("Text field is empty or invalid.")
+# # if st.button("Play"):
+# if isinstance(result_text, str) and result_text.strip():
+#         tts = gTTS(result_text.strip(), lang="en")
+#         tts.save("output.mp3")
+#         st.audio("output.mp3", format="audio/mp3")
+# else:
+#         st.warning("Text field is empty or invalid.")
 
 #############################################################################
 
