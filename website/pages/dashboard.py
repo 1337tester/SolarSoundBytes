@@ -563,9 +563,11 @@ def main():
             position=1 - (0.07 * (current_plot_yaxis_id - 1))
         )
         if not show_animation:
+            # Filter metric data to match the time window
+            filtered_metric_df = metric_df[(metric_df['month'] >= pd.to_datetime(months[start_idx])) & (metric_df['month'] <= pd.to_datetime(months[end_idx]))]
             fig.add_trace(go.Scatter(
-                x=metric_df['month'],
-                y=metric_df[metric],
+                x=filtered_metric_df['month'],
+                y=filtered_metric_df[metric],
                 mode='lines',
                 name=metric,
                 line=dict(color=color),
