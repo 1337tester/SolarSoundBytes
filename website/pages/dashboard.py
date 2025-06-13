@@ -38,6 +38,20 @@ def interactive_dashboard():
     df_news = create_df_of_newsarticle_result()
     monthly_sp500 = preprocess_sp500_df()
     df_energy = get_energy_df()
+    
+    # --- DATA PREVIEW ---
+    st.subheader("Data Preview")
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.write("**First 5 Twitter entries:**")
+        st.dataframe(df_twitter.head(), use_container_width=True)
+    
+    with col2:
+        st.write("**First 5 News entries:**")
+        st.dataframe(df_news.head(), use_container_width=True)
+    
+    st.markdown("---")
 
     def generate_quarters(start_year, end_year):
         return [f"{year} Q{q}" for year in range(start_year, end_year + 1) for q in range(1, 5)]
