@@ -6,7 +6,7 @@ def create_df_of_twitter_result():
     # base_path = os.path.dirname(__file__)
     # file_path = os.path.join(base_path, 'data_test', 'twitter_sentiment_analysis_UTF8.csv')
     # file_path = '../data/csv/twitter_sentiment_analysis_UTF8.csv'
-    csv_path = os.path.normpath(os.path.join(os.path.dirname(__file__), '..', 'data_input_streamlit', 'TwitterDays_with_sentiment.csv'))
+    csv_path = os.path.normpath(os.path.join(os.path.dirname(__file__), '..', 'data_input_streamlit', 'TwitterDays_with_sentiment_0613.csv'))
 
     data = pd.read_csv(csv_path,  encoding='utf-8')
 
@@ -30,5 +30,5 @@ def create_df_of_twitter_result_events():
                             'distilbert_neg_score': 'neg_score'})
     return df
 
-test = create_df_of_twitter_result_events()
+test = create_df_of_twitter_result()
 print(test.head())

@@ -11,7 +11,7 @@ from solarsoundbytes.import_newsarticle_sent_analysis import create_df_of_newsar
 from solarsoundbytes.text_creation.create_text import create_text_from_sent_analy_df
 
 st.set_page_config(layout="wide")
-
+st.subheader('COP28')
 # --- load api key from streamlit secrets .streamlit ---
 try:
     api_key_from_secrets = st.secrets["OPENAI_API_KEY"]
@@ -71,7 +71,7 @@ custom_r_g_b_colorscale = [
 # --- News Sentiment Bubble Chart Trace ---
 fig.add_trace(go.Scatter(
     x=monthly_stats_news['date'],
-    y=monthly_stats_news['mean_correct_prob'],
+    y=monthly_stats_news['std_correct_prob'],
     mode='markers',
     marker=dict(
         size=monthly_stats_news['count'], # Using 'count' for size
@@ -116,7 +116,7 @@ hourly_stats_twitter = df_twitter_filtered.groupby('hour').agg(
 # --- Twitter Sentiment Bubble Chart Trace (main trace) ---
 fig.add_trace(go.Scatter(
     x=hourly_stats_twitter['hour'],
-    y=hourly_stats_twitter['mean_correct_prob'], # Use the y-values with random offset
+    y=hourly_stats_twitter['std_correct_prob'], # Use the y-values with random offset
     mode='markers',
     marker=dict(
         symbol='diamond',  # Change marker to squares
@@ -147,14 +147,14 @@ fig.add_trace(go.Scatter(
 fig.update_layout(
     xaxis=dict(title='Date'),
     yaxis1=dict(
-        title='Mean Probability of Correct Sentiment (%)',
+        title='',
         side='left', # News Sentiment on the left
         showgrid=True,
         anchor='free', # Allow free positioning
         overlaying='y', # Overlay on the primary y-axis
         position=0, # Position of the left y-axis (0 is far left)
-        range=[.65, 1],
-    ),
+        autorange='reversed',
+        ),
     legend=dict(x=0.01, y=0.99), # Legend position
     height=600,
     margin=dict(r=200),
