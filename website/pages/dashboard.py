@@ -164,16 +164,17 @@ def interactive_dashboard():
     random_offset = np.random.uniform(low=-0.2, high=0.2, size=len(monthly_stats_twitter))
     y_with_offset = monthly_stats_twitter['mean_correct_prob'] + random_offset * monthly_stats_twitter['mean_correct_prob']
 
+    # Set Twitter marker sizes to be proportional but larger
+    twitter_size_capped = 12 + (monthly_stats_twitter['count'] / monthly_stats_twitter['count'].max()) * 12
+    
     fig.add_trace(go2.Scatter(
         x=monthly_stats_twitter['month'],
         y=y_with_offset,
         mode='markers',
         marker=dict(
             symbol='diamond',
-            size=monthly_stats_twitter['count'] / 3,
-            sizemode='area',
-            sizeref=2. * monthly_stats_twitter['count'].max() / (40. ** 2),
-            sizemin=4,
+            size=twitter_size_capped,
+            sizemode='diameter',
             color=monthly_stats_twitter['mean_pos_score'],
             colorscale='RdYlGn',
             cmin=0.4,
@@ -191,13 +192,13 @@ def interactive_dashboard():
         ),
         name='Twitter Sentiment',
         yaxis='y3',
-        customdata=monthly_stats_twitter[['mean_pos_score', 'std_correct_prob']].values,
+        customdata=monthly_stats_twitter[['mean_pos_score', 'std_correct_prob', 'count']].values,
         hovertemplate=(
             "<b>Month:</b> %{x|%Y-%m}<br>" +
             "<b>Mean Correct Prob:</b> %{y:.2f}<br>" +
-            "<b>Std Dev (Correct Prob):</b> %{customdata[2]:.2f}<br>" +
+            "<b>Std Dev (Correct Prob):</b> %{customdata[1]:.2f}<br>" +
             "<b>Mean Pos-score:</b> %{customdata[0]:.2f}<br>" +
-            "<b>News Count:</b> %{marker.size}<extra></extra>"
+            "<b>Twitter Count:</b> %{customdata[2]}<extra></extra>"
         )
     ))
 
@@ -288,8 +289,9 @@ def main():
     df = pd.concat([monthly_stats_twitter, monthly_stats_news])
 
     def sentiment_color(val):
-        r = int(255 * (1 - (val + 1) / 2))
-        g = int(255 * ((val + 1) / 2))
+        # Map sentiment from 0-1 range: 0=red, 1=green
+        r = int(255 * (1 - val))  # Red decreases as sentiment increases
+        g = int(255 * val)        # Green increases as sentiment increases
         return f'rgb({r},{g},100)'
 
     GLOBAL_EVENTS = {
@@ -420,7 +422,10 @@ def main():
             d_all_data = df_window[df_window['source'] == source]
             fig.data[source_idx].x = d_all_data['month'].tolist() if not d_all_data.empty else []
             fig.data[source_idx].y = d_all_data['std_sentiment'].tolist() if not d_all_data.empty else []
-            fig.data[source_idx].marker.size = np.sqrt(d_all_data['count'])*3 if not d_all_data.empty else []
+            if shape == 'diamond':  # Twitter symbols
+                fig.data[source_idx].marker.size = [12 + (cnt/d_all_data['count'].max())*12 for cnt in d_all_data['count']] if not d_all_data.empty else []
+            else:  # News symbols
+                fig.data[source_idx].marker.size = np.sqrt(d_all_data['count'])*3 if not d_all_data.empty else []
             fig.data[source_idx].marker.color = [sentiment_color(v) for v in d_all_data['mean_sentiment']] if not d_all_data.empty else []
             fig.data[source_idx].text = [
                 f"{source.capitalize()}<br>Month: {m.strftime('%Y-%m')}<br>Mean Sentiment: {s:.2f}<br>Consensus: {c:.2f}<br>Count: {cnt}" 
@@ -432,7 +437,10 @@ def main():
             d_first_month = df_window[(df_window['source'] == source) & (df_window['month'] <= first_month)]
             fig.data[source_idx].x = d_first_month['month'].tolist() if not d_first_month.empty else []
             fig.data[source_idx].y = d_first_month['std_sentiment'].tolist() if not d_first_month.empty else []
-            fig.data[source_idx].marker.size = np.sqrt(d_first_month['count'])*3 if not d_first_month.empty else []
+            if shape == 'diamond':  # Twitter symbols
+                fig.data[source_idx].marker.size = [12 + (cnt/d_first_month['count'].max())*12 for cnt in d_first_month['count']] if not d_first_month.empty else []
+            else:  # News symbols
+                fig.data[source_idx].marker.size = np.sqrt(d_first_month['count'])*3 if not d_first_month.empty else []
             marker_colors = []
             marker_opacities = []
             if not d_first_month.empty:
@@ -521,7 +529,7 @@ def main():
                     'x': d_for_frame['month'].tolist() if not d_for_frame.empty else [],
                     'y': d_for_frame['std_sentiment'].tolist() if not d_for_frame.empty else [],
                     'marker': {
-                        'size': np.sqrt(d_for_frame['count'])*3 if not d_for_frame.empty else [],
+                        'size': [12 + (cnt/d_for_frame['count'].max())*12 for cnt in d_for_frame['count']] if shape == 'diamond' and not d_for_frame.empty else (np.sqrt(d_for_frame['count'])*3 if not d_for_frame.empty else []),
                         'color': marker_colors,
                         'symbol': shape,
                         'line': dict(width=1, color='black'),

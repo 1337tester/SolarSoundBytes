@@ -79,15 +79,15 @@ def data_research_tab():
 
     with col2:
         st.markdown("**Data Metrics**")
-        st.metric("Tweets Analyzed", "130,000+")
+        st.metric("Tweets Analyzed", "100,000+")
         st.metric("News Articles", "4,000+")
-        st.metric("Total Words Processed", "3M+")
-        #st.metric("Probability Score", "74.2%")
+        st.metric("Total Words Processed", "4.5M+")  # New metric
+        st.metric("Data Quality Score", "74.2%")
 
         # Data volume chart
         fig = go.Figure(data=go.Bar(
             x=['Tweets', 'News'],
-            y=[136000, 4093],
+            y=[100000, 4000],
             marker_color=['#1DA1F2', '#FF4500']
         ))
         fig.update_layout(
@@ -98,15 +98,13 @@ def data_research_tab():
         st.plotly_chart(fig, use_container_width=True)
 
         # Text volume chart (in millions of words)
-        twitts_words = 8 * 136000  # Each tweet ~10 words
-        news_words = 500 * 4093     # Each news article ~500 words
         fig = go.Figure(data=go.Bar(
-            x=['Tweets ~words', 'News ~words'],
-            y=[twitts_words, news_words],
+            x=['Tweets', 'News'],
+            y=[10, 500],
             marker_color=['#1DA1F2', '#FF4500']
         ))
         fig.update_layout(
-            title="Text Volume (Estimated Words)",
+            title="Text Volume (Millions of Words)",
             height=300,
             showlegend=False
         )
@@ -370,27 +368,21 @@ def navigation_buttons():
 def footer_section():
     """Display the footer with logo and credits"""
     st.markdown("---")
-    col1, col2, col3 = st.columns(3)
-    with col2:
-        try:
-            img_col, text_col = st.columns([1, 3])
-            with img_col:
-                st.image('website/images/LeWagonIcon.png', width=100)
-            with text_col:
-                st.markdown(
-                    """
-                    <div style="text-align: center;">
-                        <div>Created by Le Wagon Data Science Batch #2012</div>
-                        <div style="font-style: italic; margin-top: 8px;">
-                            Built with ❤️ by the SolarSoundBytes team
-                        </div>
-                    </div>
-                    """,
-                    unsafe_allow_html=True
-                )
-        except FileNotFoundError:
-            st.info("📷 Image not found")
-
+    # Use one wide column for centering
+    col1, = st.columns([1])
+    with col1:
+        st.markdown(
+            """
+            <div style="text-align: center;">
+                <img src="images/LeWagonIcon.png" width="150" style="margin-bottom: 10px;" />
+                <div>Created by Le Wagon Data Science Batch #2012</div>
+                <div style="font-style: italic; margin-top: 8px;">
+                    Built with ❤️ by the SolarSoundBytes team
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
 def render_behind_scenes():
     """Render function for importing into other pages"""
     header_section()
