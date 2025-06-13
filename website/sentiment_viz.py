@@ -4,15 +4,6 @@ import plotly.graph_objs as go
 import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta
-from solarsoundbytes.import_twitter_sent_analysis import create_df_of_twitter_result
-from solarsoundbytes.import_newsarticle_sent_analysis import create_df_of_newsarticle_result
-from solarsoundbytes.process_sp500_df import preprocess_sp500_df
-from solarsoundbytes.import_energy_data import get_energy_df
-
-
-# --- Streamlit UI ---
-st.set_page_config(page_title="Monthly Sentiment Visualization", layout="wide")
-st.title("Monthly Sentiment Consensus: Articles vs Tweets")
 
 # --- Generate mock data ---
 def generate_mock_data():
@@ -31,48 +22,6 @@ def generate_mock_data():
                 'count': count
             })
     return pd.DataFrame(data)
-
-df_news = create_df_of_newsarticle_result()
-df_news['date'] = pd.to_datetime(df_news['date'])
-
-# Konvertiere Datum und extrahiere Monat
-df_news['date'] = pd.to_datetime(df_news['date'])
-df_news['month'] = df_news['date'].dt.to_period('M').dt.to_timestamp()
-# Berechne die Wahrscheinlichkeit des korrekten Sentiments je Zeile
-df_news['correct_prob'] = df_news[['pos_score', 'neg_score']].max(axis=1)
-
-# a
-monthly_stats_news = df_news.groupby('month').agg(
-    mean_sentiment=('pos_score', 'mean'),
-    count=('correct_prob', 'count'),
-    std_sentiment=('correct_prob', 'std'),
-).reset_index()
-monthly_stats_news['source'] = 'article'
-
-
-df_twitter = create_df_of_twitter_result()
-df_twitter['date'] = pd.to_datetime(df_twitter['date'])
-
-# Konvertiere Datum und extrahiere Monat
-df_twitter['date'] = pd.to_datetime(df_twitter['date'])
-df_twitter['month'] = df_twitter['date'].dt.to_period('M').dt.to_timestamp()
-
-# Berechne die Wahrscheinlichkeit des korrekten Sentiments je Zeile
-df_twitter['correct_prob'] = df_twitter[['pos_score', 'neg_score']].max(axis=1)
-
-# a
-monthly_stats_twitter = df_twitter.groupby('month').agg(
-    mean_sentiment=('pos_score', 'mean'),
-    count=('correct_prob', 'count'),
-    std_sentiment=('correct_prob', 'std'),
-).reset_index()
-monthly_stats_twitter['source'] = 'tweet'
-
-
-df = pd.concat([monthly_stats_twitter, monthly_stats_news])
-
-st.write(df.head())
-
 
 def sentiment_color(val):
     # Red (-1) to Green (+1)
@@ -116,16 +65,20 @@ def generate_metric_data(months):
         **metrics
     })
 
+# --- Streamlit UI ---
+st.set_page_config(page_title="Monthly Sentiment Visualization", layout="wide")
+st.title("Monthly Sentiment Consensus: Articles vs Tweets")
+
 st.markdown("""
-- **Circles**: Articles
-- **Rhombi**: Tweets
-- **Y-axis**: Sentiment consensus (higher = more agreement, lower = more disagreement)
-- **Color**: Red (negative) to Green (positive)
-- **Size**: Number of texts (articles/tweets)
+- **Circles**: Articles  
+- **Rhombi**: Tweets  
+- **Y-axis**: Sentiment consensus (higher = more agreement, lower = more disagreement)  
+- **Color**: Red (negative) to Green (positive)  
+- **Size**: Number of texts (articles/tweets)  
 """)
 
 # Controls
-# df = generate_mock_data()
+df = generate_mock_data()
 months = df['month'].dt.strftime('%Y-%m').unique()
 
 # Event Selection
@@ -182,29 +135,20 @@ show_animation = st.sidebar.checkbox("Show animation (month by month)", value=Fa
 st.sidebar.header("Metric Overlays")
 selected_metrics = st.sidebar.multiselect(
     "Select metrics to overlay:",
-    options=['S&P 500', 'Installed Capacity Renewables'],
+    options=['Solar Investment', 'Oil Investment', 'Renewable Energy Jobs', 'Carbon Emissions'],
     default=[]
 )
 
-st.write(df.head())
-
 # Generate metric data
-# metric_df = generate_metric_data(pd.to_datetime(months))
-monthly_sp500 = preprocess_sp500_df()
-df_energy = get_energy_df()
-df_energy = df_energy.rename(columns={'Date': 'month'})
+metric_df = generate_metric_data(pd.to_datetime(months))
 
-metric_df = pd.merge(monthly_sp500, df_energy, on='month', how='outer')
-metric_df = metric_df.rename(columns={'Price': 'S&P 500',
-                                      'Installed Capacity': 'Installed Capacity Renewables'})
-st.write(metric_df.head())
 # --- Plotly Figure ---
 fig = go.Figure()
 
 # 1. Initialize two empty traces as placeholders. These will be updated by frames.
 for source, shape in zip(['article', 'tweet'], ['circle', 'diamond']):
     fig.add_trace(go.Scatter(
-        x=[],
+        x=[], 
         y=[],
         mode='markers',
         marker=dict(
@@ -245,14 +189,10 @@ if not show_animation: # If not animating, show all data in the current window
         d_all_data = df_window[df_window['source'] == source]
         fig.data[source_idx].x = d_all_data['month'].tolist() if not d_all_data.empty else []
         fig.data[source_idx].y = d_all_data['std_sentiment'].tolist() if not d_all_data.empty else []
-        base_size = np.sqrt(d_all_data['count']) * 3 if not d_all_data.empty else []
-        if shape == 'diamond':
-            fig.data[source_idx].marker.size = base_size * 0.1
-        else:
-            fig.data[source_idx].marker.size = base_size
+        fig.data[source_idx].marker.size = np.sqrt(d_all_data['count'])*3 if not d_all_data.empty else []
         fig.data[source_idx].marker.color = [sentiment_color(v) for v in d_all_data['mean_sentiment']] if not d_all_data.empty else []
         fig.data[source_idx].text = [
-            f"{source.capitalize()}<br>Month: {m.strftime('%Y-%m')}<br>Mean Sentiment: {s:.2f}<br>Consensus: {c:.2f}<br>Count: {cnt}"
+            f"{source.capitalize()}<br>Month: {m.strftime('%Y-%m')}<br>Mean Sentiment: {s:.2f}<br>Consensus: {c:.2f}<br>Count: {cnt}" 
             for m, s, c, cnt in zip(d_all_data['month'], d_all_data['mean_sentiment'], d_all_data['std_sentiment'], d_all_data['count'])
         ] if not d_all_data.empty else []
 elif months_with_data: # If animating and there's data to animate, initialize with first month's data
@@ -276,10 +216,10 @@ elif months_with_data: # If animating and there's data to animate, initialize wi
         fig.data[source_idx].marker.color = marker_colors
         fig.data[source_idx].marker.opacity = marker_opacities
         fig.data[source_idx].text = [
-            f"{source.capitalize()}<br>Month: {m.strftime('%Y-%m')}<br>Mean Sentiment: {s:.2f}<br>Consensus: {c:.2f}<br>Count: {cnt}"
+            f"{source.capitalize()}<br>Month: {m.strftime('%Y-%m')}<br>Mean Sentiment: {s:.2f}<br>Consensus: {c:.2f}<br>Count: {cnt}" 
             for m, s, c, cnt in zip(d_first_month['month'], d_first_month['mean_sentiment'], d_first_month['std_sentiment'], d_first_month['count'])
         ] if not d_first_month.empty else []
-
+    
     # Also initialize metric traces with data up to the first month
     for metric_idx, (metric, color) in enumerate(zip(selected_metrics, colors)):
         # Ensure the trace exists. The sentiment traces are at index 0 and 1.
@@ -365,11 +305,11 @@ if show_animation:
                 for i, row in d_for_frame.iterrows():
                     marker_colors.append(sentiment_color(row['mean_sentiment']))
                     # if show_trace and row['month'] < m: # Faded for past points in trace mode (always on now)
-                    if row['month'] < m:
+                    if row['month'] < m: 
                         marker_opacities.append(0.3)
                     else: # Opaque for current point or in single-symbol mode
                         marker_opacities.append(1.0)
-
+            
             # Create a dictionary of updates for the current trace (by index)
             frame_updates_for_traces.append({
                 'x': d_for_frame['month'].tolist() if not d_for_frame.empty else [],
@@ -377,16 +317,16 @@ if show_animation:
                 'marker': {
                     'size': np.sqrt(d_for_frame['count'])*3 if not d_for_frame.empty else [],
                     'color': marker_colors, # Use dynamically set colors
-                    'symbol': shape,
-                    'line': dict(width=1, color='black'),
+                    'symbol': shape, 
+                    'line': dict(width=1, color='black'), 
                     'opacity': marker_opacities # Use dynamically set opacities
                 },
                 'text': [
-                    f"{source.capitalize()}<br>Month: {mo.strftime('%Y-%m')}<br>Mean Sentiment: {s:.2f}<br>Consensus: {c:.2f}<br>Count: {cnt}"
+                    f"{source.capitalize()}<br>Month: {mo.strftime('%Y-%m')}<br>Mean Sentiment: {s:.2f}<br>Consensus: {c:.2f}<br>Count: {cnt}" 
                     for mo, s, c, cnt in zip(d_for_frame['month'], d_for_frame['mean_sentiment'], d_for_frame['std_sentiment'], d_for_frame['count'])
                 ] if not d_for_frame.empty else [],
             })
-
+        
         # Add updates for metric traces
         for metric_idx, (metric, color) in enumerate(zip(selected_metrics, colors)):
             metric_trace_idx = 2 + metric_idx # Sentiment traces are at index 0 and 1
@@ -407,17 +347,17 @@ if show_animation:
                         "label": "Play",
                         "method": "animate",
                         "args": [
-                            None,
+                            None, 
                             {
-                                "frame": {"duration": 500, "redraw": True},
-                                "fromcurrent": True,
+                                "frame": {"duration": 500, "redraw": True}, 
+                                "fromcurrent": True, 
                                 "mode": "immediate"
                             }
                         ],
                         "args2": [ # Args when button is pressed again (to stop)
-                            [None],
+                            [None], 
                             {
-                                "frame": {"duration": 0, "redraw": False},
+                                "frame": {"duration": 0, "redraw": False}, 
                                 "mode": "immediate"
                             }
                         ],

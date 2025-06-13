@@ -10,9 +10,9 @@ def create_df_of_twitter_result():
 
     data = pd.read_csv(csv_path,  encoding='utf-8')
 
-    df = data[['Clean_Date', 'distilbert_pos_score', 'distilbert_neg_score']]
+    df = data[['Date', 'distilbert_pos_score', 'distilbert_neg_score']]
     df = df.rename(columns={'distilbert_pos_score': 'pos_score',
-                            'Clean_Date': 'date',
+                            'Date': 'date',
                             'distilbert_neg_score': 'neg_score'})
     return df
 
