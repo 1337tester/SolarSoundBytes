@@ -370,20 +370,26 @@ def navigation_buttons():
 def footer_section():
     """Display the footer with logo and credits"""
     st.markdown("---")
-    col1, = st.columns([1])
-    with col1:
-        st.image("images/LeWagonIcon.png", width=150)
-        st.markdown(
-            """
-            <div style="text-align: center;">
-                <div>Created by Le Wagon Data Science Batch #2012</div>
-                <div style="font-style: italic; margin-top: 8px;">
-                    Built with ❤️ by the SolarSoundBytes team
-                </div>
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
+    col1, col2, col3 = st.columns(3)
+    with col2:
+        try:
+            img_col, text_col = st.columns([1, 3])
+            with img_col:
+                st.image('website/images/LeWagonIcon.png', width=100)
+            with text_col:
+                st.markdown(
+                    """
+                    <div style="text-align: center;">
+                        <div>Created by Le Wagon Data Science Batch #2012</div>
+                        <div style="font-style: italic; margin-top: 8px;">
+                            Built with ❤️ by the SolarSoundBytes team
+                        </div>
+                    </div>
+                    """,
+                    unsafe_allow_html=True
+                )
+        except FileNotFoundError:
+            st.info("📷 Image not found")
 
 def render_behind_scenes():
     """Render function for importing into other pages"""
