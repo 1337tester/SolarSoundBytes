@@ -5,10 +5,12 @@ import plotly.graph_objects as go2
 import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta
-from solarsoundbytes.import_twitter_sent_analysis import create_df_of_twitter_result
+from solarsoundbytes.import_twitter_sent_analysis import create_df_of_twitter_result, create_df_of_twitter_result_events
 from solarsoundbytes.import_newsarticle_sent_analysis import create_df_of_newsarticle_result
 from solarsoundbytes.process_sp500_df import preprocess_sp500_df
 from solarsoundbytes.import_energy_data import get_energy_df
+from solarsoundbytes.text_creation.create_text import create_text_from_sent_analy_df
+from gtts import gTTS
 
 # ---- All dashboard.py functions below (copied verbatim for reuse) ----
 
@@ -35,21 +37,22 @@ def interactive_dashboard():
 
     # --- DATA SOURCE ---
     df_twitter = create_df_of_twitter_result()
+    df_twitter_events = create_df_of_twitter_result_events()  # Events-specific Twitter data
     df_news = create_df_of_newsarticle_result()
     monthly_sp500 = preprocess_sp500_df()
     df_energy = get_energy_df()
     
-    # --- DATA PREVIEW ---
-    st.subheader("Data Preview")
-    col1, col2 = st.columns(2)
+    # # --- Data Preview ---
+    # st.subheader("Data Preview")
+    # col1, col2 = st.columns(2)
     
-    with col1:
-        st.write("**First 5 Twitter entries:**")
-        st.dataframe(df_twitter.head(), use_container_width=True)
+    # with col1:
+    #     st.write("**First 5 Twitter entries:**")
+    #     st.dataframe(df_twitter.head(), use_container_width=True)
     
-    with col2:
-        st.write("**First 5 News entries:**")
-        st.dataframe(df_news.head(), use_container_width=True)
+    # with col2:
+    #     st.write("**First 5 News entries:**")
+    #     st.dataframe(df_news.head(), use_container_width=True)
     
     st.markdown("---")
 
@@ -58,11 +61,15 @@ def interactive_dashboard():
 
     quarters_list = generate_quarters(2022, 2024)
 
-    col1, col2 = st.columns(2)
-    with col1:
-        selected_start = st.selectbox("Start Quarter", quarters_list, index=0)
-    with col2:
-        selected_end = st.selectbox("End Quarter", quarters_list, index=len(quarters_list) - 1)
+    # col1, col2 = st.columns(2)
+    # with col1:
+    #     selected_start = st.selectbox("Start Quarter", quarters_list, index=0)
+    # with col2:
+    #     selected_end = st.selectbox("End Quarter", quarters_list, index=len(quarters_list) - 1)
+    
+    # Set default values when quarter selectors are hidden
+    selected_start = quarters_list[0]  # First quarter (2022 Q1)
+    selected_end = quarters_list[-1]   # Last quarter (2024 Q4)
 
     def quarter_to_dates(q_str):
         year, q = map(int, q_str.split(" Q"))
@@ -181,82 +188,114 @@ def interactive_dashboard():
     # Set Twitter marker sizes to be proportional but larger
     twitter_size_capped = 12 + (monthly_stats_twitter['count'] / monthly_stats_twitter['count'].max()) * 12
     
-    fig.add_trace(go2.Scatter(
-        x=monthly_stats_twitter['month'],
-        y=y_with_offset,
-        mode='markers',
-        marker=dict(
-            symbol='diamond',
-            size=twitter_size_capped,
-            sizemode='diameter',
-            color=monthly_stats_twitter['mean_pos_score'],
-            colorscale='RdYlGn',
-            cmin=0.4,
-            cmax=0.8,
-            showscale=True,
-            colorbar=dict(
-                title='Mean Pos-score',
-                x=0.5,
-                y=1.15,
-                xanchor='center',
-                yanchor='top',
-                orientation='h',
-                len=0.5
-            ),
-        ),
-        name='Twitter Sentiment',
-        yaxis='y3',
-        customdata=monthly_stats_twitter[['mean_pos_score', 'std_correct_prob', 'count']].values,
-        hovertemplate=(
-            "<b>Month:</b> %{x|%Y-%m}<br>" +
-            "<b>Mean Correct Prob:</b> %{y:.2f}<br>" +
-            "<b>Std Dev (Correct Prob):</b> %{customdata[1]:.2f}<br>" +
-            "<b>Mean Pos-score:</b> %{customdata[0]:.2f}<br>" +
-            "<b>Twitter Count:</b> %{customdata[2]}<extra></extra>"
-        )
-    ))
+    # fig.add_trace(go2.Scatter(
+    #     x=monthly_stats_twitter['month'],
+    #     y=y_with_offset,
+    #     mode='markers',
+    #     marker=dict(
+    #         symbol='diamond',
+    #         size=twitter_size_capped,
+    #         sizemode='diameter',
+    #         color=monthly_stats_twitter['mean_pos_score'],
+    #         colorscale='RdYlGn',
+    #         cmin=0.4,
+    #         cmax=0.8,
+    #         showscale=True,
+    #         colorbar=dict(
+    #             title='Mean Pos-score',
+    #             x=0.5,
+    #             y=1.15,
+    #             xanchor='center',
+    #             yanchor='top',
+    #             orientation='h',
+    #             len=0.5
+    #         ),
+    #     ),
+    #     name='Twitter Sentiment',
+    #     yaxis='y3',
+    #     customdata=monthly_stats_twitter[['mean_pos_score', 'std_correct_prob', 'count']].values,
+    #     hovertemplate=(
+    #         "<b>Month:</b> %{x|%Y-%m}<br>" +
+    #         "<b>Mean Correct Prob:</b> %{y:.2f}<br>" +
+    #         "<b>Std Dev (Correct Prob):</b> %{customdata[1]:.2f}<br>" +
+    #         "<b>Mean Pos-score:</b> %{customdata[0]:.2f}<br>" +
+    #         "<b>Twitter Count:</b> %{customdata[2]}<extra></extra>"
+    #     )
+    # ))
 
-    fig.update_layout(
-        xaxis=dict(title='Date'),
-        yaxis=dict(
-            title='S&P 500 ($)',
-            side='right',
-            showgrid=False
-        ),
-        yaxis2=dict(
-            title='Installed Capacity Solar + Wind (MW)',
-            side='right',
-            overlaying='y',
-            anchor='free',
-            autoshift=True,
-            showgrid=False,
-            automargin=True
-        ),
-        yaxis3=dict(
-            title='Mean Probability of Correct Sentiment (%)',
-            side='left',
-            showgrid=True,
-            anchor='free',
-            overlaying='y',
-            position=0
-        ),
-        legend=dict(x=0.01, y=0.99),
-        height=600,
-        margin=dict(r=200),
-    )
+    # fig.update_layout(
+    #     xaxis=dict(title='Date'),
+    #     yaxis=dict(
+    #         title='S&P 500 ($)',
+    #         side='right',
+    #         showgrid=False
+    #     ),
+    #     yaxis2=dict(
+    #         title='Installed Capacity Solar + Wind (MW)',
+    #         side='right',
+    #         overlaying='y',
+    #         anchor='free',
+    #         autoshift=True,
+    #         showgrid=False,
+    #         automargin=True
+    #     ),
+    #     yaxis3=dict(
+    #         title='Mean Probability of Correct Sentiment (%)',
+    #         side='left',
+    #         showgrid=True,
+    #         anchor='free',
+    #         overlaying='y',
+    #         position=0
+    #     ),
+    #     legend=dict(x=0.01, y=0.99),
+    #     height=600,
+    #     margin=dict(r=200),
+    # )
 
-    st.plotly_chart(fig, use_container_width=True)
-    st.markdown("---")
+    # st.plotly_chart(fig, use_container_width=True)
+    # st.markdown("---")
+    
+    # --- TEXT GENERATION AND AUDIO ---
+    # st.subheader("AI-Generated Market Pulse Report")
+    # st.write(f"**Analysis Period:** {selected_start} to {selected_end}")
+    
+    # try:
+    #     # Note: Using available variables from the interactive dashboard
+    #     result_text = create_text_from_sent_analy_df(monthly_stats_news, monthly_stats_news, filtered_sp500, filtered_df_energy)
+    #     st.write("**Generated Report:**")
+    #     st.write(result_text)
+        
+    #     text = st.text_input(label='Edit the text if needed:', value=result_text)
+        
+    #     if st.button("🎧 Generate Audio"):
+    #         if isinstance(text, str) and text.strip():
+    #             from gtts import gTTS
+    #             tts = gTTS(text.strip(), lang="en")
+    #             tts.save("output.mp3")
+    #             st.audio("output.mp3", format="audio/mp3")
+    #         else:
+    #             st.warning("Text field is empty or invalid.")
+    # except Exception as e:
+    #     st.error(f"Error generating text: {str(e)}")
+    #     st.info("Text generation requires valid data for the selected time period.")
+    
+    # st.markdown("---")
 
 
 # ---- Main dashboard from sentiment_viz.py (unchanged) ----
-
 def main():
+    
+    st.set_page_config(page_title="Dashboard: Sentiment Visualization", layout="wide")
+    st.title("Monthly Sentiment Consensus: Articles vs Tweets")
+    
     # Only show the main dashboard from sentiment_viz.py as requested.
     # All functions from dashboard.py are imported above.
     # --- Streamlit UI ---
-    st.set_page_config(page_title="Monthly Sentiment Visualization", layout="wide")
-    st.title("Monthly Sentiment Consensus: Articles vs Tweets")
+    """Main function to run the page"""
+    dashboard_info()
+    interactive_dashboard()
+
+    
 
     # --- Generate mock data ---
     def generate_mock_data():
@@ -289,6 +328,7 @@ def main():
     monthly_stats_news['source'] = 'article'
 
     df_twitter = create_df_of_twitter_result()
+    df_twitter_events = create_df_of_twitter_result_events()  # Events-specific Twitter data
     df_twitter['date'] = pd.to_datetime(df_twitter['date'])
     df_twitter['month'] = df_twitter['date'].dt.to_period('M').dt.to_timestamp()
     df_twitter['correct_prob'] = df_twitter[['pos_score', 'neg_score']].max(axis=1)
@@ -358,15 +398,46 @@ def main():
         event_date = pd.to_datetime(GLOBAL_EVENTS[event_name_only])
         start_date = event_date - pd.Timedelta(days=1)
         end_date = event_date + pd.Timedelta(days=1)
+        
+        # Use events-specific data for the selected event
+        # Filter Twitter events data
+        df_twitter_events['date'] = pd.to_datetime(df_twitter_events['date']).dt.tz_convert(None)
+        df_twitter_filtered = df_twitter_events[(df_twitter_events['date'] >= start_date) & (df_twitter_events['date'] <= end_date)].copy()
+        df_twitter_filtered['date'] = pd.to_datetime(df_twitter_filtered['date'])
+        df_twitter_filtered['hour'] = df_twitter_filtered['date'].dt.to_period('H').dt.to_timestamp()
+        df_twitter_filtered['correct_prob'] = df_twitter_filtered[['pos_score', 'neg_score']].max(axis=1)
+        
+        # Aggregate Twitter by hour for events (like in event_russia.py)
+        hourly_stats_twitter = df_twitter_filtered.groupby('hour').agg(
+            mean_sentiment=('pos_score', 'mean'),
+            count=('correct_prob', 'count'),
+            std_sentiment=('correct_prob', 'std'),
+        ).reset_index()
+        hourly_stats_twitter['source'] = 'tweet'
+        hourly_stats_twitter = hourly_stats_twitter.rename(columns={'hour': 'month'})
+        
+        # Filter News data
+        df_news['date'] = pd.to_datetime(df_news['date'])
+        df_news_filtered = df_news[(df_news['date'] >= start_date) & (df_news['date'] <= end_date)].copy()
+        df_news_filtered['correct_prob'] = df_news_filtered[['pos_score', 'neg_score']].max(axis=1)
+        
+        # Aggregate News by day for events
+        daily_stats_news = df_news_filtered.groupby('date').agg(
+            mean_sentiment=('pos_score', 'mean'),
+            count=('correct_prob', 'count'),
+            std_sentiment=('correct_prob', 'std'),
+        ).reset_index()
+        daily_stats_news['source'] = 'article'
+        daily_stats_news = daily_stats_news.rename(columns={'date': 'month'})
+        
+        # Combine Twitter and News data for events
+        df_window = pd.concat([hourly_stats_twitter, daily_stats_news])
+        
         months_dt = pd.to_datetime(months, format='%Y-%m')
         start_idx = np.searchsorted(months_dt, start_date, side='left')
         end_idx = np.searchsorted(months_dt, end_date, side='right') - 1
         start_idx = max(0, start_idx)
         end_idx = min(len(months) - 1, end_idx)
-        if start_idx > end_idx or start_idx >= len(months) or end_idx < 0:
-            df_window = pd.DataFrame(columns=df.columns)
-        else:
-            df_window = df[(df['month'] >= pd.to_datetime(months[start_idx])) & (df['month'] <= pd.to_datetime(months[end_idx]))]
     else:
         start_idx, end_idx = st.select_slider(
             "Select time window:",
@@ -639,10 +710,61 @@ def main():
                 font=dict(color="darkgrey", size=10)
             )
     st.plotly_chart(fig, use_container_width=True)
+    
+    # --- TEXT GENERATION AND AUDIO ---
+    st.subheader("AI-Generated Market Pulse Report")
+    
+    # Get the actual date range from the slider
+    start_month_str = months[start_idx] if start_idx < len(months) else "N/A"
+    end_month_str = months[end_idx] if end_idx < len(months) else "N/A"
+    st.write(f"**Analysis Period:** {start_month_str} to {end_month_str}")
+    
+    try:
+        # Filter data for the selected period for text generation
+        filtered_news_for_text = df_news[(df_news['month'] >= pd.to_datetime(months[start_idx])) & (df_news['month'] <= pd.to_datetime(months[end_idx]))]
+        filtered_twitter_for_text = df_twitter[(df_twitter['month'] >= pd.to_datetime(months[start_idx])) & (df_twitter['month'] <= pd.to_datetime(months[end_idx]))]
+        
+        # Aggregate the filtered data for text generation
+        monthly_stats_news_text = filtered_news_for_text.groupby('month').agg(
+            mean_sentiment=('pos_score', 'mean'),
+            count=('correct_prob', 'count'),
+            std_sentiment=('correct_prob', 'std'),
+        ).reset_index()
+        
+        monthly_stats_twitter_text = filtered_twitter_for_text.groupby('month').agg(
+            mean_sentiment=('pos_score', 'mean'),
+            count=('correct_prob', 'count'),
+            std_sentiment=('correct_prob', 'std'),
+        ).reset_index()
+        
+        # Filter SP500 and energy data for the same period
+        filtered_sp500_text = monthly_sp500[(monthly_sp500['month'] >= pd.to_datetime(months[start_idx])) & (monthly_sp500['month'] <= pd.to_datetime(months[end_idx]))]
+        filtered_energy_text = df_energy[(df_energy['month'] >= pd.to_datetime(months[start_idx])) & (df_energy['month'] <= pd.to_datetime(months[end_idx]))]
+        
+        result_text = create_text_from_sent_analy_df(monthly_stats_twitter_text, monthly_stats_news_text, filtered_sp500_text, filtered_energy_text)
+        st.write("**Generated Report:**")
+        st.write(result_text)
+        
+        text = st.text_input(label='Edit the text if needed:', value=result_text)
+        
+        if st.button("🎧 Generate Audio"):
+            if isinstance(text, str) and text.strip():
+                tts = gTTS(text.strip(), lang="en")
+                tts.save("output.mp3")
+                st.audio("output.mp3", format="audio/mp3")
+            else:
+                st.warning("Text field is empty or invalid.")
+    except Exception as e:
+        st.error(f"Error generating text: {str(e)}")
+        st.info("Text generation requires valid data for the selected time period.")
 
+    
+# Run the page
 if __name__ == "__main__":
     main()
-
+else:
+    # This runs when imported
+    interactive_dashboard()
 
 
 # import streamlit as st
@@ -653,7 +775,7 @@ if __name__ == "__main__":
 # from gtts import gTTS
 # from solarsoundbytes.import_twitter_sent_analysis import create_df_of_twitter_result
 # from solarsoundbytes.import_newsarticle_sent_analysis import create_df_of_newsarticle_result
-# from solarsoundbytes.text_creation.create_text import create_text_from_sent_analy_df
+
 # from solarsoundbytes.process_sp500_df import preprocess_sp500_df
 # from solarsoundbytes.import_energy_data import get_energy_df
 
@@ -1448,32 +1570,7 @@ if __name__ == "__main__":
 
 
 
-# #result_text = create_text_from_sent_analy_df(monthly_stats_twitter, monthly_stats_news ,filtered_sp500, filtered_df_energy)
-
-# #st.write(result_text)
-
-# # text = st.text_input(label='1', value=result_text)
+# Text generation moved to inside functions where variables are defined
 
 
-# # if st.button("Play"):
-# #if isinstance(result_text, str) and result_text.strip():
-# #        tts = gTTS(result_text.strip(), lang="en")
-# #        tts.save("output.mp3")
-# #        st.audio("output.mp3", format="audio/mp3")
-# #else:
-# #        st.warning("Text field is empty or invalid.")
 
-# st.markdown("---")
-
-
-# def main():
-#     """Main function to run the page"""
-#     dashboard_info()
-#     interactive_dashboard()
-
-# # Run the page
-# if __name__ == "__main__":
-#     main()
-# else:
-#     # This runs when imported
-#     interactive_dashboard()
