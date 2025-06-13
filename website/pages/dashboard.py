@@ -22,7 +22,7 @@ def dashboard_info():
     st.markdown("""
     Navigate through our sentiment analysis dashboard to explore how public opinion from ***tweets and official news***
     correlates with renewable energy indicators ***(S&P 500)*** performance and the actual capacity growth
-    ***(Ember's Monthly Wind and Solar Capacity Data)***. Then scroll down for your custom market pulse report - available in both text and audio format.""")
+    ***([Ember's Monthly Wind and Solar Capacity Data](https://ember-energy.org/data/monthly-wind-and-solar-capacity-data/))***. Then scroll down for your custom market pulse report - available in both text and audio format.""")
     st.markdown("---")
 
 def interactive_dashboard():
@@ -285,13 +285,13 @@ def interactive_dashboard():
 # ---- Main dashboard from sentiment_viz.py (unchanged) ----
 def main():
     
-    st.set_page_config(page_title="Dashboard: Sentiment Visualization", layout="wide")
-    st.title("Monthly Sentiment Consensus: Articles vs Tweets")
+    st.set_page_config(page_title="SolarSoundBytes: Renewables Made Audible", layout="wide")
+    # st.title("Monthly Sentiment Consensus: Articles vs Tweets")
     
     # Only show the main dashboard from sentiment_viz.py as requested.
     # All functions from dashboard.py are imported above.
     # --- Streamlit UI ---
-    """Main function to run the page"""
+    # """Main function to run the page"""
     dashboard_info()
     interactive_dashboard()
 
