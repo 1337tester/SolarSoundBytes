@@ -66,37 +66,6 @@ if start_date > end_date:
     st.error("Start quarter must be before end quarter.")
     st.stop()
 
-# Filter datasets
-# filtered_sp500 = monthly_sp500[(monthly_sp500['month'] >= start_date) & (monthly_sp500['month'] <= end_date)]
-# filtered_counts_twitter = counts_twitter[(counts_twitter['quarter_start'] >= start_date) & (counts_twitter['quarter_start'] <= end_date)]
-# filtered_counts_news = counts_news[(counts_news['quarter_start'] >= start_date) & (counts_news['quarter_start'] <= end_date)]
-
-# # Streamlit Selectboxes for quarter selection
-# st.sidebar.header("Select Date Range")
-# years = range(2022, 2024)
-# quarters = ["Q1", "Q2", "Q3", "Q4"]
-
-# start_quarter_options = [f"{year} {q}" for year in years for q in quarters]
-# end_quarter_options = [f"{year} {q}" for year in years for q in quarters]
-
-# selected_start = st.sidebar.selectbox("Start Quarter", start_quarter_options, index=start_quarter_options.index("2015 Q1"))
-# selected_end = st.sidebar.selectbox("End Quarter", end_quarter_options, index=end_quarter_options.index("2024 Q4"))
-
-# def quarter_to_dates(q_str):
-#     year, q = map(int, q_str.split(" Q"))
-#     start_month = (q - 1) * 3 + 1
-#     end_month = start_month + 2
-#     start_date = pd.to_datetime(f"{year}-{start_month:02d}-01")
-#     end_date = pd.to_datetime(f"{year}-{end_month:02d}-01") + pd.offsets.MonthEnd(1)
-#     return start_date, end_date
-
-# start_date, _ = quarter_to_dates(selected_start)
-# _, end_date = quarter_to_dates(selected_end)
-
-# # Ensure start < end
-# if start_date > end_date:
-#     st.error("Start quarter must be before end quarter.")
-#     st.stop()
 
 # Filter datasets
 filtered_sp500 = monthly_sp500[(monthly_sp500['month'] >= start_date) & (monthly_sp500['month'] <= end_date)]
@@ -169,7 +138,7 @@ fig.add_trace(go.Scatter(
         cmax=0.8,
         showscale=True,
         colorbar=dict(
-            title='Mean Pos-score',
+            title='Negative/Positive?',
             x=0.5,
             y=1.15,
             xanchor='center',
@@ -194,28 +163,28 @@ fig.add_trace(go.Scatter(
 ))
 
 # --- NEW: Separate Trace for Standard Deviation Error Bars ---
-fig.add_trace(go.Scatter(
-    x=monthly_stats_news['month'],
-    y=monthly_stats_news['std_correct_prob'], # Y-values are the same as the bubbles
-    mode='lines', # No markers or lines for this trace, only error bars
-    line=dict(
-        color='grey',
-        width=0,
-    ),
-    error_y=dict(
-        type='data',
-        array=monthly_stats_news['std_correct_prob'],
-        symmetric=True,
-        visible=True,
-        color='grey', # You can choose a color for your error bars
-        width=1 # Thickness of the error bar line
-    ),
-    name='Std (News Sentiment)', # Name for the legend
-    yaxis='y3', # Use the same y-axis as the bubbles
-    showlegend=True, # Ensure it shows in the legend
-    hoverinfo='skip', # Skip hover info for this trace to avoid clutter
-    visible='legendonly'
-))
+# fig.add_trace(go.Scatter(
+#     x=monthly_stats_news['month'],
+#     y=monthly_stats_news['std_correct_prob'], # Y-values are the same as the bubbles
+#     mode='lines', # No markers or lines for this trace, only error bars
+#     line=dict(
+#         color='grey',
+#         width=0,
+#     ),
+#     error_y=dict(
+#         type='data',
+#         array=monthly_stats_news['std_correct_prob'],
+#         symmetric=True,
+#         visible=True,
+#         color='grey', # You can choose a color for your error bars
+#         width=1 # Thickness of the error bar line
+#     ),
+#     name='Std (News Sentiment)', # Name for the legend
+#     yaxis='y3', # Use the same y-axis as the bubbles
+#     showlegend=True, # Ensure it shows in the legend
+#     hoverinfo='skip', # Skip hover info for this trace to avoid clutter
+#     visible='legendonly'
+# ))
 
 ####################
 ########Twitter
@@ -226,9 +195,6 @@ df_twitter_filtered = df_twitter[(df_twitter['date'] >= start_date) & (df_twitte
 
 # Konvertiere Datum und extrahiere Monat
 df_twitter_filtered['date'] = pd.to_datetime(df_twitter_filtered['date'])
-
-
-
 df_twitter_filtered['month'] = df_twitter_filtered['date'].dt.to_period('M').dt.to_timestamp()
 
 # Berechne die Wahrscheinlichkeit des korrekten Sentiments je Zeile
@@ -252,7 +218,7 @@ monthly_stats_twitter['std_correct_prob'] = monthly_stats_twitter['std_correct_p
 # --- News Sentiment Bubble Chart Trace (main trace) ---
 fig.add_trace(go.Scatter(
     x=monthly_stats_twitter['month'], # X-Achse
-    y=monthly_stats_twitter['std_correct_prob'], # **NEU: Y-Achse ist jetzt die Standardabweichung**
+    y=monthly_stats_twitter['std_correct_prob'],
     mode='markers',
     marker=dict(
         symbol='diamond',  # Markerform
@@ -286,7 +252,7 @@ fig.update_layout(
         showgrid=False
     ),
     yaxis2=dict(
-        title='Installed Capacity Solar + Wind (MW)',
+        title='Installed Capacity Solar + Wind (GW)',
         side='right', # Secondary right axis
         overlaying='y', # Overlays the primary y-axis
         anchor='free',  # Allows it to be positioned independently
@@ -296,13 +262,14 @@ fig.update_layout(
 
     ),
     yaxis3=dict(
-        title='Mean Probability of Correct Sentiment (%)',
+        title='',
         side='left', # News Sentiment on the left
         showgrid=True,
         anchor='free', # Allow free positioning
         overlaying='y', # Overlay on the primary y-axis
         autorange="reversed",
-        position=0 # Position of the left y-axis (0 is far left)
+        position=0, # Position of the left y-axis (0 is far left)
+        showticklabels=False
     ),
     legend=dict(x=0.01, y=0.99), # Legend position
     height=600,
@@ -312,28 +279,58 @@ fig.update_layout(
     # yaxis2_range=[min_val_renewables, max_val_renewables],
     # yaxis3_range=[min_val_sentiment, max_val_sentiment],
 )
+fig.add_annotation(
+    xref="paper",  # Referenz zum Plot-Bereich (0 ist ganz links, 1 ist ganz rechts)
+    yref="y3",     # Referenz zur dritten y-Achse
+    x=0.0,         # Ganz links am Rand der Achse
+    y=0.08,           # Oben auf der umgekehrten Achse (niedrigster Datenwert)
+    text="more consent",
+    showarrow=False,
+    textangle=-90, # Dreht den Text um -90 Grad (vertikal)
+    xanchor="right", # Textanker, um die Ausrichtung zu steuern
+    yanchor="middle",
+    font=dict(size=14)
+)
+
+fig.add_annotation(
+    xref="paper",
+    yref="y3",
+    x=0.0,
+    y=0.12,           # Unten auf der umgekehrten Achse (höchster Datenwert)
+    text="less consent",
+    showarrow=False,
+    textangle=-90,
+    xanchor="right",
+    yanchor="middle",
+    font=dict(size=14)
+)
 
 st.plotly_chart(fig, use_container_width=True)
 
-#######################Switch to Events Site ################################
+#######################Switch to Events pages ################################
 ############################################################################
-if st.button("Russias invasion of Ukraine "):
-    st.switch_page("pages/event_russia.py")
+# Create 6 equal columns with proper spacing
+col1, col2, col3, col4, col5, col6 = st.columns(6, gap="medium")
 
-if st.button("REPowerEU"):
-    st.switch_page("pages/repowereu.py")
+with col1:
+    if st.button("2022-02-24"):
+        st.switch_page("pages/event_russia.py")
+with col2:
+    if st.button("2022-05-18"):
+        st.switch_page("pages/repowereu.py")
+with col6:
+    if st.button("2023-12-12"):
+        st.switch_page("pages/cop28.py")
 
-if st.button("COP28"):
-    st.switch_page("pages/cop28.py")
-
-if st.button("Solar Invest > Oil Invest"):
-    st.switch_page("pages/solar_oil.py")
-
-if st.button("IRA USA"):
-    st.switch_page("pages/eu_ira.py")
-
-if st.button("Solar Production > 1 TW"):
-    st.switch_page("pages/solar_1tw.py")
+with col5:
+    if st.button("2023-05-30"):
+        st.switch_page("pages/solar_oil.py")
+with col3:
+    if st.button("2022-08-16"):
+        st.switch_page("pages/us_ira.py")
+with col4:
+    if st.button("2022-12-31"):
+        st.switch_page("pages/solar_1tw.py")
 
 
 ############################################################################
@@ -342,20 +339,21 @@ if st.button("Solar Production > 1 TW"):
 ############################################################################
 #############################################################################
 
-result_text = create_text_from_sent_analy_df(monthly_stats_twitter, monthly_stats_news ,filtered_sp500, filtered_df_energy)
+st.subheader("Automatically generated explanation of the plot in the selected timeframe")
+# result_text = create_text_from_sent_analy_df(monthly_stats_twitter, monthly_stats_news ,filtered_sp500, filtered_df_energy)
 
-st.write(result_text)
+# st.write(result_text)
 
-# text = st.text_input(label='1', value=result_text)
+# # text = st.text_input(label='1', value=result_text)
 
-
-# if st.button("Play"):
-if isinstance(result_text, str) and result_text.strip():
-        tts = gTTS(result_text.strip(), lang="en")
-        tts.save("output.mp3")
-        st.audio("output.mp3", format="audio/mp3")
-else:
-        st.warning("Text field is empty or invalid.")
+# st.subheader('The Podcast')
+# # if st.button("Play"):
+# if isinstance(result_text, str) and result_text.strip():
+#         tts = gTTS(result_text.strip(), lang="en")
+#         tts.save("output.mp3")
+#         st.audio("output.mp3", format="audio/mp3")
+# else:
+#         st.warning("Text field is empty or invalid.")
 
 #############################################################################
 
