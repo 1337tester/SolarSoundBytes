@@ -359,14 +359,11 @@ def navigation_buttons():
     """Display navigation buttons"""
     col1, col2, col3, col4, col5 = st.columns([1, 1, 1, 1, 1])
     with col2:
-        if st.button("🏠 Back to Home", use_container_width=True):
-            st.switch_page("home.py")
+        st.link_button("🏠 Back to Home", "home.py", use_container_width=True)
     with col3:
-        if st.button("📊 Try Dashboard", use_container_width=True):
-            st.switch_page("pages/app.py")
+        st.link_button("📊 Try Dashboard", "pages/app.py", use_container_width=True)
     with col4:
-        if st.button("🚀 Future Features", use_container_width=True):
-            st.switch_page("pages/upcoming.py")
+        st.link_button("🚀 Future Features", "https://github.com/FadriPestalozzi/SolarSoundBytes")
 
 def footer_section():
     """Display the footer with logo and credits"""

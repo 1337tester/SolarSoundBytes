@@ -74,7 +74,7 @@ def render_about_us():
         st.markdown('<div class="team-member">', unsafe_allow_html=True)
         st.subheader("Fadri Pestalozzi")
         try:
-            image = Image.open('images/Fadri.jpeg')
+            image = Image.open('website/images/Fadri.jpeg')
             image = image.resize((250, 250), Image.Resampling.LANCZOS)
             st.image(image)
         except FileNotFoundError: st.info("📷 Image not found")
@@ -100,7 +100,7 @@ def render_about_us():
         st.markdown('<div class="team-member">', unsafe_allow_html=True)
         st.subheader("Steffen Lauterbach")
         try:
-            image = Image.open('images/SteffenLauterbach.png')
+            image = Image.open('website/images/SteffenLauterbach.png')
             image = image.resize((250, 250), Image.Resampling.LANCZOS)
             st.image(image)
         except FileNotFoundError: st.info("📷 Image not found")
@@ -129,7 +129,7 @@ def render_about_us():
         st.markdown('<div class="team-member">', unsafe_allow_html=True)
         st.subheader("Enrique Flores Roldán")
         try:
-            image = Image.open('images/Enrique.jpeg')
+            image = Image.open('website/images/Enrique.jpeg')
             width, height = image.size
             size = min(width, height)  # Use the smaller dimension
             left = (width - size) // 2

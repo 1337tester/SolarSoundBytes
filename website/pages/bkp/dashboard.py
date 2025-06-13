@@ -38,20 +38,6 @@ def interactive_dashboard():
     df_news = create_df_of_newsarticle_result()
     monthly_sp500 = preprocess_sp500_df()
     df_energy = get_energy_df()
-    
-    # --- DATA PREVIEW ---
-    st.subheader("Data Preview")
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        st.write("**First 5 Twitter entries:**")
-        st.dataframe(df_twitter.head(), use_container_width=True)
-    
-    with col2:
-        st.write("**First 5 News entries:**")
-        st.dataframe(df_news.head(), use_container_width=True)
-    
-    st.markdown("---")
 
     def generate_quarters(start_year, end_year):
         return [f"{year} Q{q}" for year in range(start_year, end_year + 1) for q in range(1, 5)]
@@ -178,8 +164,8 @@ def interactive_dashboard():
     random_offset = np.random.uniform(low=-0.2, high=0.2, size=len(monthly_stats_twitter))
     y_with_offset = monthly_stats_twitter['mean_correct_prob'] + random_offset * monthly_stats_twitter['mean_correct_prob']
 
-    # Set Twitter marker sizes to be proportional but larger
-    twitter_size_capped = 12 + (monthly_stats_twitter['count'] / monthly_stats_twitter['count'].max()) * 12
+    # Set Twitter marker sizes to be very small and proportional
+    twitter_size_capped = 4 + (monthly_stats_twitter['count'] / monthly_stats_twitter['count'].max()) * 4
     
     fig.add_trace(go2.Scatter(
         x=monthly_stats_twitter['month'],
@@ -303,9 +289,8 @@ def main():
     df = pd.concat([monthly_stats_twitter, monthly_stats_news])
 
     def sentiment_color(val):
-        # Map sentiment from 0-1 range: 0=red, 1=green
-        r = int(255 * (1 - val))  # Red decreases as sentiment increases
-        g = int(255 * val)        # Green increases as sentiment increases
+        r = int(255 * (1 - (val + 1) / 2))
+        g = int(255 * ((val + 1) / 2))
         return f'rgb({r},{g},100)'
 
     GLOBAL_EVENTS = {
@@ -437,7 +422,7 @@ def main():
             fig.data[source_idx].x = d_all_data['month'].tolist() if not d_all_data.empty else []
             fig.data[source_idx].y = d_all_data['std_sentiment'].tolist() if not d_all_data.empty else []
             if shape == 'diamond':  # Twitter symbols
-                fig.data[source_idx].marker.size = [12 + (cnt/d_all_data['count'].max())*12 for cnt in d_all_data['count']] if not d_all_data.empty else []
+                fig.data[source_idx].marker.size = [4 + (cnt/d_all_data['count'].max())*4 for cnt in d_all_data['count']] if not d_all_data.empty else []
             else:  # News symbols
                 fig.data[source_idx].marker.size = np.sqrt(d_all_data['count'])*3 if not d_all_data.empty else []
             fig.data[source_idx].marker.color = [sentiment_color(v) for v in d_all_data['mean_sentiment']] if not d_all_data.empty else []
@@ -452,7 +437,7 @@ def main():
             fig.data[source_idx].x = d_first_month['month'].tolist() if not d_first_month.empty else []
             fig.data[source_idx].y = d_first_month['std_sentiment'].tolist() if not d_first_month.empty else []
             if shape == 'diamond':  # Twitter symbols
-                fig.data[source_idx].marker.size = [12 + (cnt/d_first_month['count'].max())*12 for cnt in d_first_month['count']] if not d_first_month.empty else []
+                fig.data[source_idx].marker.size = [4 + (cnt/d_first_month['count'].max())*4 for cnt in d_first_month['count']] if not d_first_month.empty else []
             else:  # News symbols
                 fig.data[source_idx].marker.size = np.sqrt(d_first_month['count'])*3 if not d_first_month.empty else []
             marker_colors = []
@@ -543,7 +528,7 @@ def main():
                     'x': d_for_frame['month'].tolist() if not d_for_frame.empty else [],
                     'y': d_for_frame['std_sentiment'].tolist() if not d_for_frame.empty else [],
                     'marker': {
-                        'size': [12 + (cnt/d_for_frame['count'].max())*12 for cnt in d_for_frame['count']] if shape == 'diamond' and not d_for_frame.empty else (np.sqrt(d_for_frame['count'])*3 if not d_for_frame.empty else []),
+                        'size': [4 + (cnt/d_for_frame['count'].max())*4 for cnt in d_for_frame['count']] if shape == 'diamond' and not d_for_frame.empty else (np.sqrt(d_for_frame['count'])*3 if not d_for_frame.empty else []),
                         'color': marker_colors,
                         'symbol': shape,
                         'line': dict(width=1, color='black'),

@@ -157,7 +157,6 @@ def generate_metric_data(months):
         **metrics
     })
 
-# --- UI Description ---
 st.markdown("""
 - **Circles**: Articles (Monthly)
 - **Rhombi**: Tweets (Monthly)
@@ -222,7 +221,7 @@ if selected_event and selected_event != "None":
 st.sidebar.header("Metric Overlays")
 selected_metrics = st.sidebar.multiselect(
     "Select metrics to overlay:",
-    options=['S&P 500', 'Installed Capacity Renewables'],
+    options=['Solar Investment', 'Oil Investment', 'Renewable Energy Jobs', 'Carbon Emissions'],
     default=[]
 )
 
@@ -253,7 +252,10 @@ else:
 # 1. Initialize sentiment traces as placeholders
 for source_name_for_trace, shape, display_name, legend_group in sentiment_traces_config:
     fig.add_trace(go.Scatter(
-        x=[], y=[], mode='markers',
+
+        x=[],
+        y=[],
+
         marker=dict(
             size=[],
             color=[],
@@ -287,13 +289,53 @@ for metric_idx, (metric, color) in enumerate(zip(selected_metrics, colors)):
         legendgroup=metric
     ))
 
-# 2. Populate the initial traces (static view)
-if not show_animation:
-    # Removed trace_idx_counter here, as we directly address fig.data[0] and fig.data[1] in the event case
 
-    if selected_event and selected_event != "None":
-        # Populate hourly event data for both article and tweet (using df_window_events)
-        # Trace indices are now 0 for Article and 1 for Tweet based on initialization above
+# 2. Populate the initial traces based on animation state (static or first frame of animation)
+if not show_animation: # If not animating, show all data in the current window
+    for source_idx, (source, shape) in enumerate(zip(['article', 'tweet'], ['circle', 'diamond'])):
+        d_all_data = df_window[df_window['source'] == source]
+        fig.data[source_idx].x = d_all_data['month'].tolist() if not d_all_data.empty else []
+        fig.data[source_idx].y = d_all_data['std_sentiment'].tolist() if not d_all_data.empty else []
+        fig.data[source_idx].marker.size = np.sqrt(d_all_data['count'])*3 if not d_all_data.empty else []
+        fig.data[source_idx].marker.color = [sentiment_color(v) for v in d_all_data['mean_sentiment']] if not d_all_data.empty else []
+        fig.data[source_idx].text = [
+            f"{source.capitalize()}<br>Month: {m.strftime('%Y-%m')}<br>Mean Sentiment: {s:.2f}<br>Consensus: {c:.2f}<br>Count: {cnt}"
+            for m, s, c, cnt in zip(d_all_data['month'], d_all_data['mean_sentiment'], d_all_data['std_sentiment'], d_all_data['count'])
+        ] if not d_all_data.empty else []
+elif months_with_data: # If animating and there's data to animate, initialize with first month's data
+    first_month = months_with_data[0]
+    for source_idx, (source, shape) in enumerate(zip(['article', 'tweet'], ['circle', 'diamond'])):
+        # Initialize with cumulative data up to the first month for the trace effect
+        d_first_month = df_window[(df_window['source'] == source) & (df_window['month'] <= first_month)]
+        fig.data[source_idx].x = d_first_month['month'].tolist() if not d_first_month.empty else []
+        fig.data[source_idx].y = d_first_month['std_sentiment'].tolist() if not d_first_month.empty else []
+        fig.data[source_idx].marker.size = np.sqrt(d_first_month['count'])*3 if not d_first_month.empty else []
+        # Prepare marker colors and opacity based on the trace logic for the initial frame
+        marker_colors = []
+        marker_opacities = []
+        if not d_first_month.empty:
+            for i, row in d_first_month.iterrows():
+                marker_colors.append(sentiment_color(row['mean_sentiment']))
+                if row['month'] < first_month: # Faded for past points in trace mode
+                    marker_opacities.append(0.3)
+                else: # Opaque for current point
+                    marker_opacities.append(1.0)
+        fig.data[source_idx].marker.color = marker_colors
+        fig.data[source_idx].marker.opacity = marker_opacities
+        fig.data[source_idx].text = [
+            f"{source.capitalize()}<br>Month: {m.strftime('%Y-%m')}<br>Mean Sentiment: {s:.2f}<br>Consensus: {c:.2f}<br>Count: {cnt}"
+            for m, s, c, cnt in zip(d_first_month['month'], d_first_month['mean_sentiment'], d_first_month['std_sentiment'], d_first_month['count'])
+        ] if not d_first_month.empty else []
+
+    # Also initialize metric traces with data up to the first month
+    for metric_idx, (metric, color) in enumerate(zip(selected_metrics, colors)):
+        # Ensure the trace exists. The sentiment traces are at index 0 and 1.
+        # Metric traces will start from index 2.
+        metric_trace_idx = 2 + metric_idx
+        if metric_trace_idx < len(fig.data):
+            d_metric_first_month = metric_df[metric_df['month'] <= first_month]
+            fig.data[metric_trace_idx].x = d_metric_first_month['month'].tolist() if not d_metric_first_month.empty else []
+            fig.data[metric_trace_idx].y = d_metric_first_month[metric].tolist() if not d_metric_first_month.empty else []
 
         # Article Hourly Event - Corresponds to fig.data[0]
         hourly_data_article = df_window_events[df_window_events['source'] == 'article']
@@ -321,11 +363,11 @@ if not show_animation:
                 for h, s, c, cnt in zip(hourly_data_tweet['hour'], hourly_data_tweet['mean_sentiment'], hourly_data_tweet['std_sentiment'], hourly_data_tweet['count'])
             ]
 
-    elif not df_window.empty: # Populate monthly sentiment data if no event is selected
+        elif not df_window.empty: # Populate monthly sentiment data if no event is selected
         # Trace indices are 0 for Article and 1 for Tweet based on initialization above
 
         # Monthly Article
-        d_all_data_article = df_window[df_window['source'] == 'article']
+            d_all_data_article = df_window[df_window['source'] == 'article']
         if not d_all_data_article.empty:
             fig.data[0].x = d_all_data_article['month'].tolist()
             fig.data[0].y = d_all_data_article['std_sentiment'].tolist()
