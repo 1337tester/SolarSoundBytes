@@ -252,60 +252,34 @@ def interactive_dashboard():
     #     margin=dict(r=200),
     # )
 
-    # --- Update Layout ---
-    fig.update_layout(
-        xaxis=dict(title='Date'),
-        yaxis=dict(
-            title='S&P 500 ($)',
-            side='right', # S&P 500 on the right
-            #position = 0.95,
-            showgrid=False
-        ),
-        yaxis2=dict(
-            title='Installed Capacity Solar + Wind (MW)',
-            side='right', # Secondary right axis
-            overlaying='y', # Overlays the primary y-axis
-            anchor='free',  # Allows it to be positioned independently
-            autoshift=True, # THIS IS THE KEY! Automatically shifts to avoid overlap
-            showgrid=False,
-            automargin=True # Let Plotly adjust margin for this axis if needed
-
-        ),
-        yaxis3=dict(
-            title='Mean Probability of Correct Sentiment (%)',
-            side='left', # News Sentiment on the left
-            showgrid=True,
-            anchor='free', # Allow free positioning
-            overlaying='y', # Overlay on the primary y-axis
-            position=0 # Position of the left y-axis (0 is far left)
-        ),
-        legend=dict(x=0.01, y=0.99), # Legend position
-        height=600,
-        margin=dict(r=200),
-        # Make sure to set proper ranges if necessary or Plotly will auto-scale
-        # yaxis_range=[min_val_sp500, max_val_sp500],
-        # yaxis2_range=[min_val_renewables, max_val_renewables],
-        # yaxis3_range=[min_val_sentiment, max_val_sentiment],
-    )
-
-    st.plotly_chart(fig, use_container_width=True)
-
-    result_text = create_text_from_sent_analy_df(monthly_stats_twitter, monthly_stats_news ,filtered_sp500, filtered_df_energy)
-
-    st.write(result_text)
-
-    text = st.text_input(label='1', value=result_text)
-
-
-    if st.button("Play"):
-        if isinstance(result_text, str) and result_text.strip():
-                tts = gTTS(result_text.strip(), lang="en")
-                tts.save("output.mp3")
-                st.audio("output.mp3", format="audio/mp3")
-        else:
-                st.warning("Text field is empty or invalid.")
-
-        st.markdown("---")
+    # st.plotly_chart(fig, use_container_width=True)
+    # st.markdown("---")
+    
+    # --- TEXT GENERATION AND AUDIO ---
+    # st.subheader("AI-Generated Market Pulse Report")
+    # st.write(f"**Analysis Period:** {selected_start} to {selected_end}")
+    
+    # try:
+    #     # Note: Using available variables from the interactive dashboard
+    #     result_text = create_text_from_sent_analy_df(monthly_stats_news, monthly_stats_news, filtered_sp500, filtered_df_energy)
+    #     st.write("**Generated Report:**")
+    #     st.write(result_text)
+        
+    #     text = st.text_input(label='Edit the text if needed:', value=result_text)
+        
+    #     if st.button("🎧 Generate Audio"):
+    #         if isinstance(text, str) and text.strip():
+    #             from gtts import gTTS
+    #             tts = gTTS(text.strip(), lang="en")
+    #             tts.save("output.mp3")
+    #             st.audio("output.mp3", format="audio/mp3")
+    #         else:
+    #             st.warning("Text field is empty or invalid.")
+    # except Exception as e:
+    #     st.error(f"Error generating text: {str(e)}")
+    #     st.info("Text generation requires valid data for the selected time period.")
+    
+    # st.markdown("---")
 
 
 # ---- Main dashboard from sentiment_viz.py (unchanged) ----
@@ -1599,6 +1573,5 @@ else:
 
 
 # Text generation moved to inside functions where variables are defined
-
 
 
