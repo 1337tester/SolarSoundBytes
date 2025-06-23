@@ -3,9 +3,6 @@
 - [Project Overview](#project-overview)
   - [SoundBytes](#soundbytes)
   - [Tagline](#tagline)
-- [Website](#website)
-- [MVP](#mvp)
-- [Beyond the MVP](#beyond-the-mvp)
 - [👥 Roles and Responsabilities of Collaborators](#-roles-and-responsabilities-of-collaborators)
 - [Table of Contents](#table-of-contents-1)
 - [Gather Data](#gather-data)
@@ -49,6 +46,10 @@ correlations) and both are also mapped onto the global capacity of renewable ene
 and energy storage technologies recorded during the same timeframe from 2022-01-02 to
 2024-12-24. 
 
+This project is a real-world application of the learnings acquired
+during our 
+[9-week bootcamp at Le Wagon](https://www.lewagon.com/barcelona/data-science-course) and was created during our final 2 weeks together in Barcelona from June 2 to 13, 2025.
+
 ## SoundBytes
 
 We've created **SoundBytes** - short audio summaries that turn our data insights into easy-to-understand stories. Users can pick any combination of data streams and time periods to generate custom audio reports, making the energy transition accessible to everyone.
@@ -57,44 +58,13 @@ To draw your own concusions, anyone can play with our extensive dataset using [t
 
 ## Tagline
 
-To break down the complexity of this project, here are 2 taglines. 
+To break down the complexity of this project, we created 2 taglines. 
 
-Which one was written by a human and which by an AI agent?
+Now it's up to your human intuition to decide: 
+Which tagline was written by a human and which one is the figment of an AI agent?
 
-You can place your guess in this poll together with your betting stake!
+Place your bets in [this poll](https://github.com/FadriPestalozzi/SolarSoundBytes/discussions/27) to figure out, if your subconscious chose the blue pill (just NetFlix and Chill) or the red pill (Ready to Face the Terminator)!
 
-### Alternative 0
-Empowering you to explore our global energy transition by generating bite-sized audio insights based on your custom-made focus data subset.
-
-### Alternative 1
-Transform complex energy data into digestible audio stories, empowering you to discover insights from your chosen data perspective.
-
-# Website
-
-The code presented in this repo is exposed online on the
-[SolarSoundBytes Website](https://github.com/SL14-SL/solarsoundbytes-website).
-
-# MVP
-
-The initial MVP focuses on articles in the
-[Cleantech Media Dataset by Anacode](https://www.kaggle.com/datasets/jannalipenkova/cleantech-media-dataset),
-which span a time from 2022-01-02 to 2024-10-24.
-
-To compare this official/academic dataset with the perception of the general
-public, a twitter dataset was created by scraping xxx, covering the same time
-frame.
-
-# Beyond the MVP
-
-To investigate a possible discrepancy between officially reported data and the
-actually installed renewable energy generation capacity, we aim to supplement
-the NLP sentiment analysis with solar panel and wind turbine detection using
-satellite images (inspired by the
-[SATLAS by Ai2](https://satlas.allen.ai/map?state={%22view%22:{%22longitude%22:-75.20284958000718,%22latitude%22:19.56034742358146,%22zoom%22:6.1407764029809515,%22pitch%22:0,%22bearing%22:0},%22showHeatmap%22:false,%22showAnimation%22:false,%22showSatellite%22:true,%22selectedDateOption%22:%222022-10%22,%22selectedDateOptionSecondary%22:%222016-08%22,%22selectedStartDateOption%22:%222016-07%22,%22selectedEndDateOption%22:%222022-12%22,%22selectedTreeCoverFill%22:[{%22label%22:%22None%22,%22isChecked%22:false},{%22label%22:%22Low%22,%22isChecked%22:false},{%22label%22:%22Medium%22,%22isChecked%22:true},{%22label%22:%22High%22,%22isChecked%22:true},{%22label%22:%22Full%22,%22isChecked%22:true}],%22selectedMarineInfra%22:[{%22label%22:%22Offshore%20Wind%20Turbines%22,%22isChecked%22:true},{%22label%22:%22Offshore%20Platforms%22,%22isChecked%22:false}],%22selectedRenewableEnergy%22:[{%22label%22:%22Solar%20Farms%22,%22isChecked%22:false},{%22label%22:%22Onshore%20Wind%20Turbines%22,%22isChecked%22:true}],%22selectedApplication%22:%22Renewable%20Energy%22,%22selectedLayout%22:%22Single%20Map%22})).
-
-This would be an additional real-world application of the learnings acquired
-during our
-[bootcamp at Le Wagon](https://www.lewagon.com/barcelona/data-science-course).
 
 # 👥 Roles and Responsabilities of Collaborators
 
