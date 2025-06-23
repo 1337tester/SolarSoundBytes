@@ -37,7 +37,7 @@
 
 # Project Overview
 
-**SolarSoundBytes** is a data-driven machine-learning project that explores the
+**SolarSoundBytes** is a data-driven machine-learning project that explores the global
 development of **renewable energy** and **energy storage** by:
 
 1. NLP sentiment analysis of **public tweets** and
@@ -45,19 +45,29 @@ development of **renewable energy** and **energy storage** by:
 2. NLP sentiment analysis of **official news articles**.
 
 These 2 sentiment analyses are compared to each other (to identify possible
-correlations) and both mapped onto data on the development of renewable energy
-and energy storage technologies in the same timeframe from 2022-01-02 to
-2024-12-24.
+correlations) and both are also mapped onto the global capacity of renewable energy
+and energy storage technologies recorded during the same timeframe from 2022-01-02 to
+2024-12-24. 
 
 ## SoundBytes
 
-To make our findings accessible and engaging, we transform the resulting
-insights into concise audio summaries, aka **SoundBytes**, to effectively
-communicate the state of the ongoing energy transition to a broader audience.
+We've created **SoundBytes** - short audio summaries that turn our data insights into easy-to-understand stories. Users can pick any combination of data streams and time periods to generate custom audio reports, making the energy transition accessible to everyone.
+
+To draw your own concusions, anyone can play with our extensive dataset using [this link](https://solar-sound-bytes-26080134526.europe-west1.run.app/).
 
 ## Tagline
 
-Mapping our global energy transition into bite-sized audio insights.
+To break down the complexity of this project, here are 2 taglines. 
+
+Which one was written by a human and which by an AI agent?
+
+You can place your guess in this poll together with your betting stake!
+
+### Alternative 0
+Empowering you to explore our global energy transition by generating bite-sized audio insights based on your custom-made focus data subset.
+
+### Alternative 1
+Transform complex energy data into digestible audio stories, empowering you to discover insights from your chosen data perspective.
 
 # Website
 
