@@ -24,6 +24,7 @@ def render_about_us():
         .team-member h3 {
             color: #ffffff;
             margin-bottom: 1rem;
+            font-size: 1.5rem;
         }
 
         .team-image {
@@ -177,6 +178,10 @@ def render_about_us():
     with col_stats3:
         st.markdown("### 🚀 Mission")
         st.write("AI-powered insights tracking the global shift to renewable energy")
+
+def main():
+    """Main function for the about us page"""
+    render_about_us()
 
 if __name__ == "__main__":
     render_about_us()
