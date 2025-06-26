@@ -1,5 +1,9 @@
 import streamlit as st
 from PIL import Image
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from shared_components import get_emoji_title
 
 # Page config
 #st.set_page_config(page_title="About Us - SolarSoundBytes", layout="wide")
@@ -64,100 +68,104 @@ def render_about_us():
     </style>
     """, unsafe_allow_html=True)
 
+    # Add CSS to center images and style buttons
+    st.markdown("""
+    <style>
+    .team-name {
+        height: 48px;   /* Adjust as needed to fit the longest name */
+        display: flex;
+        align-items: flex-end; /* Align text to bottom of the area for nice look */
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #fff;
+        margin-bottom: 1rem;
+    }
+    
+    /* Custom styling for link buttons */
+    .stLinkButton > a {
+        padding: 4px 8px !important;
+        font-size: 14px !important;
+        white-space: nowrap !important;
+        text-overflow: ellipsis !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+    
+    /* Align footer section headers */
+    .stats-section {
+        text-align: left !important;
+    }
+    
+    .stats-section h3 {
+        text-align: left !important;
+        font-size: 1.5rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .stats-section .emoji {
+        font-size: 2rem !important;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+
     # Centered title
-    st.markdown('<h1 class="team-title">The SolarSoundBytes Team</h1>', unsafe_allow_html=True)
+    st.markdown(f'<h1 class="team-title">{get_emoji_title(include_team=True)}</h1>', unsafe_allow_html=True)
 
     # Create 3 equal columns with proper spacing
     col1, col2, col3 = st.columns(3, gap="medium")
 
     #FADRI PESTALOZZI
     with col1:
-        st.markdown('<div class="team-member">', unsafe_allow_html=True)
-        st.subheader("Fadri Pestalozzi")
-        try:
-            image = Image.open('website/images/Fadri.jpeg')
-            image = image.resize((250, 250), Image.Resampling.LANCZOS)
-            st.image(image)
-        except FileNotFoundError: st.info("📷 Image not found")
-        st.markdown("""
-        <div class="profile-description">
-        Mechanical engineer turned software developer proficient in Python, SQL, and Odoo, now pivoting fully into tech. After building strong foundations in full-stack development, he's diving into ML/AI through community‑driven bootcamps and open-source events. Motivated by collaborative impact and continuous upskilling.
-        </div>
-        """, unsafe_allow_html=True)
-    # Social links as buttons
+        st.markdown('<div class="team-name">Fadri Pestalozzi</div>', unsafe_allow_html=True)
+        # st.subheader("Fadri Pestalozzi")
+        image = Image.open('website/images/Fadri.jpeg').resize((250, 250))
+        st.image(image)
+        st.write("Mechanical engineer turned software developer proficient in Python, SQL, and Odoo. After building a strong backend foundation, he's currently diving into ML/AI through community‑driven bootcamps and open-source events. Motivated by collaborative impact and continuous upskilling.")
+        # link buttons
         col_linkedin, col_github = st.columns(2)
-
         with col_linkedin:
-            if st.button("🔗 LinkedIn", key="linkedin_fadri"):
-                st.link_button("Go to LinkedIn", "https://www.linkedin.com/in/fadri-pestalozzi/")
-
+            st.link_button("🔗 LinkedIn", "https://www.linkedin.com/in/fadri-pestalozzi/")
         with col_github:
-            if st.button("💻 GitHub", key="github_fadri"):
-                st.link_button("Go to GitHub", "https://github.com/FadriPestalozzi")
+            st.link_button("🐙 GitHub", "https://github.com/FadriPestalozzi")
 
 
     # STEFFEN LAUTERBACH
     with col2:
-        st.markdown('<div class="team-member">', unsafe_allow_html=True)
-        st.subheader("Steffen Lauterbach")
-        try:
-            image = Image.open('website/images/SteffenLauterbach.png')
-            image = image.resize((250, 250), Image.Resampling.LANCZOS)
-            st.image(image)
-        except FileNotFoundError: st.info("📷 Image not found")
-        # Description
-        st.markdown("""
-        <div class="profile-description">
-        Renewable energy engineer and former research associate with deep experience in designing and optimizing clean energy systems. Passionate about bridging technical innovation with real-world impact. Committed to driving the next wave of green energy solutions.
-        </div>
-        """, unsafe_allow_html=True)
-
-        # Social links with logos
+        st.markdown('<div class="team-name">Steffen Lauterbach</div>', unsafe_allow_html=True)
+        # st.subheader("Steffen Lauterbach")
+        image = Image.open('website/images/SteffenLauterbach.png').resize((250, 250))
+        st.image(image)
+        st.write("Renewable energy engineer and former research associate with deep experience in designing and optimizing clean energy systems. Passionate about bridging technical innovation with real-world impact. Committed to driving the next wave of green energy solutions.")
+        # link buttons
         col_linkedin, col_github = st.columns(2)
         with col_linkedin:
-            if st.button("🔗 LinkedIn", key="linkedin_Steffen"):
-                st.link_button("Go to LinkedIn", "https://www.linkedin.com/in/92-steffen-lauterbach/")
-
+            st.link_button("🔗 LinkedIn", "https://www.linkedin.com/in/92-steffen-lauterbach/")
         with col_github:
-            if st.button("💻 GitHub", key="github_Steffen"):
-                st.link_button("Go to GitHub", "https://github.com/SL14-SL14")
-
-
-
+            st.link_button("🐙 GitHub", "https://github.com/SL14-SL14")
 
     # ENRIQUE FLORES ROLDÁN
     with col3:
-        st.markdown('<div class="team-member">', unsafe_allow_html=True)
-        st.subheader("Enrique Flores Roldán")
-        try:
-            image = Image.open('website/images/Enrique.jpeg')
-            width, height = image.size
-            size = min(width, height)  # Use the smaller dimension
-            left = (width - size) // 2
-            top = (height - size) // 2
-            right = left + size
-            bottom = top + size
-            image = image.crop((left, top, right, bottom))
-            image = image.resize((250, 250), Image.Resampling.LANCZOS)
-            st.image(image)
-        except FileNotFoundError:
-            st.info("📷 Image not found")
-        # Description
-        st.markdown("""
-        <div class="profile-description">
-        Video producer with 12 years of experience crafting visual storytelling across TV, advertising, and corporate media. Now pursuing a career shift into ML and AI to fuse creativity with cutting‑edge technology. Eager to apply narrative expertise in building intelligent, engaging solutions.
-        </div>
-        """, unsafe_allow_html=True)
-
-        # Social links with logos
+        st.markdown('<div class="team-name">Enrique Flores Roldán</div>', unsafe_allow_html=True)
+        # st.subheader("Enrique Flores Roldán")
+        image = Image.open('website/images/Enrique.jpeg')
+        width, height = image.size
+        size = min(width, height)  # Use the smaller dimension
+        left = (width - size) // 2
+        top = (height - size) // 2
+        right = left + size
+        bottom = top + size
+        image = image.crop((left, top, right, bottom))
+        image = image.resize((250, 250), Image.Resampling.LANCZOS)
+        st.image(image)
+        st.write("Video producer with 12 years of experience crafting visual storytelling across TV, advertising, and corporate media. Now pursuing a career shift into ML and AI to fuse creativity with cutting‑edge technology. Eager to apply narrative expertise in building intelligent, engaging solutions.")
+        # link buttons
         col_linkedin, col_github = st.columns(2)
         with col_linkedin:
-            if st.button("🔗 LinkedIn", key="linkedin_Enrique"):
-                st.link_button("Go to LinkedIn", "https://www.linkedin.com/in/enriqfr5/")
-
+            st.link_button("🔗 LinkedIn", "https://www.linkedin.com/in/enriqfr5/")
         with col_github:
-            if st.button("💻 GitHub", key="github_Enrique"):
-                st.link_button("Go to GitHub", "https://github.com/EFRdev")
+            st.link_button("🐙 GitHub", "https://github.com/EFRdev")
 
 
     # Add some spacing and a footer section
@@ -165,19 +173,25 @@ def render_about_us():
     st.markdown("---")
 
     # Team stats or additional info
-    col_stats1, col_stats2, col_stats3 = st.columns(3,vertical_alignment='center')
+    col_stats1, col_stats2, col_stats3 = st.columns(3, vertical_alignment='top')
 
     with col_stats1:
-        st.markdown("### 🎓 Education")
-        st.write("Le Wagon Data Science Bootcamp")
+        st.markdown('<div class="stats-section">', unsafe_allow_html=True)
+        st.markdown('<h3><span class="emoji">🎓</span> Education</h3>', unsafe_allow_html=True)
+        st.markdown('<p style="text-align: left;">Le Wagon Data Science Bootcamp</p>', unsafe_allow_html=True)
+        st.markdown('</div>', unsafe_allow_html=True)
 
     with col_stats2:
-        st.markdown("### 🌍 Based in")
-        st.write("Barcelona")
+        st.markdown('<div class="stats-section">', unsafe_allow_html=True)
+        st.markdown('<h3><span class="emoji">🌍</span> Based in</h3>', unsafe_allow_html=True)
+        st.markdown('<p style="text-align: left;">Barcelona</p>', unsafe_allow_html=True)
+        st.markdown('</div>', unsafe_allow_html=True)
 
     with col_stats3:
-        st.markdown("### 🚀 Mission")
-        st.write("AI-powered insights tracking the global shift to renewable energy")
+        st.markdown('<div class="stats-section">', unsafe_allow_html=True)
+        st.markdown('<h3><span class="emoji">🚀</span> Mission</h3>', unsafe_allow_html=True)
+        st.markdown('<p style="text-align: left;">AI-powered insights tracking the global shift to renewable energy</p>', unsafe_allow_html=True)
+        st.markdown('</div>', unsafe_allow_html=True)
 
 def main():
     """Main function for the about us page"""

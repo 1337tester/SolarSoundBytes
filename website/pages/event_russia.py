@@ -100,7 +100,7 @@ def main():
 
     # Konvertiere Datum und extrahiere Hour
     df_twitter_filtered['date'] = pd.to_datetime(df_twitter_filtered['date'])
-    df_twitter_filtered['hour'] = df_twitter_filtered['date'].dt.to_period('H').dt.to_timestamp()
+    df_twitter_filtered['hour'] = df_twitter_filtered['date'].dt.to_period('h').dt.to_timestamp()
     # Berechne die Wahrscheinlichkeit des korrekten Sentiments je Zeile
     df_twitter_filtered['correct_prob'] = df_twitter_filtered[['pos_score', 'neg_score']].max(axis=1)
 

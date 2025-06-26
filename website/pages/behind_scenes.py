@@ -4,6 +4,10 @@ from plotly.subplots import make_subplots
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from shared_components import get_emoji_title
 
 def page_config():
     """Configure the page settings"""
@@ -12,7 +16,7 @@ def page_config():
 def header_section():
     """Display the main header and hero section"""
     st.title("🔧 Behind the Scenes")
-    st.markdown("### How we built SolarSoundBytes: from raw data to AI-generated podcasts")
+    st.markdown(f"### How we built {get_emoji_title()}: from raw data to AI-generated podcasts")
     st.markdown("""
         Welcome to our technical kitchen!</p>
         """, unsafe_allow_html=True)
@@ -385,7 +389,7 @@ def footer_section():
                     <div style="text-align: center;">
                         <div>Created by Le Wagon Data Science Batch #2012</div>
                         <div style="font-style: italic; margin-top: 8px;">
-                            Built with ❤️ by the SolarSoundBytes team
+                            Built with ❤️ by the {get_emoji_title(include_team=True)}
                         </div>
                     </div>
                     """,
