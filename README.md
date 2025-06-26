@@ -34,12 +34,22 @@
 
 # Project Overview
 
-**SolarSoundBytes** is a data-driven machine-learning project that explores the global
-development of **renewable energy** and **energy storage** by:
+[**SolarSoundBytes**](https://solarsoundbytes-production.up.railway.app/) is a data-driven machine-learning project that explores the global sentiment development towards **renewable energy** and **energy storage**. 
 
-1. NLP sentiment analysis of **public tweets** and
+The sentiment of the general public is being approximated by scraping tweets. 
+The sentiment of official 
 
-2. NLP sentiment analysis of **official news articles**.
+- 130k+ **public tweets**
+- 4k+ **official news articles**
+
+To process large amounts of text from tweets and news articles, a sentiment analysis is performed. 
+
+ by Natural Language Processing (NLP). 
+
+
+
+Sentiment analysis is the process of analyzing digital text to determine if the emotional tone of the message is positive, negative, or neutral. 
+
 
 These 2 sentiment analyses are compared to each other (to identify possible
 correlations) and both are also mapped onto the global capacity of renewable energy
