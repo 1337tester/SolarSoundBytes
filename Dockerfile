@@ -6,13 +6,9 @@ RUN pip install --upgrade pip
 RUN pip install -e .
 RUN pip install -r requirements.txt
 
-# ENV PYTHONPATH=/app
+# expose port for deployment to access by railway.com
+EXPOSE 8080
 
-# CMD uvicorn solarsoundbytes.api.api_development:app --host 0.0.0.0 --port $PORT
-
-
+# enable running locally using streamlit
 CMD ["sh", "-c", "streamlit run website/home.py --server.address 0.0.0.0 --server.port $PORT"]
-
-
-
 
