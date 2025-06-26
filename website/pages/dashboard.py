@@ -28,10 +28,24 @@ def dashboard_info():
 
 def interactive_dashboard():
     """Content for Dashboard page"""
+    import os
+    
+    # Try multiple methods to get the API key
+    api_key_from_secrets = None
+    
+    # Method 1: Try secrets.toml
     try:
         api_key_from_secrets = st.secrets["OPENAI_API_KEY"]
-    except KeyError:
-        st.error("Error: OpenAI API Key not found in .streamlit/secrets.toml")
+    except (KeyError, FileNotFoundError):
+        pass
+    
+    # Method 2: Try environment variable
+    if not api_key_from_secrets:
+        api_key_from_secrets = os.getenv("OPENAI_API_KEY")
+    
+    # Method 3: Check if no API key found
+    if not api_key_from_secrets:
+        st.error("Error: OpenAI API Key not found")
         st.info("Please set your OPENAI_API_KEY in .streamlit/secrets.toml or as an environment variable.")
         st.stop()
 
