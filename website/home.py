@@ -33,7 +33,7 @@ def main():
     with img_col:
         st.image('website/images/LeWagonIcon.png', width=70)
     with text_col:
-        st.markdown("""
+        st.markdown(f"""
             <div style="margin-top: 0px;">
                 <div style="font-size: 14px; margin-bottom: 2px; white-space: nowrap;">🚁 Lift-off as final project of our <a href="https://www.lewagon.com/barcelona/data-science-course" target="_blank">🥾 Le Wagon  Data Science Bootcamp</a> batch #2012 in 🏖️ Barcelona  </div>
                 <div style="font-size: 14px; margin-bottom: 2px; white-space: nowrap;">🫀 Created with love by the <a href="/about_us">{get_emoji_link_text()}</a> </div>
@@ -44,7 +44,47 @@ def main():
     # --- Image Carousel ---
     st.markdown("---")
 
-    st.image('website/images/ren_en_Image.png', width=200, use_container_width=True)
+    # Image carousel for home page
+    import glob
+    import os
+    from PIL import Image
+    
+    # Get all image files from the home-carousel folder and subdirectories
+    image_extensions = ['*.png', '*.jpg', '*.jpeg', '*.webp', '*.avif']
+    carousel_images = []
+    
+    for extension in image_extensions:
+        # Search in main folder and subdirectories
+        carousel_images.extend(glob.glob(f'website/images/home-carousel/**/{extension}', recursive=True))
+    
+    # Filter out directories and validate image files
+    valid_images = []
+    for img_path in carousel_images:
+        if os.path.isfile(img_path):
+            try:
+                # Try to open the image to validate it
+                with Image.open(img_path) as img:
+                    img.verify()  # Verify it's a valid image
+                valid_images.append(img_path)
+            except Exception as e:
+                # Skip invalid/corrupted images
+                print(f"Skipping invalid image: {img_path} - {e}")
+                continue
+    
+    if valid_images:
+        # Create tabs for carousel effect
+        tab_names = [f"Image {i+1}" for i in range(len(valid_images))]
+        tabs = st.tabs(tab_names)
+        
+        for i, (tab, image_path) in enumerate(zip(tabs, valid_images)):
+            with tab:
+                try:
+                    st.image(image_path, width=200, use_container_width=True)
+                except Exception as e:
+                    st.error(f"Error loading image: {os.path.basename(image_path)}")
+    else:
+        # Fallback to original image if no valid carousel images found
+        st.image('website/images/home-carousel/renewables/ren_en_Image.png', width=200, use_container_width=True)
 
 
 # For backward compatibility when run directly
