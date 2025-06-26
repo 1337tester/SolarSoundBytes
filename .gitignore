@@ -13,6 +13,7 @@ solarsoundbytes.egg-info/
 solarsoundbytes/api/__pycache__/
 *data_test/
 .streamlit/
+website/.streamlit/
 
 *.mp3
 
