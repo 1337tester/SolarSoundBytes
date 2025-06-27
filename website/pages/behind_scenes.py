@@ -11,7 +11,7 @@ from shared_components import get_emoji_title
 
 def page_config():
     """Configure the page settings"""
-    st.set_page_config(page_title="Behind the Scenes - SolarSoundBytes", layout="wide")
+    pass  # Page config is handled by the main app navigation
 
 def header_section():
     """Display the main header and hero section"""
@@ -408,7 +408,8 @@ def render_behind_scenes():
 
 def main():
     """Main function to run the page"""
-    page_config()
+    # Set page config (must be first Streamlit command)
+    st.set_page_config(page_title="Behind the Scenes - SolarSoundBytes", page_icon="🔧", layout="wide")
     render_behind_scenes()
 
 # Run the page

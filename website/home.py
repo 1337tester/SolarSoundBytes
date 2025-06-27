@@ -8,10 +8,10 @@ from shared_components import get_emoji_title, render_emoji_title_header, get_em
 def main():
     """Main function for the home page"""
     # Set page config (must be first Streamlit command)
-    st.set_page_config(page_title="SolarSoundBytes", page_icon="☀️", layout="wide")
+    st.set_page_config(page_title="SolarSoundBytes", page_icon="🤗", layout="wide")
     
     # Header
-    st.markdown(f"<h1 style='text-align: center'>Welcome to {get_emoji_title()}</h1>", unsafe_allow_html=True)
+    st.markdown(f"<h1 style='text-align: center'>🤗Welcome to {get_emoji_title()}</h1>", unsafe_allow_html=True)
     st.markdown("<h3 style='text-align: center'>Mapping our global energy transition into tasty audio-bites</h3>", unsafe_allow_html=True)
 
     st.markdown("---")
