@@ -4,7 +4,7 @@
 - [👥 Roles and Responsibilities of Collaborators](#-roles-and-responsibilities-of-collaborators)
 - [📊 Gather Data](#-gather-data)
 - [🌍 Identify Global Events](#-identify-global-events)
-- [⚙️ Process Data](#-process-data)
+- [⚙️ Process Data](#️-process-data)
 - [🔧 How to Install](#-how-to-install)
 - [📚 Glossary](#-glossary)
 
