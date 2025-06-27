@@ -17,9 +17,10 @@ from shared_components import get_emoji_title, render_emoji_title_header, get_em
 
 def dashboard_info():
     """Display the main header and hero section"""
-    st.title(f"{get_emoji_title()}📊Dashboard")
-    st.markdown("""
-        **Discover the story behind the data.** """)
+    st.title("📊 interactive dashboard for you ❤️")
+    st.title("🔎 to discover the stories behind the data 🚀")
+    # st.markdown("""
+    #     **🔎 Discover the stories behind the data.** """)
     st.markdown("""
     Navigate through our sentiment analysis dashboard to explore how public opinion from ***tweets and official news***
     correlates with renewable energy indicators ***(S&P 500)*** performance and the actual capacity growth
