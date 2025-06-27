@@ -10,27 +10,17 @@
 
 # 📖 Project Overview
 
-[**SolarSoundBytes**](https://solar-sound-bytes.up.railway.app/) is a data-driven machine-learning project that explores the global sentiment development towards **renewable energy** and **energy storage**. 
+[**SolarSoundBytes**](https://solar-sound-bytes.up.railway.app/) is a data-driven machine-learning project that explores the global sentiment towards **renewable energy** and **energy storage** in the timeframe from 2022-01-02 to 2024-12-24.
 
-The sentiment of the general public is being approximated by scraping tweets. 
-The sentiment of official 
+## Sentiment Analysis
 
-- 130k+ **public tweets**
-- 4k+ **official news articles**
+Sentiment analysis is a well-known Natural Language Processing (NLP) technique used to determine the emotional tone of a text, classifying it as either positive, negative, or neutral. 
 
-To process large amounts of text from tweets and news articles, a sentiment analysis is performed. 
+- The sentiment of the general public is being inferred by performing sentiment analysis on **130k+ public tweets**. 
+- Analogously, the sentiment of official channels is derived by sentiment analysis on **4k+ official news articles**. 
 
- by Natural Language Processing (NLP). 
-
-
-
-Sentiment analysis is the process of analyzing digital text to determine if the emotional tone of the message is positive, negative, or neutral. 
-
-
-These 2 sentiment analyses are compared to each other (to identify possible
-correlations) and both are also mapped onto the global capacity of renewable energy
-and energy storage technologies recorded during the same timeframe from 2022-01-02 to
-2024-12-24. 
+By feeding the sentiment analysis results of these 2 datasets into an [interactive dashboard](https://solar-sound-bytes.up.railway.app/dashboard), the user is empowered to investigate possible
+correlations between public and official sentiments as well as compare those data with the global capacity of renewable energy and energy storage technologies as recorded during the same timeframe (xxx TODO LINK AND NAME OF RENEWABLES DATASET). 
 
 This project is a real-world application of the learnings acquired
 during our 
