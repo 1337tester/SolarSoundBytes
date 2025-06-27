@@ -12,34 +12,39 @@
 
 [**SolarSoundBytes**](https://solar-sound-bytes.up.railway.app/) is a data-driven machine-learning project that explores the global sentiment towards **renewable energy** and **energy storage** in the timeframe from 2022-01-02 to 2024-12-24.
 
-## Sentiment Analysis
-
-Sentiment analysis is a well-known Natural Language Processing (NLP) technique used to determine the emotional tone of a text, classifying it as either positive, negative, or neutral. 
-
-- The sentiment of the general public is being inferred by performing sentiment analysis on **130k+ public tweets**. 
-- Analogously, the sentiment of official channels is derived by sentiment analysis on **4k+ official news articles**. 
-
-By feeding the sentiment analysis results of these 2 datasets into an [interactive dashboard](https://solar-sound-bytes.up.railway.app/dashboard), the user is empowered to investigate possible
-correlations between public and official sentiments as well as compare those data with the global capacity of renewable energy and energy storage technologies as recorded during the same timeframe (xxx TODO LINK AND NAME OF RENEWABLES DATASET). 
-
 This project is a real-world application of the learnings acquired
 during our 
 [9-week bootcamp at Le Wagon](https://www.lewagon.com/barcelona/data-science-course) and was created during our final 2 weeks together in Barcelona from June 2 to 13, 2025.
 
-## SoundBytes
 
-We've created **SoundBytes** - short audio summaries that turn our data insights into easy-to-understand stories. Users can pick any combination of data streams and time periods to generate custom audio reports, making the energy transition accessible to everyone.
 
-To draw your own concusions, anyone can play with our extensive dataset using [this link](https://solar-sound-bytes.up.railway.app/).
 
-## Tagline
+## Input: Sentiment Analysis
 
-To break down the complexity of this project, we created 2 taglines. 
+Sentiment analysis is a well-known Natural Language Processing (NLP) technique used to determine the emotional tone of a text, classifying it as either positive, negative, or neutral. 
 
-Now it's up to your human intuition to decide: 
-Which tagline was written by a human and which one is the figment of an AI agent?
+- The sentiment of the general public is being inferred by performing sentiment analysis on **130k+ public tweets (TODO link to dataset description)**. 
+- Analogously, the sentiment of official channels is derived by sentiment analysis on **4k+ official news articles (TODO link to dataset description)**. 
 
-Place your bets in [this poll](https://github.com/FadriPestalozzi/SolarSoundBytes/discussions/27) to figure out, if your subconscious chose the blue pill (just NetFlix and Chill) or the red pill (Ready to Face the Terminator)!
+By feeding the sentiment analysis results of these 2 datasets into an [interactive dashboard](https://solar-sound-bytes.up.railway.app/dashboard), the user is empowered to investigate possible
+correlations between public and official sentiments as well as compare those data with further metrics. 
+
+## Input: Additional Metrics
+
+So far, two additional metrics to optionally overlay with sentiment analysis results have been implemented, covering the same timeframe from 2022-01-02 to 2024-12-24. 
+
+1. Global capacity of renewable energy and energy storage technologies (TODO LINK AND NAME OF RENEWABLES DATASET). 
+2. S&P 500 (TODO LINK AND NAME OF ECONOMIC DATASET)
+
+
+## Output: SoundBytes
+
+Based on custom user inputs compiled from the a chosen  timeframe of [sentiment analysis results](#input-sentiment-analysis) and optional overlay of [additional metrics](#input-additional-metrics), the user can trigger the creation of a customized **SoundByte**. 
+
+A SoundByte is a short audio summary which turns the chosen data range into a simple and easily digestible explanation. Users can pick any combination of data streams for a specific time period to generate custom audio reports, making the complex and multi-layered topic of energy transition accessible to everyone.
+
+To draw your own concusions, you can play with our extensive dataset using [our interactive dashboard](https://solar-sound-bytes.up.railway.app/dashboard).
+
 
 
 # 👥 Roles and Responsibilities of Collaborators
@@ -266,7 +271,7 @@ define specific packages and versions.
 # go to the project-folder
 cd /path/to/SolarSoundBytes
 
-pyenv virtualenv 3.10.6 SolarSoundBytes
+pyenv virtualenv 3.12.9 SolarSoundBytes
 ```
 
 ## activate virtual environment in cloned repo
@@ -311,3 +316,15 @@ touch data
 - **TTS**: Text-to-Speech – technology that converts written text into spoken
   voice output.
 - **USD**: United States Dollar
+
+
+# 🥚 Easter Eggs
+
+## Tagline
+
+To break down the complexity of this project, we created 2 taglines using either raw brainpower or sprinkling in some AI guesswork.  
+
+Now it's up to your human intuition to decide: 
+Which tagline was written by a human and which one is the figment of an AI agent? 
+
+Place your bets in [the TaglineTouringTest](https://github.com/FadriPestalozzi/SolarSoundBytes/discussions/27) to figure out, if your subconscious chose the blue pill (just NetFlix and Chill) or the red pill (Ready to Face the Terminator)!
