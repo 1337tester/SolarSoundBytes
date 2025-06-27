@@ -108,12 +108,12 @@ def render_limitations():
         st.write("AI-powered insights tracking the global shift to renewable energy")
 
 def main():
-    """Main function for the challenges & further work page"""
+    """Main function for the challenges & WIP page"""
     # Set page config (must be first Streamlit command)
-    st.set_page_config(page_title="Challenges & Further Work - SolarSoundBytes", page_icon="🚧", layout="wide")
+    st.set_page_config(page_title="Challenges & WIP @ ☀️🔊🍔", page_icon="🚧", layout="wide")
     render_limitations()
 
 if __name__ == "__main__":
     # Set page config (must be first Streamlit command)
-    st.set_page_config(page_title="Challenges & Further Work - SolarSoundBytes", page_icon="🚧", layout="wide")
+    st.set_page_config(page_title="Challenges & WIP @ ☀️🔊🍔", page_icon="🚧", layout="wide")
     render_limitations()
