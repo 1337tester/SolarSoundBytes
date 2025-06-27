@@ -195,7 +195,11 @@ def render_about_us():
 
 def main():
     """Main function for the about us page"""
+    # Set page config (must be first Streamlit command)
+    st.set_page_config(page_title="About Us - SolarSoundBytes", page_icon="👥", layout="wide")
     render_about_us()
 
 if __name__ == "__main__":
+    # Set page config (must be first Streamlit command)
+    st.set_page_config(page_title="About Us - SolarSoundBytes", page_icon="👥", layout="wide")
     render_about_us()

@@ -17,7 +17,7 @@ from shared_components import get_emoji_title, render_emoji_title_header, get_em
 
 def dashboard_info():
     """Display the main header and hero section"""
-    st.title(f"{get_emoji_title()} Dashboard")
+    st.title(f"{get_emoji_title()}📈Dashboard")
     st.markdown("""
         **Discover the story behind the data.** """)
     st.markdown("""
@@ -187,7 +187,8 @@ def interactive_dashboard():
 
 # ---- main dashboard ----
 def main():    
-    st.set_page_config(page_title="SolarSoundBytes: Renewables Made Audible", layout="wide")
+    # Set page config (must be first Streamlit command)
+    st.set_page_config(page_title="Dashboard - SolarSoundBytes", page_icon="📊", layout="wide")
     dashboard_info()
     interactive_dashboard()
 
@@ -283,7 +284,7 @@ def main():
         df_twitter_filtered['hour'] = df_twitter_filtered['date'].dt.to_period('H').dt.to_timestamp()
         df_twitter_filtered['correct_prob'] = df_twitter_filtered[['pos_score', 'neg_score']].max(axis=1)
         
-        # Aggregate Twitter by hour for events (like in event_russia.py)
+        # Aggregate Twitter by hour for events (like in events/z_event_russia.py)
         hourly_stats_twitter = df_twitter_filtered.groupby('hour').agg(
             mean_sentiment=('pos_score', 'mean'),
             count=('correct_prob', 'count'),
@@ -316,7 +317,7 @@ def main():
         end_idx = min(len(months) - 1, end_idx)
     else:
         start_idx, end_idx = st.select_slider(
-            "Select time window:",
+            "Select monthly time window:",
             options=list(range(len(months))),
             value=(0, len(months)-1),
             format_func=lambda x: months[x]
