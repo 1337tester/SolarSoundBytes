@@ -17,7 +17,7 @@ from shared_components import get_emoji_title, render_emoji_title_header, get_em
 
 def dashboard_info():
     """Display the main header and hero section"""
-    st.title(f"{get_emoji_title()}📈Dashboard")
+    st.title(f"{get_emoji_title()}📊Dashboard")
     st.markdown("""
         **Discover the story behind the data.** """)
     st.markdown("""
