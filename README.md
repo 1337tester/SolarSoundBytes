@@ -1,15 +1,14 @@
 # Table of Contents
 
-- [📖 Project Overview](#project-overview)
-- [👥 Roles and Responsabilities of Collaborators](#-roles-and-responsabilities-of-collaborators)
-- [📋 Table of Contents](#table-of-contents-1)
-- [📊 Gather Data](#gather-data)
-- [🌍 Identify Global Events](#global-events)
-- [⚙️ Process Data](#process-data)
-- [🔧 How to Install](#installation)
-- [📚 Glossary](#glossary)
+- [📖 Project Overview](#-project-overview)
+- [👥 Roles and Responsibilities of Collaborators](#-roles-and-responsibilities-of-collaborators)
+- [📊 Gather Data](#-gather-data)
+- [🌍 Identify Global Events](#-identify-global-events)
+- [⚙️ Process Data](#-process-data)
+- [🔧 How to Install](#-how-to-install)
+- [📚 Glossary](#-glossary)
 
-# Project Overview
+# 📖 Project Overview
 
 [**SolarSoundBytes**](https://solar-sound-bytes.up.railway.app/) is a data-driven machine-learning project that explores the global sentiment development towards **renewable energy** and **energy storage**. 
 
@@ -53,7 +52,7 @@ Which tagline was written by a human and which one is the figment of an AI agent
 Place your bets in [this poll](https://github.com/FadriPestalozzi/SolarSoundBytes/discussions/27) to figure out, if your subconscious chose the blue pill (just NetFlix and Chill) or the red pill (Ready to Face the Terminator)!
 
 
-# 👥 Roles and Responsabilities of Collaborators
+# 👥 Roles and Responsibilities of Collaborators
 
 | Name                  | GitHub                                                 | Role             | Content                                                                                                                                                               |
 | --------------------- | ------------------------------------------------------ | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -61,9 +60,7 @@ Place your bets in [this poll](https://github.com/FadriPestalozzi/SolarSoundByte
 | Steffen Lauterbach    | [@steffenlaut](https://github.com/steffenlaut)         | System Architect | Create model pipeline and docker container to expose API // Research and process satellite images to detect and quantify solar panels //Integrate TTS (text-to-sound) |
 | Enrique Flores Roldán | [@efloresr](https://github.com/efloresr)               | Project Manager  | News Articles: Research data sources // Create data processing pipeline, and tested models for NLP. // Fine tune distilber model for sentiment analysis.              |
 
-# Table of Contents
-
-# Gather Data
+# 📊 Gather Data
 
 ## News Articles from Cleantech Media Dataset
 
@@ -212,7 +209,7 @@ twitter dataset with as large of a contextual overlap as possible with the
 - renewable energy
 - energy storage
 
-# Global Events
+# 🌍 Identify Global Events
 
 To identify around which specific dates to refine the twitter dataset to zoom
 into global events where a significant change in sentiment is highly probable, a
@@ -238,7 +235,7 @@ references and reasoning, see the
 
 
 
-# Process Data
+# ⚙️ Process Data
 
 ## Sentiment Analysis
 
@@ -260,7 +257,7 @@ references and reasoning, see the
 
 <img src="images/png/twitter/sentiment_share_vs_nTweets_quarter.png" alt="sentiment_analysis_twitter_and_news" width="500"/>
 
-# Installation
+# 🔧 How to Install
 
 ## clone this repo to your computer
 
@@ -308,7 +305,7 @@ pip install -r requirements.txt
 touch data
 ```
 
-# Glossary
+# 📚 Glossary
 
 - **API**: Application Programming Interface – a set of rules that allows
   different software applications to communicate with each other.
