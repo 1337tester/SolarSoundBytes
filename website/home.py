@@ -1,6 +1,8 @@
 import streamlit as st
 from PIL import Image
+import glob
 import os
+import time
 from shared_components import get_emoji_title, render_emoji_title_header, get_emoji_link_text
 
 def main():
@@ -43,11 +45,6 @@ def main():
 
     # --- Image Carousel ---
     st.markdown("---")
-
-    # Image carousel for home page
-    import glob
-    import os
-    from PIL import Image
     
     # Get all image files from the home-carousel folder and subdirectories
     image_extensions = ['*.png', '*.jpg', '*.jpeg', '*.webp', '*.avif']
@@ -72,16 +69,18 @@ def main():
                 continue
     
     if valid_images:
-        # Create tabs for carousel effect
-        tab_names = [f"Image {i+1}" for i in range(len(valid_images))]
-        tabs = st.tabs(tab_names)
-        
-        for i, (tab, image_path) in enumerate(zip(tabs, valid_images)):
-            with tab:
-                try:
-                    st.image(image_path, width=200, use_container_width=True)
-                except Exception as e:
-                    st.error(f"Error loading image: {os.path.basename(image_path)}")
+        # Initialize session state for carousel index
+        if 'carousel_index' not in st.session_state:
+            st.session_state.carousel_index = 0
+
+        # Show current image
+        current_image = valid_images[st.session_state.carousel_index]
+        st.image(current_image, width=200, use_container_width=True)
+
+        # Wait for 5 seconds, then move to next image and rerun
+        time.sleep(5)
+        st.session_state.carousel_index = (st.session_state.carousel_index + 1) % len(valid_images)
+        st.rerun()
     else:
         # Fallback to original image if no valid carousel images found
         st.image('website/images/home-carousel/renewables/ren_en_Image.png', width=200, use_container_width=True)
