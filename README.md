@@ -34,7 +34,7 @@
 
 # Project Overview
 
-[**SolarSoundBytes**](https://solarsoundbytes-production.up.railway.app/) is a data-driven machine-learning project that explores the global sentiment development towards **renewable energy** and **energy storage**. 
+[**SolarSoundBytes**](https://solar-sound-bytes.up.railway.app/) is a data-driven machine-learning project that explores the global sentiment development towards **renewable energy** and **energy storage**. 
 
 The sentiment of the general public is being approximated by scraping tweets. 
 The sentiment of official 
@@ -64,7 +64,7 @@ during our
 
 We've created **SoundBytes** - short audio summaries that turn our data insights into easy-to-understand stories. Users can pick any combination of data streams and time periods to generate custom audio reports, making the energy transition accessible to everyone.
 
-To draw your own concusions, anyone can play with our extensive dataset using [this link](https://solarsoundbytes-production.up.railway.app/).
+To draw your own concusions, anyone can play with our extensive dataset using [this link](https://solar-sound-bytes.up.railway.app/).
 
 ## Tagline
 
